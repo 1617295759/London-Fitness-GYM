@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Java EE 6">
+    <CLASSES>
+      <root url="jar://D:/Develop/java/javaSE1.8/jdk1.8/lib/ant-javafx.jar!/" />
+      <root url="jar://D:/Develop/java/javaSE1.8/jdk1.8/lib/dt.jar!/" />
+      <root url="jar://D:/Develop/java/javaSE1.8/jdk1.8/lib/javafx-mx.jar!/" />
+      <root url="jar://D:/Develop/java/javaSE1.8/jdk1.8/lib/jconsole.jar!/" />
+      <root url="jar://D:/Develop/java/javaSE1.8/jdk1.8/lib/sa-jdi.jar!/" />
+      <root url="jar://D:/Develop/java/javaSE1.8/jdk1.8/lib/tools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
