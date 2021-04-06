@@ -11,7 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import team.gym.MainApp;
 import team.gym.MyUtils.DialogUtils;
 import team.gym.MyUtils.Session;
-import team.gym.Service.UserService;
+import team.gym.Service.CustomerService;
+import team.gym.Service.TrainerService;
 import team.gym.View.AdminView;
 import team.gym.View.CustomerView;
 
@@ -48,8 +49,9 @@ public class LoginViewController {
     private Button saveToDataBaseButton;
 
     @Autowired
-    private UserService userService;
-
+    private CustomerService customerService;
+    @Autowired
+    private TrainerService trainerService;
     @Autowired
     @FXML
     private MainApp mainApp;
@@ -73,19 +75,19 @@ public class LoginViewController {
 
         try {
             if (isAdmin.isSelected()) {
-                int status = userService.verifyTrainer(usernameField.getText(),passwordField.getText());
+                int status = trainerService.verifyTrainer(usernameField.getText(),passwordField.getText());
                 if (status != 1) {
                     throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }
-                Session.setUser(userService.getTrainer(usernameField.getText(),passwordField.getText()));
+                Session.setUser(trainerService.getTrainer(usernameField.getText(),passwordField.getText()));
                 Session.setType("admin");
                 MainApp.showView(AdminView.class);
             } else {
-                int status = userService.verifyCustumer(usernameField.getText(),passwordField.getText());
+                int status = customerService.verifyCustumer(usernameField.getText(),passwordField.getText());
                 if (status != 1) {
                     throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }
-                Session.setUser(userService.getCustomer(usernameField.getText(),passwordField.getText()));
+                Session.setUser(customerService.getCustomer(usernameField.getText(),passwordField.getText()));
                 Session.setType("customer");
                 MainApp.showView(CustomerView.class);
             }
