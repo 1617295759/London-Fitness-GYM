@@ -1,38 +1,46 @@
 import team.gym.Beans.Customer;
 import org.junit.Test;
+import team.gym.Beans.CustomerWrapper;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.util.HashMap;
+import java.util.Map;
 
 public class testIO {
     @Test
-    public void testIO() throws JAXBException, IOException {
-        Customer customer = new Customer();
-        JAXBContext context = JAXBContext.newInstance(Customer.class);
+    public void testLoad() throws JAXBException, IOException {
+        CustomerWrapper wrapper = new CustomerWrapper();
+        Map map = new HashMap<String,Customer>();
+
+        JAXBContext context = JAXBContext
+                .newInstance(CustomerWrapper.class);
+        Unmarshaller um = context.createUnmarshaller();
+
+        // Reading XML from the file and unmarshalling.
+        wrapper = (CustomerWrapper) um.unmarshal(new File("XMLdata/customers.xml"));
+        Map m = wrapper.getCustomerMap();
+        System.out.println(m.keySet());
+    }
+
+    @Test
+    public void testSave() throws JAXBException {
+        CustomerWrapper wrapper = new CustomerWrapper();
+        Map map = new HashMap<String,Customer>();
+        Customer c1 = new Customer();
+        Customer c2 = new Customer();
+        map.put(c1.getAccout(),c1);
+        map.put(c2.getAccout(),c2);
+        wrapper.setCustomerMap(map);
+
+        JAXBContext context = JAXBContext.newInstance(CustomerWrapper.class);
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-        //文件路径问题：java.io.FileNotFoundException:系统找不到指定的路径 ？？
-        //问题解决 ：路径中的中文或有空格路径处理，会用编码为 a3%20%e9%a1%b9% 等字符
-        URL xmlURL = getClass().getResource("/xmldata/customer.xml");
-        String xmlPath = URLDecoder.decode(xmlURL.getPath(),"utf-8");
-        File f = new File(xmlPath);
-        //m.marshal(customer, f);
-        StringWriter writer = new StringWriter();
-        m.marshal(customer, writer);
-
-        System.out.println(f.getAbsoluteFile());
-        System.out.println(f.getPath());
-
-        BufferedWriter bfw = new BufferedWriter(new FileWriter(f));
-        bfw.write(writer.toString());
-        bfw.close();
-
-        System.out.println(writer.toString());
-        System.out.println("over");
+        m.marshal(wrapper,new File("XMLdata/customers.xml"));
     }
 }

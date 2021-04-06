@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CustomerWrapper>
+    <customers>
+        <entry>
+            <key>89</key>
+            <value>
+                <accout>89</accout>
+                <email>email</email>
+                <gender>gender</gender>
+                <location>location</location>
+                <name>name</name>
+                <password>password</password>
+                <phone>138</phone>
+            </value>
+        </entry>
+        <entry>
+            <key>74</key>
+            <value>
+                <accout>74</accout>
+                <email>email</email>
+                <gender>gender</gender>
+                <location>location</location>
+                <name>name</name>
+                <password>password</password>
+                <phone>138</phone>
+            </value>
+        </entry>
+    </customers>
+</CustomerWrapper>

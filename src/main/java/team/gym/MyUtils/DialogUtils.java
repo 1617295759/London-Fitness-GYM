@@ -6,15 +6,18 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import team.gym.MainApp;
 
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.Optional;
 
 public class DialogUtils {
     public static void tips(Stage stage, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("提示");
-        ImageView menhera = new ImageView(Main.class.getResource("statics/images/systemUse/tips.png").toString());
+        ImageView menhera = new ImageView("/statics/images/systemUse/tips.png");
         menhera.setFitHeight(100);
         menhera.setPreserveRatio(true);
         alert.setGraphic(menhera);
@@ -22,12 +25,13 @@ public class DialogUtils {
         alert.setContentText(message);
         alert.initOwner(stage);
         alert.show();
+
     }
 
     public static void good(Stage stage, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("祝贺");
-        ImageView menhera = new ImageView(Main.class.getResource("statics/images/systemUse/good.png").toString());
+        ImageView menhera = new ImageView("/statics/images/systemUse/good.png");
         menhera.setFitHeight(100);
         menhera.setPreserveRatio(true);
         alert.setGraphic(menhera);
@@ -42,7 +46,7 @@ public class DialogUtils {
                 new ButtonType("确定", ButtonBar.ButtonData.YES));
 //        设置窗口的标题
         alert.setTitle("确认");
-        ImageView menhera = new ImageView(Main.class.getResource("statics/images/systemUse/confirm.png").toString());
+        ImageView menhera = new ImageView("/statics/images/systemUse/confirm.png");
         menhera.setFitHeight(100);
         menhera.setPreserveRatio(true);
         alert.setGraphic(menhera);
@@ -57,5 +61,20 @@ public class DialogUtils {
         } else {
             return false;
         }
+    }
+
+    /**get the String type path in the Resources, need "/" at first letter
+     *
+     * @param relativePath the ralative path, for example "/statics/images/systemUse/tips.png"
+     * @return the String type path
+     */
+    public static String getURL(String relativePath){
+        String path = null;
+        try {
+            path = URLDecoder.decode(MainApp.class.getResource(relativePath).getPath(),"utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return path;
     }
 }

@@ -50,6 +50,7 @@ public class LoginViewController {
     @Autowired
     private UserService userService;
 
+    @Autowired
     @FXML
     private MainApp mainApp;
     public void setMainApp(MainApp mainApp) {
@@ -78,7 +79,6 @@ public class LoginViewController {
                 }
                 Session.setUser(userService.getTrainer(usernameField.getText(),passwordField.getText()));
                 Session.setType("admin");
-
                 MainApp.showView(AdminView.class);
             } else {
                 int status = userService.verifyCustumer(usernameField.getText(),passwordField.getText());
