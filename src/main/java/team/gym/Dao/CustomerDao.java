@@ -3,7 +3,7 @@ package team.gym.Dao;
 import team.gym.Beans.Customer;
 import java.util.Map;
 
-public interface UserDao {
+public interface CustomerDao {
     /** append a customer information into the xml data
      *
      * @param customer the Object to be saved

@@ -4,19 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team.gym.Beans.Customer;
 import team.gym.Beans.User;
-import team.gym.Dao.UserDao;
-import team.gym.Service.UserService;
-
-import javax.annotation.Resource;
+import team.gym.Dao.CustomerDao;
+import team.gym.Service.CustomerService;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class CustomerServiceImpl implements CustomerService {
     @Autowired
-    private UserDao userDao;
+    private CustomerDao customerDao;
+
 
     @Override
     public int verifyCustumer(String username, String password) {
-        Customer verifycustomer = userDao.getCustomer(username);
+        Customer verifycustomer = customerDao.getCustomer(username);
         if(verifycustomer == null ){
             return 0;
         }else if(password == verifycustomer.getPassword()){
@@ -28,17 +27,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getCustomer(String username, String password) {
-        return userDao.getCustomer(username);
+        return customerDao.getCustomer(username);
     }
 
     @Override
-    public int verifyTrainer(String username, String password) {
-        return 1;
+    public int registerCustomer(Customer customer) {
+        return 0;
     }
 
-    @Override
-    public User getTrainer(String username, String password) {
-        return null;
-    }
 
 }
