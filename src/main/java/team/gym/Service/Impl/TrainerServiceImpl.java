@@ -3,12 +3,23 @@ package team.gym.Service.Impl;
 import org.springframework.stereotype.Service;
 import team.gym.Beans.Trainer;
 import team.gym.Beans.User;
+import team.gym.Dao.TrainerDao;
 import team.gym.Service.TrainerService;
 @Service
 public class TrainerServiceImpl implements TrainerService {
+
+    public TrainerDao trainerDao;
+
     @Override
     public int verifyTrainer(String username, String password) {
-        return 0;
+        Trainer verifytrainer = trainerDao.getTrainer(username);
+        if(verifytrainer == null ){
+            return 0;
+        }else if(password.equals(verifytrainer.getPassword())){
+            return 1;
+        }else{
+            return 2;
+        }
     }
 
     @Override
