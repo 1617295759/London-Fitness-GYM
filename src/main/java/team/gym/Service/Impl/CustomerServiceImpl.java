@@ -12,13 +12,12 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerDao customerDao;
 
-
     @Override
     public int verifyCustumer(String username, String password) {
         Customer verifycustomer = customerDao.getCustomer(username);
         if(verifycustomer == null ){
             return 0;
-        }else if(password.equals(verifycustomer.getPassword())){
+        }else if(password == verifycustomer.getPassword()){
             return 1;
         }else{
             return 2;
@@ -34,8 +33,6 @@ public class CustomerServiceImpl implements CustomerService {
     public int registerCustomer(Customer customer) {
         return 0;
     }
-
-
 
 
 }
