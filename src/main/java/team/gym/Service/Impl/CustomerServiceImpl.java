@@ -12,7 +12,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerDao customerDao;
 
-
     @Override
     public int verifyCustumer(String username, String password) {
         Customer verifycustomer = customerDao.getCustomer(username);

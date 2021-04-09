@@ -110,4 +110,17 @@ public class User {
     public void setEmail(String email) {
         this.email.set(email);
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "accout=" + getAccout() +
+                ", password=" + getPassword() +
+                ", name=" + getName() +
+                ", gender=" + getGender() +
+                ", location=" + getLocation() +
+                ", phone=" + getPhone() +
+                ", email=" + getEmail() +
+                '}';
+    }
 }
