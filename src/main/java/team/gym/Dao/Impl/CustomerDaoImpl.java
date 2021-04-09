@@ -13,6 +13,7 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.sql.Wrapper;
 import java.util.HashMap;
 import java.util.Map;
 @Repository
@@ -34,11 +35,9 @@ public class CustomerDaoImpl implements CustomerDao {
         try {
             String xmlPath = URLDecoder.decode("XMLdata/customers.xml","utf-8");
             customersfile = new File(xmlPath);
-            System.out.println(customersfile.getAbsoluteFile());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-
         try {
             // initiate JAXBContext context
             context = JAXBContext.newInstance(CustomerWrapper.class);
@@ -47,9 +46,12 @@ public class CustomerDaoImpl implements CustomerDao {
             // Reading XML from the file and unmarshalling.
             wrapper = (CustomerWrapper) um.unmarshal(customersfile);
         } catch (JAXBException e) {
+            System.out.println("此时xml为空");
             e.printStackTrace();
+            wrapper = new CustomerWrapper();
         }
     }
+
 
     @Override
     public void saveCustomer(Customer customer) {
@@ -59,13 +61,11 @@ public class CustomerDaoImpl implements CustomerDao {
             map.put(customer.getAccout(),customer);
             //package the map to wrapper to transmute to XML
             wrapper.setCustomerMap(map);
-            //write the wrapper to XML
-            Marshaller m = context.createMarshaller();
-            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            m.marshal(wrapper, customersfile);
+            saveWrapper(wrapper);
         }catch(Exception e){
-            System.out.println(e.getMessage());;
+            e.printStackTrace();
         }
+
     }
 
     @Override
@@ -80,4 +80,17 @@ public class CustomerDaoImpl implements CustomerDao {
         return wrapper.getCustomerMap();
     }
 
+    /** write the wrapper to customers.xml
+     *
+     * @param wrapper
+     */
+    public void saveWrapper(CustomerWrapper wrapper){
+        try {
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            m.marshal(wrapper, customersfile);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
 }
