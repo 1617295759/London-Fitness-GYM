@@ -13,7 +13,7 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerDao customerDao;
 
     @Override
-    public int verifyCustumer(String username, String password) {
+    public int verifyCustomer(String username, String password) {
         Customer verifycustomer = customerDao.getCustomer(username);
         if(verifycustomer == null ){
             return 0;
@@ -23,6 +23,7 @@ public class CustomerServiceImpl implements CustomerService {
             return 2;
         }
     }
+
 
     @Override
     public User getCustomer(String username, String password) {
@@ -34,5 +35,8 @@ public class CustomerServiceImpl implements CustomerService {
         return 0;
     }
 
-
+    @Override
+    public int deleteCustomer(Customer customer) {
+        return 0;
+    }
 }
