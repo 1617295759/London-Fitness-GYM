@@ -438,10 +438,6 @@ public class AdminViewController {
 
     }
 
-    @FXML
-    void handleToOrderAndMagazineClass(ActionEvent event) {
-
-    }
 
     @FXML
     void handleToSearch(ActionEvent event) {
@@ -453,10 +449,6 @@ public class AdminViewController {
 
     }
 
-    @FXML
-    void handleTomagazine(ActionEvent event) {
-
-    }
 
     @FXML
     void handleToCommonUser(ActionEvent event) {

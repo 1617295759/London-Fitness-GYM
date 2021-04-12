@@ -14,6 +14,11 @@ import java.util.Random;
 
 @Component
 @XmlRootElement(name = "customer")
+
+/**
+ * 会员实体类
+ */
+
 public class Customer extends User{
     // different level of membership
     // Newbie —— Registered —— Advanced —— Respectful —— VIP —— Honorable
@@ -52,6 +57,8 @@ public class Customer extends User{
     public List<Course> getCourses() { return courses; }
 
     public void setCourses(List<Course> courses) { this.courses = courses; }
+
+
 
 
 }

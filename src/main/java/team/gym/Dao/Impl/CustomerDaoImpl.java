@@ -4,8 +4,6 @@ import org.springframework.stereotype.Repository;
 import team.gym.Beans.Customer;
 import team.gym.Beans.CustomerWrapper;
 import team.gym.Dao.CustomerDao;
-
-import javax.annotation.PostConstruct;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -13,8 +11,6 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.sql.Wrapper;
-import java.util.HashMap;
 import java.util.Map;
 @Repository
 public class CustomerDaoImpl implements CustomerDao {
@@ -69,11 +65,15 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public Customer getCustomer(String account) {
-        //get the specific customer information
-        Customer customer = wrapper.getCustomerMap().get(account);
-        return customer;
+    public Customer findCustomerByName(String username) {
+        return null;
     }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
 
     @Override
     public Map getCustomerMap() {

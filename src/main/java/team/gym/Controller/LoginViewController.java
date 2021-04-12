@@ -83,7 +83,7 @@ public class LoginViewController {
                 Session.setType("admin");
                 MainApp.showView(AdminView.class);
             } else {
-                int status = customerService.verifyCustumer(usernameField.getText(),passwordField.getText());
+                int status = customerService.verifyCustomer(usernameField.getText(),passwordField.getText());
                 if (status != 1) {
                     throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }

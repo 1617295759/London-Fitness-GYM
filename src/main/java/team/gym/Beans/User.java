@@ -14,6 +14,7 @@ public class User {
     private final StringProperty phone= new SimpleStringProperty();
     private final StringProperty email= new SimpleStringProperty();
 
+
     public User(){
 
     }
@@ -122,5 +123,11 @@ public class User {
                 ", phone=" + getPhone() +
                 ", email=" + getEmail() +
                 '}';
+    }
+
+    public boolean isEmpty() {
+        if(getName().equals(""))
+            return true;
+         return false;
     }
 }
