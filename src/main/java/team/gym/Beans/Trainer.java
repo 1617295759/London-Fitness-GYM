@@ -18,7 +18,7 @@ public class Trainer extends User{
     private List<Course> courses = new LinkedList<Course>();
     public Trainer(){
         super();
-        setAccout("accout");
+        setAccount("accout");
         setPassword("password");
         setName("name");
         setGender("gender");

@@ -19,8 +19,6 @@ public interface CustomerDao {
      */
     public Customer findCustomerByName(String username);
 
-    public boolean isEmpty();//判重
-
     /**
      * @return all the cutomers map, the key is account number(String), value is customer Object
      */

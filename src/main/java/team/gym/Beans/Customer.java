@@ -32,7 +32,7 @@ public class Customer extends User{
 
     public Customer(){
         super();
-        setAccout(String.valueOf(new Random().nextInt(94)));
+        setAccount(String.valueOf(new Random().nextInt(94)));
         setPassword("ipassword");
         setName("iname");
         setGender("it");
