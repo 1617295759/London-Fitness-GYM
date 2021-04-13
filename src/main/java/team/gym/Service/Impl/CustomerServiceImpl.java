@@ -24,7 +24,6 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
-
     @Override
     public User getCustomer(String username, String password) {
         return customerDao.findCustomerByName(username);
@@ -32,19 +31,13 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public int registerCustomer(Customer customer) {
-        if (customerDao.findCustomerByName(customer.getName()).isEmpty()) {
-            customerDao.saveCustomer(customer);
-            return 1;
-
-        } else {
-
-            return 0;//用户名已被占用
-        }
-
+        return 0;
     }
 
     @Override
     public int deleteCustomer(Customer customer) {
         return 0;
     }
+
+
 }

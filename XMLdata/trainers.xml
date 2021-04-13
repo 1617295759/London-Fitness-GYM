@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CustomerWrapper>
+    <trainers>
+        <entry>
+            <key>1670403162</key>
+            <value>
+                <account>1670403162</account>
+                <email>email</email>
+                <gender>gender</gender>
+                <location>location</location>
+                <name>name</name>
+                <password>password</password>
+                <phone>138</phone>
+                <CourseList/>
+            </value>
+        </entry>
+        <entry>
+            <key>accout</key>
+            <value>
+                <account>accout</account>
+                <email>email</email>
+                <gender>gender</gender>
+                <location>location</location>
+                <name>name</name>
+                <password>password</password>
+                <phone>138</phone>
+                <CourseList/>
+            </value>
+        </entry>
+    </trainers>
+</CustomerWrapper>

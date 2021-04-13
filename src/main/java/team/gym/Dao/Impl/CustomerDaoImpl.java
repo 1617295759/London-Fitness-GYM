@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import team.gym.Beans.Customer;
 import team.gym.Beans.CustomerWrapper;
 import team.gym.Dao.CustomerDao;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -42,7 +43,7 @@ public class CustomerDaoImpl implements CustomerDao {
             // Reading XML from the file and unmarshalling.
             wrapper = (CustomerWrapper) um.unmarshal(customersfile);
         } catch (JAXBException e) {
-            System.out.println("此时xml为空");
+            System.out.println("此时customers.xml为空");
             e.printStackTrace();
             wrapper = new CustomerWrapper();
         }
@@ -54,7 +55,7 @@ public class CustomerDaoImpl implements CustomerDao {
         try{
             // read the original data and append the new customer information
             Map map = getCustomerMap();
-            map.put(customer.getAccout(),customer);
+            map.put(customer.getAccount(),customer);
             //package the map to wrapper to transmute to XML
             wrapper.setCustomerMap(map);
             saveWrapper(wrapper);
@@ -65,15 +66,11 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public Customer findCustomerByName(String username) {
-        return null;
+    public Customer findCustomerByName(String account) {
+        //get the specific customer information
+        Customer customer = wrapper.getCustomerMap().get(account);
+        return customer;
     }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
 
     @Override
     public Map getCustomerMap() {
@@ -93,4 +90,5 @@ public class CustomerDaoImpl implements CustomerDao {
             e.printStackTrace();
         }
     }
+
 }

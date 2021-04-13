@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class User {
-    private final StringProperty accout= new SimpleStringProperty();
+    private final StringProperty account = new SimpleStringProperty();
     private final StringProperty password= new SimpleStringProperty();
     private final StringProperty name= new SimpleStringProperty();
     private final StringProperty gender= new SimpleStringProperty();
@@ -18,8 +18,8 @@ public class User {
     public User(){
 
     }
-    public User(String accout, String password, String name, String gender, String location, String phone, String email) {
-        setAccout(accout);
+    public User(String account, String password, String name, String gender, String location, String phone, String email) {
+        setAccount(account);
         setPassword(password);
         setName(name);
         setGender(gender);
@@ -28,16 +28,16 @@ public class User {
         setEmail(email);
     }
 
-    public String getAccout() {
-        return accout.get();
+    public String getAccount() {
+        return account.get();
     }
 
-    public StringProperty accoutProperty() {
-        return accout;
+    public StringProperty accountProperty() {
+        return account;
     }
 
-    public void setAccout(String accout) {
-        this.accout.set(accout);
+    public void setAccount(String account) {
+        this.account.set(account);
     }
 
     public String getPassword() {
@@ -115,7 +115,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "accout=" + getAccout() +
+                "accout=" + getAccount() +
                 ", password=" + getPassword() +
                 ", name=" + getName() +
                 ", gender=" + getGender() +

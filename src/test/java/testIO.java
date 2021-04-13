@@ -7,8 +7,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
-import java.net.URL;
-import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,8 +32,8 @@ public class testIO {
         Map map = new HashMap<String,Customer>();
         Customer c1 = new Customer();
         Customer c2 = new Customer();
-        map.put(c1.getAccout(),c1);
-        map.put(c2.getAccout(),c2);
+        map.put(c1.getAccount(),c1);
+        map.put(c2.getAccount(),c2);
         wrapper.setCustomerMap(map);
 
         JAXBContext context = JAXBContext.newInstance(CustomerWrapper.class);

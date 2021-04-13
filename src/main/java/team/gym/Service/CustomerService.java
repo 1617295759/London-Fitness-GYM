@@ -24,5 +24,4 @@ public interface CustomerService {
 
     public int deleteCustomer(Customer customer);
 
-
 }

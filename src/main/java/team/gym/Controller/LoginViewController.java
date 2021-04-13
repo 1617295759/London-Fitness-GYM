@@ -80,7 +80,6 @@ public class LoginViewController {
                     throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }
                 Session.setUser(trainerService.getTrainer(usernameField.getText(),passwordField.getText()));
-                Session.setType("admin");
                 MainApp.showView(AdminView.class);
             } else {
                 int status = customerService.verifyCustomer(usernameField.getText(),passwordField.getText());
@@ -88,7 +87,6 @@ public class LoginViewController {
                     throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }
                 Session.setUser(customerService.getCustomer(usernameField.getText(),passwordField.getText()));
-                Session.setType("customer");
                 MainApp.showView(CustomerView.class);
             }
 //

@@ -8,7 +8,6 @@ public interface CourseTableService {
     //查询课程信息
     public List<CourseTable> findClassTable();
 
-
     //删除课程
     public int deleteClassId(Integer classId);
 
