@@ -1,5 +1,6 @@
 package team.gym.Dao;
 
+import team.gym.Beans.Course;
 import team.gym.Beans.Trainer;
 
 import java.util.Map;
@@ -23,4 +24,7 @@ public interface TrainerDao {
      */
     public Map getTrainerMap();
 
+    int modifyCustomer(String account, String field, String newValue);
+
+    int addCourse(String account, Course course);
 }

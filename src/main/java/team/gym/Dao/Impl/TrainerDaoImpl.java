@@ -2,6 +2,7 @@ package team.gym.Dao.Impl;
 
 
 import org.springframework.stereotype.Repository;
+import team.gym.Beans.Course;
 import team.gym.Beans.Trainer;
 import team.gym.Beans.TrainerWrapper;
 import team.gym.Dao.TrainerDao;
@@ -11,25 +12,21 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 @Repository
 public class TrainerDaoImpl implements TrainerDao{
 
-    private File trainersfile;
+    private final File trainersfile;
     private TrainerWrapper wrapper;
     private JAXBContext context;
 
     public TrainerDaoImpl() {
         // initiate File customersfile
-        try {
-            String xmlPath = URLDecoder.decode("XMLdata/trainers.xml","utf-8");
-            trainersfile = new File(xmlPath);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        String xmlPath = URLDecoder.decode("XMLdata/trainers.xml", StandardCharsets.UTF_8);
+        trainersfile = new File(xmlPath);
         try {
             // initiate JAXBContext context
             context = JAXBContext.newInstance(TrainerWrapper.class);
@@ -49,7 +46,7 @@ public class TrainerDaoImpl implements TrainerDao{
     public void saveTrainer(Trainer trainer) {
         try{
             // read the original data and append the new customer information
-            Map map = getTrainerMap();
+            Map<String,Trainer> map = getTrainerMap();
             map.put(trainer.getAccount(),trainer);
             //package the map to wrapper to transmute to XML
             wrapper.setTrainerMap(map);
@@ -60,14 +57,23 @@ public class TrainerDaoImpl implements TrainerDao{
     }
 
     @Override
-    public Map getTrainerMap() {
+    public Map<String,Trainer> getTrainerMap() {
         return wrapper.getTrainerMap();
     }
 
     @Override
+    public int modifyCustomer(String account, String field, String newValue) {
+        return 0;
+    }
+
+    @Override
+    public int addCourse(String account, Course course) {
+        return 0;
+    }
+
+    @Override
     public Trainer findTrainerByName(String username) {
-        Trainer trainer = wrapper.getTrainerMap().get(username);
-        return trainer;
+        return wrapper.getTrainerMap().get(username);
     }
 
     public void saveWrapper(TrainerWrapper wrapper){

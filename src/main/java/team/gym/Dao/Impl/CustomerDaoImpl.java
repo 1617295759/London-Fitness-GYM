@@ -1,6 +1,7 @@
 package team.gym.Dao.Impl;
 
 import org.springframework.stereotype.Repository;
+import team.gym.Beans.Course;
 import team.gym.Beans.Customer;
 import team.gym.Beans.CustomerWrapper;
 import team.gym.Dao.CustomerDao;
@@ -10,9 +11,10 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
+
 @Repository
 public class CustomerDaoImpl implements CustomerDao {
     /*
@@ -23,18 +25,14 @@ public class CustomerDaoImpl implements CustomerDao {
             URL xmlURL = getClass().getResource("/xmldata/customer.xml");
             resources文件夹下为静态资源，只适合存放配置等不改动的文件，持久化文件不应该放在那里
     */
-    private File customersfile;
+    private final File customersfile;
     private CustomerWrapper wrapper;
     private JAXBContext context;
 
     public CustomerDaoImpl() {
         // initiate File customersfile
-        try {
-            String xmlPath = URLDecoder.decode("XMLdata/customers.xml","utf-8");
-            customersfile = new File(xmlPath);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        String xmlPath = URLDecoder.decode("XMLdata/customers.xml", StandardCharsets.UTF_8);
+        customersfile = new File(xmlPath);
         try {
             // initiate JAXBContext context
             context = JAXBContext.newInstance(CustomerWrapper.class);
@@ -54,7 +52,7 @@ public class CustomerDaoImpl implements CustomerDao {
     public void saveCustomer(Customer customer) {
         try{
             // read the original data and append the new customer information
-            Map map = getCustomerMap();
+            Map<String,Customer> map = getCustomerMap();
             map.put(customer.getAccount(),customer);
             //package the map to wrapper to transmute to XML
             wrapper.setCustomerMap(map);
@@ -68,18 +66,27 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public Customer findCustomerByName(String account) {
         //get the specific customer information
-        Customer customer = wrapper.getCustomerMap().get(account);
-        return customer;
+        return wrapper.getCustomerMap().get(account);
     }
 
     @Override
-    public Map getCustomerMap() {
+    public Map<String,Customer> getCustomerMap() {
         return wrapper.getCustomerMap();
+    }
+
+    @Override
+    public int modifyCustomer(String account, String field, String newValue) {
+        return 0;
+    }
+
+    @Override
+    public int addCourse(String account, Course course) {
+        return 0;
     }
 
     /** write the wrapper to customers.xml
      *
-     * @param wrapper
+     * @param wrapper the wrapper to be saved
      */
     public void saveWrapper(CustomerWrapper wrapper){
         try {

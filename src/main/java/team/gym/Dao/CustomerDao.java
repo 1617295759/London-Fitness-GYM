@@ -1,9 +1,8 @@
 package team.gym.Dao;
 
+import team.gym.Beans.Course;
 import team.gym.Beans.Customer;
-import team.gym.Beans.User;
 
-import java.util.List;
 import java.util.Map;
 
 public interface CustomerDao {
@@ -24,5 +23,7 @@ public interface CustomerDao {
      */
     public Map getCustomerMap();
 
+    int modifyCustomer(String account, String field, String newValue);
 
+    int addCourse(String account, Course course);
 }
