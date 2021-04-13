@@ -2,9 +2,9 @@
 <CustomerWrapper>
     <customers>
         <entry>
-            <key>23</key>
+            <key>89</key>
             <value>
-                <account>23</account>
+                <account>89</account>
                 <email>iemail</email>
                 <gender>it</gender>
                 <location>ilocation</location>
@@ -13,17 +13,25 @@
                 <phone>138</phone>
                 <CourseList>
                     <course>
-                        <customer_account>Tom</customer_account>
-                        <trainer_account>Old jack</trainer_account>
+                        <courseId>-270055933</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>-1471125925</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
                     </course>
                 </CourseList>
                 <level>Newbie</level>
             </value>
         </entry>
         <entry>
-            <key>37</key>
+            <key>4</key>
             <value>
-                <account>37</account>
+                <account>4</account>
                 <email>iemail</email>
                 <gender>it</gender>
                 <location>ilocation</location>
@@ -32,10 +40,32 @@
                 <phone>138</phone>
                 <CourseList>
                     <course>
-                        <customer_account>Tom</customer_account>
-                        <trainer_account>Old jack</trainer_account>
+                        <courseId>270541036</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>1724759136</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
                     </course>
                 </CourseList>
+                <level>Newbie</level>
+            </value>
+        </entry>
+        <entry>
+            <key>90</key>
+            <value>
+                <account>90</account>
+                <email>iemail</email>
+                <gender>it</gender>
+                <location>ilocation</location>
+                <name>iname</name>
+                <password>ipassword</password>
+                <phone>138</phone>
+                <CourseList/>
                 <level>Newbie</level>
             </value>
         </entry>

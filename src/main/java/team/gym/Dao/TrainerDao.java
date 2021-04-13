@@ -1,12 +1,13 @@
 package team.gym.Dao;
 
+import team.gym.Beans.Course;
 import team.gym.Beans.Trainer;
 
 import java.util.Map;
 
 public interface TrainerDao {
 
-    /** append a customer information into the xml data
+    /** append a trainer information into the xml data
      *
      * @param trainer the Object to be saved
      */
@@ -23,4 +24,7 @@ public interface TrainerDao {
      */
     public Map getTrainerMap();
 
+    int modifyCustomer(String account, String field, String newValue);
+
+    int addCourse(String account, Course course);
 }

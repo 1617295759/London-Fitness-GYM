@@ -10,7 +10,7 @@ public interface CustomerService {
      * @param password the information user typed in the password area.
      * @return user's state 0-null account information, 1-match, 2-password wrong
      */
-    public int verifyCustomer(String username, String password);
+    public String verifyCustomer(String username, String password);
 
     /** get the customer Object according to the account
      *
