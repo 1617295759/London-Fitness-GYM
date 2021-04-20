@@ -3,7 +3,6 @@ package team.gym.Dao;
 import org.springframework.stereotype.Repository;
 import team.gym.Beans.Course;
 
-import java.util.Map;
 
 /**
  * 课程接口
@@ -20,10 +19,10 @@ public interface CourseDao {
      double price
      These parameters are needed to be involved
      *
-     * @param course
+     * @param courses
      * @return
      */
-    int saveCourse(Course course);
+    int saveCourse(Course courses);
 
 
     /**根据id查询课表
@@ -31,11 +30,15 @@ public interface CourseDao {
      * @param courseId
      * @return
      */
-    Course selByCourseId(String courseId);
+    Course selByCourseId(int courseId);
 
-    int delByCourseId(String courseId);
 
-    int modifyCourse(String courseId, String field, String newValue);
+    /**
+     * @param courseId
+     * @return
+     */
+    int delByCourseId(int courseId);
 
-    public Map getCourseMap();
+    int modifyCourse(int courseId, String field, String newValue);
+
 }
