@@ -25,7 +25,6 @@ public class DialogUtils {
         alert.setContentText(message);
         alert.initOwner(stage);
         alert.show();
-
     }
 
     public static void good(Stage stage, String message) {

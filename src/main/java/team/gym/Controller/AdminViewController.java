@@ -15,6 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Rectangle;
@@ -465,5 +466,10 @@ public class AdminViewController {
 
     }
 
+    public void handleToOrderAndMagazineClass(MouseEvent mouseEvent) {
+    }
+
+    public void handleTomagazine(MouseEvent mouseEvent) {
+    }
 }
 

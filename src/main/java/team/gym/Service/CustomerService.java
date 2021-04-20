@@ -20,8 +20,7 @@ public interface CustomerService {
      */
     public User getCustomer(String username, String password);
 
-    public int registerCustomer(Customer customer);
+    public String registerCustomer(Customer customer);
 
     public int deleteCustomer(Customer customer);
-
 }

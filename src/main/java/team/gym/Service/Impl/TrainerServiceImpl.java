@@ -1,5 +1,6 @@
 package team.gym.Service.Impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team.gym.Beans.Trainer;
 import team.gym.Beans.User;
@@ -7,7 +8,7 @@ import team.gym.Dao.TrainerDao;
 import team.gym.Service.TrainerService;
 @Service
 public class TrainerServiceImpl implements TrainerService {
-
+    @Autowired
     private TrainerDao trainerDao;
 
     @Override
@@ -24,11 +25,15 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public User getTrainer(String username, String password) {
-        return null;
+        return trainerDao.findTrainerByName(username);
     }
 
     @Override
-    public int registerTrainer(Trainer trainer) {
-        return 0;
+    public String registerTrainer(Trainer trainer) {
+        //1. verify
+
+        //2.save the trainer
+        trainerDao.saveTrainer(trainer);
+        return "registered over";
     }
 }

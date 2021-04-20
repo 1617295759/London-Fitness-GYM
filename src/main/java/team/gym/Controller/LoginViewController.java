@@ -15,6 +15,7 @@ import team.gym.Service.CustomerService;
 import team.gym.Service.TrainerService;
 import team.gym.View.AdminView;
 import team.gym.View.CustomerView;
+import team.gym.View.User;
 
 @FXMLController
 public class LoginViewController {
@@ -87,7 +88,7 @@ public class LoginViewController {
                     throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }
                 Session.setUser(customerService.getCustomer(usernameField.getText(),passwordField.getText()));
-                MainApp.showView(CustomerView.class);
+                MainApp.showView(User.class);
             }
 //
 //            //认证完成，装载对应页面

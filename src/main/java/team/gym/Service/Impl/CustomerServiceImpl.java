@@ -30,8 +30,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public int registerCustomer(Customer customer) {
-        return 0;
+    public String registerCustomer(Customer customer) {
+        return "registered over";
     }
 
     @Override
