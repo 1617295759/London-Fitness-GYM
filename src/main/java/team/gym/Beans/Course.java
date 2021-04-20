@@ -8,7 +8,7 @@ import java.util.Random;
 
 @Component
 public class Course {
-    private final IntegerProperty courseId = new SimpleIntegerProperty();
+    private final StringProperty courseId = new SimpleStringProperty();
     private final StringProperty customerAccount = new SimpleStringProperty();
     private final StringProperty trainerAccount = new SimpleStringProperty();
     private final StringProperty category = new SimpleStringProperty();
@@ -21,7 +21,7 @@ public class Course {
     private final DoubleProperty price = new SimpleDoubleProperty();
 
     public Course(){
-        setCourseId(new Random().nextInt());
+        setCourseId(String.valueOf(new Random().nextInt()));
         setCustomerAccount("Tom");
         setTrainerAccount("Old jack");
     }
@@ -33,15 +33,15 @@ public class Course {
         setEndTime(endTime);
     }
 
-    public int getCourseId() {
+    public String getCourseId() {
         return courseId.get();
     }
 
-    public IntegerProperty courseIdProperty() {
+    public StringProperty courseIdProperty() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(String courseId) {
         this.courseId.set(courseId);
     }
 

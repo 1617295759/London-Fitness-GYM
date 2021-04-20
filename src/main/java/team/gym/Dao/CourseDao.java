@@ -2,18 +2,14 @@ package team.gym.Dao;
 
 import org.springframework.stereotype.Repository;
 import team.gym.Beans.Course;
-import team.gym.Beans.Customer;
 
-import java.util.List;
+import java.util.Map;
 
 /**
  * 课程接口
  */
 @Repository
 public interface CourseDao {
-
-
-    int deleteByCourseId(int courseId);
 
 
     /**String customerAccount,
@@ -35,9 +31,11 @@ public interface CourseDao {
      * @param courseId
      * @return
      */
-    Course selByCourseId(int courseId);
+    Course selByCourseId(String courseId);
 
-    int delByCourseId(int courseId);
+    int delByCourseId(String courseId);
 
-    int modifyCourse(int courseId, String field, String newValue);
+    int modifyCourse(String courseId, String field, String newValue);
+
+    public Map getCourseMap();
 }

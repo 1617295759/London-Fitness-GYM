@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashMap;
 import java.util.Map;
 
-
+@XmlRootElement(name = "VideoWrapper")
 public class VideoWrapper {
     private Map<String,Video> videoMap;
 

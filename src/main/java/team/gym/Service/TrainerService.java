@@ -1,6 +1,5 @@
 package team.gym.Service;
 
-import team.gym.Beans.Customer;
 import team.gym.Beans.Trainer;
 import team.gym.Beans.User;
 
