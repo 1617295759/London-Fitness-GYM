@@ -5,9 +5,9 @@ import team.gym.Beans.Trainer;
 import team.gym.Beans.User;
 
 public interface TrainerService {
-    public int verifyTrainer(String username, String password);
+    public String verifyTrainer(String username, String password);
 
     public User getTrainer(String username, String password);
 
-    public int registerTrainer(Trainer trainer);
+    public String registerTrainer(Trainer trainer);
 }

@@ -1,5 +1,6 @@
 package team.gym.Service.Impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team.gym.Beans.Trainer;
 import team.gym.Beans.User;
@@ -7,28 +8,30 @@ import team.gym.Dao.TrainerDao;
 import team.gym.Service.TrainerService;
 @Service
 public class TrainerServiceImpl implements TrainerService {
-
+    @Autowired
     private TrainerDao trainerDao;
 
     @Override
-    public int verifyTrainer(String username, String password) {
+    public String verifyTrainer(String username, String password) {
         Trainer verifytrainer = trainerDao.findTrainerByName(username);
         if(verifytrainer == null ){
-            return 0;
-        }else if(password.equals(verifytrainer.getPassword())){
-            return 1;
+            return "User Not Found! Please Check Your ID";
+        }else if(password == verifytrainer.getPassword()){
+            return "1";
         }else{
-            return 2;
+            return "Wrong Password! Please Input Again";
         }
     }
 
     @Override
     public User getTrainer(String username, String password) {
-        return null;
+
+        return trainerDao.findTrainerByName(username);
     }
 
     @Override
-    public int registerTrainer(Trainer trainer) {
-        return 0;
+    public String registerTrainer(Trainer trainer) {
+
+        return " ";
     }
 }

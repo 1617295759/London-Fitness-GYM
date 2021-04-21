@@ -13,19 +13,20 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerDao customerDao;
 
     @Override
-    public int verifyCustomer(String username, String password) {
+    public String verifyCustomer(String username, String password) {
         Customer verifycustomer = customerDao.findCustomerByName(username);
         if(verifycustomer == null ){
-            return 0;
+            return "User Not Found! Please Check Your ID";
         }else if(password == verifycustomer.getPassword()){
-            return 1;
+            return "1";
         }else{
-            return 2;
+            return "Wrong Password! Please Input Again";
         }
     }
 
     @Override
     public User getCustomer(String username, String password) {
+
         return customerDao.findCustomerByName(username);
     }
 

@@ -75,16 +75,16 @@ public class LoginViewController {
 
         try {
             if (isAdmin.isSelected()) {
-                int status = trainerService.verifyTrainer(usernameField.getText(),passwordField.getText());
-                if (status != 1) {
+                String status = trainerService.verifyTrainer(usernameField.getText(),passwordField.getText());
+                if (status != "1") {
                     throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }
                 Session.setUser(trainerService.getTrainer(usernameField.getText(),passwordField.getText()));
                 MainApp.showView(AdminView.class);
             } else {
-                int status = customerService.verifyCustomer(usernameField.getText(),passwordField.getText());
-                if (status != 1) {
-                    throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
+                String status = customerService.verifyCustomer(usernameField.getText(),passwordField.getText());
+                if (status != "1") {
+                    throw new NullPointerException(status);
                 }
                 Session.setUser(customerService.getCustomer(usernameField.getText(),passwordField.getText()));
                 MainApp.showView(CustomerView.class);
