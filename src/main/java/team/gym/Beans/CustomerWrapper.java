@@ -9,10 +9,10 @@ import java.util.Map;
 @XmlRootElement(name = "CustomerWrapper")
 public class CustomerWrapper {
 
-    private Map<String,Customer> customerMap;
+    private Map<String, Customer> customerMap;
 
     public CustomerWrapper(){
-        customerMap = new HashMap<String,Customer>();
+        customerMap = new HashMap<String, Customer>();
     }
     @XmlElementWrapper(name="customers")
     @XmlElement(name = "customer")

@@ -1,4 +1,4 @@
-import team.gym.Beans.Customer;
+import team.gym.Beans.Course;
 import org.junit.Test;
 import team.gym.Beans.CustomerWrapper;
 
@@ -14,7 +14,7 @@ public class testIO {
     @Test
     public void testLoad() throws JAXBException, IOException {
         CustomerWrapper wrapper = new CustomerWrapper();
-        Map map = new HashMap<String,Customer>();
+        Map map = new HashMap<String, Course>();
 
         JAXBContext context = JAXBContext
                 .newInstance(CustomerWrapper.class);
@@ -29,11 +29,11 @@ public class testIO {
     @Test
     public void testSave() throws JAXBException {
         CustomerWrapper wrapper = new CustomerWrapper();
-        Map map = new HashMap<String,Customer>();
-        Customer c1 = new Customer();
-        Customer c2 = new Customer();
-        map.put(c1.getAccount(),c1);
-        map.put(c2.getAccount(),c2);
+        Map map = new HashMap<String, Course>();
+        Course c1 = new Course();
+        Course c2 = new Course();
+        map.put(c1.getCourseId(),c1);
+        map.put(c2.getCourseId(),c2);
         wrapper.setCustomerMap(map);
 
         JAXBContext context = JAXBContext.newInstance(CustomerWrapper.class);

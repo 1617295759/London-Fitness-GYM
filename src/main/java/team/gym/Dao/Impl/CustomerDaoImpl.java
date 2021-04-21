@@ -52,7 +52,7 @@ public class CustomerDaoImpl implements CustomerDao {
     public void saveCustomer(Customer customer) {
         try{
             // read the original data and append the new customer information
-            Map<String,Customer> map = getCustomerMap();
+            Map<String, Customer> map = getCustomerMap();
             map.put(customer.getAccount(),customer);
             //package the map to wrapper to transmute to XML
             wrapper.setCustomerMap(map);
@@ -63,6 +63,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
     }
 
+
     @Override
     public Customer findCustomerByName(String account) {
         //get the specific customer information
@@ -70,7 +71,7 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public Map<String,Customer> getCustomerMap() {
+    public Map<String, Customer> getCustomerMap() {
         return wrapper.getCustomerMap();
     }
 
