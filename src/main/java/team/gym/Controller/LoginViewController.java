@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import team.gym.MainApp;
 import team.gym.MyUtils.DialogUtils;
 import team.gym.MyUtils.Session;
+import team.gym.MyUtils.VideoPlayer;
 import team.gym.Service.CustomerService;
 import team.gym.Service.TrainerService;
 import team.gym.View.AdminView;
