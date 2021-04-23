@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CustomerWrapper>
+    <trainers>
+        <entry>
+            <key>-1836583194</key>
+            <value>
+                <account>-1836583194</account>
+                <email>email</email>
+                <gender>gender</gender>
+                <location>location</location>
+                <name>name</name>
+                <password>password</password>
+                <phone>138</phone>
+                <CourseList/>
+            </value>
+        </entry>
+    </trainers>
+</CustomerWrapper>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CustomerWrapper>
+    <customers>
+        <entry>
+            <key>89</key>
+            <value>
+                <account>89</account>
+                <email>iemail</email>
+                <gender>it</gender>
+                <location>ilocation</location>
+                <name>iname</name>
+                <password>ipassword</password>
+                <phone>138</phone>
+                <CourseList>
+                    <course>
+                        <courseId>-270055933</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>-1471125925</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
+                    </course>
+                </CourseList>
+                <level>Newbie</level>
+            </value>
+        </entry>
+        <entry>
+            <key>4</key>
+            <value>
+                <account>4</account>
+                <email>iemail</email>
+                <gender>it</gender>
+                <location>ilocation</location>
+                <name>iname</name>
+                <password>ipassword</password>
+                <phone>138</phone>
+                <CourseList>
+                    <course>
+                        <courseId>270541036</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>1724759136</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
+                    </course>
+                </CourseList>
+                <level>Newbie</level>
+            </value>
+        </entry>
+        <entry>
+            <key>90</key>
+            <value>
+                <account>90</account>
+                <email>iemail</email>
+                <gender>it</gender>
+                <location>ilocation</location>
+                <name>iname</name>
+                <password>ipassword</password>
+                <phone>138</phone>
+                <CourseList/>
+                <level>Newbie</level>
+            </value>
+        </entry>
+    </customers>
+</CustomerWrapper>
