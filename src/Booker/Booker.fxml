@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Booker.Booker">
+   <children>
+      <Separator layoutX="185.0" minHeight="400.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="113.0" layoutX="204.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="374.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="113.0" layoutX="205.0" layoutY="226.0" stroke="BLACK" strokeType="INSIDE" width="374.0" />
+      <Button fx:id="BookerAccept1button" layoutX="478.0" layoutY="167.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#BookerAccept1Event" prefHeight="40.0" prefWidth="100.0" text="Accept">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="BookerAccept2button" layoutX="478.0" layoutY="339.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#BookerAccept2Event" prefHeight="40.0" prefWidth="100.0" text="Accept">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="326.0" layoutX="21.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="145.0" />
+      <Button fx:id="BookerAdjustment" layoutX="85.0" layoutY="352.0" minHeight="28.0" minWidth="80.0" mnemonicParsing="false" onAction="#BookerAdjustEvent" prefHeight="28.0" prefWidth="80.0" text="Adjust">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="233.0" layoutY="13.0" text="Appointment waiting for confirmation">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="13.0" text="Appointment">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

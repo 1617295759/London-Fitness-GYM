@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MineView.Controller">
+   <children>
+      <VBox prefHeight="168.0" prefWidth="105.0">
+         <children>
+            <ToggleButton fx:id="mineButton" mnemonicParsing="false" onAction="#mineEvent" prefHeight="42.0" prefWidth="105.0" selected="true" text="Mine">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="function" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="videoButton" mnemonicParsing="false" onAction="#videoEvent" prefHeight="42.0" prefWidth="105.0" text="Video" toggleGroup="$function">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="bookButton" mnemonicParsing="false" onAction="#bookEvent" prefHeight="42.0" prefWidth="105.0" text="Book" toggleGroup="$function">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="membershipButton" mnemonicParsing="false" onAction="#membershipEvent" prefHeight="42.0" prefWidth="105.0" text="Membership" toggleGroup="$function">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </ToggleButton>
+         </children>
+      </VBox>
+      <Separator layoutX="105.0" orientation="VERTICAL" prefHeight="400.0" />
+      <Button fx:id="exitButton" layoutX="21.0" layoutY="335.0" mnemonicParsing="false" onAction="#exitEvent" text="Exit" />
+      <HBox layoutX="142.0" layoutY="63.0" prefHeight="55.0" prefWidth="420.0">
+         <children>
+            <Button fx:id="viewCompletedCourseButton" mnemonicParsing="false" onAction="#viewCompletedCourseEvent" prefHeight="55.0" prefWidth="210.0" text="Completed Sessions">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="viewMembershipButton" mnemonicParsing="false" onAction="#viewMembershipEvent" prefHeight="55.0" prefWidth="210.0" text="Membership">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
