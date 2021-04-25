@@ -22,6 +22,4 @@ public interface CustomerService {
 
     public int registerCustomer(Customer customer);
 
-    public int deleteCustomer(Customer customer);
-
 }

@@ -32,13 +32,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public int registerCustomer(Customer customer) {
+
         return 0;
     }
-
-    @Override
-    public int deleteCustomer(Customer customer) {
-        return 0;
-    }
-
 
 }
