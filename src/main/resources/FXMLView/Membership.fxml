@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="team.gym.FXMLController.Membership">
+    <children>
+        <VBox prefHeight="168.0" prefWidth="105.0">
+            <children>
+                <ToggleButton fx:id="mineButton" mnemonicParsing="false" onAction="#mineEvent" prefHeight="42.0"
+                              prefWidth="105.0" selected="true" text="Mine">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="function"/>
+                    </toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="videoButton" mnemonicParsing="false" onAction="#videoEvent" prefHeight="42.0"
+                              prefWidth="105.0" text="Video" toggleGroup="$function">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </ToggleButton>
+                <ToggleButton fx:id="bookButton" mnemonicParsing="false" onAction="#bookEvent" prefHeight="42.0"
+                              prefWidth="105.0" text="Book" toggleGroup="$function">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </ToggleButton>
+                <ToggleButton fx:id="membershipButton" mnemonicParsing="false" onAction="#membershipEvent"
+                              prefHeight="42.0" prefWidth="105.0" text="Membership" toggleGroup="$function">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </ToggleButton>
+            </children>
+        </VBox>
+        <Button fx:id="exitButton" layoutX="7.0" layoutY="330.0" mnemonicParsing="false" onAction="#exitEvent"
+                text="Exit"/>
+        <Separator layoutX="105.0" orientation="VERTICAL" prefHeight="400.0"/>
+        <Label layoutX="238.0" layoutY="10.0" text="Membership"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3f6f800" height="91.0" layoutX="120.0" layoutY="54.0"
+                   stroke="BLACK" strokeType="INSIDE" width="469.0"/>
+        <Label layoutX="129.0" layoutY="160.0" text="Junior Member">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+        <Label layoutX="127.0" layoutY="276.0" text="Senior Member">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+        <Button fx:id="MemJbuyButton" layoutX="475.0" layoutY="208.0" minHeight="35.0" minWidth="100.0"
+                mnemonicParsing="false" onAction="#MemJbuyEvent" prefHeight="25.0" prefWidth="100.0" text="Buy">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+        <Button fx:id="MemSbuyButton" layoutX="475.0" layoutY="333.0" minHeight="35.0" minWidth="100.0"
+                mnemonicParsing="false" onAction="#MemSbuyEvent" prefHeight="25.0" prefWidth="100.0" text="Buy">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Button>
+        <Label layoutX="156.0" layoutY="214.0" text="\$20.00">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="156.0" layoutY="333.0" text="\$50.00">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

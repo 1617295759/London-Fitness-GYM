@@ -16,11 +16,11 @@ public class CustomerServiceImpl implements CustomerService {
     public String verifyCustomer(String username, String password) {
         Customer verifycustomer = customerDao.findCustomerByName(username);
         if(verifycustomer == null ){
-            return null;
-        }else if(password == verifycustomer.getPassword()){
+            return "Customer Account Doesn't Exist";
+        }else if(password.equals(verifycustomer.getPassword())){
             return null;
         }else{
-            return null;
+            return "Wrong password, Type Again Please";
         }
     }
 

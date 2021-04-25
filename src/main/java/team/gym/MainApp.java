@@ -12,7 +12,6 @@ public class MainApp extends AbstractJavaFxApplicationSupport {
     private User userNow;
 
     public static void main(String[] args) {
-
         launch(MainApp.class, LoginView.class, args);
     }
 

@@ -62,7 +62,7 @@ public class TrainerDaoImpl implements TrainerDao{
     }
 
     @Override
-    public int modifyCustomer(String account, String field, String newValue) {
+    public int modifyTrainer(String account, String field, String newValue) {
         return 0;
     }
 

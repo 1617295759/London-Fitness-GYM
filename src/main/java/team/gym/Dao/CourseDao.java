@@ -7,7 +7,6 @@ import team.gym.Beans.Course;
 /**
  * 课程接口
  */
-@Repository
 public interface CourseDao {
 
 
@@ -23,7 +22,6 @@ public interface CourseDao {
      * @return
      */
     int saveCourse(Course courses);
-
 
     /**根据id查询课表
      *

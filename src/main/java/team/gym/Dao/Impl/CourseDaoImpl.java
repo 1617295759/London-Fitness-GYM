@@ -4,8 +4,10 @@ import org.springframework.stereotype.Repository;
 import team.gym.Beans.Course;
 
 import team.gym.Beans.Customer;
+import team.gym.Beans.Trainer;
 import team.gym.Dao.CourseDao;
 import team.gym.Dao.CustomerDao;
+import team.gym.Dao.TrainerDao;
 import team.gym.MyUtils.Session;
 
 
@@ -24,23 +26,28 @@ public class CourseDaoImpl implements CourseDao {
     */
 
     @Autowired
-    private CourseDao courseDao;
+    private TrainerDao trainerDao;
 
     @Autowired
     private CustomerDao customerDao;
 
     private Customer customer;
-
-
-
+    private Trainer trainer;
     @Override
     public int saveCourse(Course course) {
         try {
-            List<Course> courses1;
+            List<Course> trainer_course;
+            trainer = trainerDao.findTrainerByName(course.getTrainerAccount());
+            trainer_course = trainer.getCourses();
+            trainer_course.add(course);
+            trainer.setCourses(trainer_course);
+            trainerDao.saveTrainer(trainer);
+
+            List<Course> user_course;
             customer = (Customer)Session.getUser();
-            courses1 = customer.getCourses();
-            courses1.add(course);
-            customer.setCourses(courses1);
+            user_course = customer.getCourses();
+            user_course.add(course);
+            customer.setCourses(user_course);
             customerDao.saveCustomer(customer);
             return 1;
         } catch (Exception e) {

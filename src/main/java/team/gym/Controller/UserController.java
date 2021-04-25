@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
 
 @FXMLController
 public class UserController {
-
     @FXML
     private TableColumn<User, String> gender;
 

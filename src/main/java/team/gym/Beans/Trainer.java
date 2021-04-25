@@ -12,11 +12,7 @@ import java.util.Random;
 @Component
 @XmlRootElement(name = "trainer")
 public class Trainer extends User{
-    // XmLElementWrapper generates a wrapper element around XML representation
-    @XmlElementWrapper(name = "CourseList")
-    // XmlElement sets the name of the entities
-    @XmlElement(name = "course")
-    private List<Course> courses = new LinkedList<Course>();
+
     public Trainer(){
         super();
         setAccount(String.valueOf(new Random().nextInt()));
@@ -27,9 +23,4 @@ public class Trainer extends User{
         setPhone("138");
         setEmail("email");
     }
-
-    @XmlTransient
-    public List<Course> getCourses() { return courses; }
-
-    public void setCourses(List<Course> courses) { this.courses = courses; }
 }

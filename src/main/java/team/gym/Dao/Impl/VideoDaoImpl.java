@@ -10,6 +10,7 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -39,13 +40,18 @@ public class VideoDaoImpl implements VideoDao {
 
     @Override
     public List<Video> findVideosByCategory(String category) {
-        List<Video> videosInSameCate = videoDao.findVideosByCategory(category);
-        return videosInSameCate;
+        List<Video> videos = new LinkedList<>();
+        for (Video video:videoDao.findAllVideo()) {
+            if (video.getClassification() == category){
+                videos.add(video);
+            }
+        }
+        return videos;
     }
 
     @Override
     public List<Video> findAllVideo() {
-        return wrapper.getVideoMap().values().stream().collect(Collectors.toList());
+        return getVideoMap().values().stream().collect(Collectors.toList());
     }
 
 

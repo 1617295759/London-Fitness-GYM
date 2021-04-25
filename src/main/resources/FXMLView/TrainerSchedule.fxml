@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="603.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.FXMLController.TrainerSchedule">
+    <children>
+        <Separator layoutX="385.0" layoutY="75.0" minHeight="400.0" orientation="VERTICAL" prefHeight="200.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="113.0" layoutX="410.0" layoutY="113.0" stroke="BLACK" strokeType="INSIDE" width="374.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="113.0" layoutX="416.0" layoutY="302.0" stroke="BLACK" strokeType="INSIDE" width="374.0" />
+        <Button fx:id="BookerAccept1button" layoutX="690.0" layoutY="235.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#BookerAccept1Event" prefHeight="40.0" prefWidth="100.0" text="Accept">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="BookerAccept2button" layoutX="684.0" layoutY="452.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Accept">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="BookerAdjustment" layoutX="289.0" layoutY="485.0" minHeight="28.0" minWidth="80.0" mnemonicParsing="false" onAction="#BookerAdjustEvent" prefHeight="28.0" prefWidth="80.0" text="Adjust">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Label layoutX="433.0" layoutY="58.0" text="Appointment waiting for confirmation">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="40.0" layoutY="13.0" text="Appointment">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+      <Button fx:id="Exit" layoutX="25.0" layoutY="513.0" mnemonicParsing="false" onAction="#Exit" prefHeight="48.0" prefWidth="87.0" text="Exit" />
+      <TableView fx:id="schedule" layoutX="13.0" layoutY="58.0" prefHeight="400.0" prefWidth="356.0">
+        <columns>
+          <TableColumn fx:id="client" prefWidth="75.0" text="client" />
+          <TableColumn fx:id="startTime" prefWidth="143.0" text="start time" />
+            <TableColumn fx:id="duration" prefWidth="143.0" text="duration" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+    </children>
+</AnchorPane>

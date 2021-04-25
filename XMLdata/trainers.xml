@@ -2,16 +2,29 @@
 <CustomerWrapper>
     <trainers>
         <entry>
-            <key>-1836583194</key>
+            <key>Dwayne Johnson</key>
             <value>
-                <account>-1836583194</account>
+                <account>Dwayne Johnson</account>
                 <email>email</email>
                 <gender>gender</gender>
                 <location>location</location>
                 <name>name</name>
-                <password>password</password>
+                <password>123</password>
                 <phone>138</phone>
-                <CourseList/>
+                <CourseList>
+                    <course>
+                        <courseId>-270055933</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>-1471125925</courseId>
+                        <customerAccount>Tom</customerAccount>
+                        <price>0.0</price>
+                        <trainerAccount>Old jack</trainerAccount>
+                    </course>
+                </CourseList>
             </value>
         </entry>
     </trainers>

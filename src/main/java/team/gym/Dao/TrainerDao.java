@@ -24,7 +24,7 @@ public interface TrainerDao {
      */
     public Map getTrainerMap();
 
-    int modifyCustomer(String account, String field, String newValue);
+    int modifyTrainer(String account, String field, String newValue);
 
     int addCourse(String account, Course course);
 }

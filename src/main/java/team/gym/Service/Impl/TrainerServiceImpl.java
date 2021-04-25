@@ -12,14 +12,14 @@ public class TrainerServiceImpl implements TrainerService {
     private TrainerDao trainerDao;
 
     @Override
-    public int verifyTrainer(String username, String password) {
+    public String verifyTrainer(String username, String password) {
         Trainer verifytrainer = trainerDao.findTrainerByName(username);
         if(verifytrainer == null ){
-            return 0;
+            return "Trainer Account Doesn't Exist";
         }else if(password.equals(verifytrainer.getPassword())){
-            return 1;
+            return null;
         }else{
-            return 2;
+            return "Wrong password, Type Again Please";
         }
     }
 

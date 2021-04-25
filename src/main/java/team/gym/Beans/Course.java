@@ -4,6 +4,7 @@ package team.gym.Beans;
 import javafx.beans.property.*;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.Random;
 
 @Component
@@ -13,24 +14,24 @@ public class Course {
     private final StringProperty trainerAccount = new SimpleStringProperty();
     private final StringProperty category = new SimpleStringProperty();
     private final StringProperty intro = new SimpleStringProperty();
-    private StringProperty startTime = new SimpleStringProperty();
-    private StringProperty endTime = new SimpleStringProperty();
+    private Date startTime = new Date();
+    private IntegerProperty duration = new SimpleIntegerProperty();
     private final StringProperty feedback = new SimpleStringProperty();
     // 0-committed but not yet accepted，1-reject，2-accept
     private final StringProperty status = new SimpleStringProperty();
     private final DoubleProperty price = new SimpleDoubleProperty();
 
-    public Course(){
+    public Course() {
         setCourseId(new Random().nextInt());
         setCustomerAccount("Tom");
         setTrainerAccount("Old jack");
     }
 
-    public Course(String customerAccount, String trainerAccount, String startTime, String endTime){
+    public Course(String customerAccount, String trainerAccount, Date startTime, int endTime) {
         setCustomerAccount(customerAccount);
         setTrainerAccount(trainerAccount);
         setStartTime(startTime);
-        setEndTime(endTime);
+        setDuration(endTime);
     }
 
     public int getCourseId() {
@@ -93,28 +94,20 @@ public class Course {
         this.intro.set(intro);
     }
 
-    public String getStartTime() {
-        return startTime.get();
+    public Date getStartTime() { return startTime; }
+
+    public void setStartTime(Date startTime) { this.startTime = startTime; }
+
+    public int getDuration() {
+        return duration.get();
     }
 
-    public StringProperty startTimeProperty() {
-        return startTime;
+    public IntegerProperty durationProperty() {
+        return duration;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime.set(startTime);
-    }
-
-    public String getEndTime() {
-        return endTime.get();
-    }
-
-    public StringProperty endTimeProperty() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime.set(endTime);
+    public void setDuration(int duration) {
+        this.duration.set(duration);
     }
 
     public String getFeedback() {
@@ -152,4 +145,6 @@ public class Course {
     public void setPrice(double price) {
         this.price.set(price);
     }
+
+
 }
