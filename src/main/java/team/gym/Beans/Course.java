@@ -25,6 +25,7 @@ public class Course {
         setCourseId(new Random().nextInt());
         setCustomerAccount("Tom");
         setTrainerAccount("Old jack");
+        setStartTime(new Date());
     }
 
     public Course(String customerAccount, String trainerAccount, Date startTime, int endTime) {

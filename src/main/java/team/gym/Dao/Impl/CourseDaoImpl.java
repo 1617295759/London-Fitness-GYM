@@ -82,7 +82,6 @@ public class CourseDaoImpl implements CourseDao {
         return 0;
     }
 
-
     @Override
     public int modifyCourse(int courseId, String field, String newValue) {
         Course course = selByCourseId(courseId);
@@ -95,8 +94,15 @@ public class CourseDaoImpl implements CourseDao {
         return 0;
     }
 
+    @Override
+    public List<Course> getCustomerCourses(String account) {
+        return customerDao.findCustomerByName(account).getCourses();
+    }
 
-
+    @Override
+    public List<Course> getTrainerCourses(String account) {
+        return trainerDao.findTrainerByName(account).getCourses();
+    }
 
 
 }

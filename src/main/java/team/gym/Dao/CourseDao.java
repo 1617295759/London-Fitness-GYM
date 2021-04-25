@@ -3,13 +3,13 @@ package team.gym.Dao;
 import org.springframework.stereotype.Repository;
 import team.gym.Beans.Course;
 
+import java.util.List;
+
 
 /**
  * 课程接口
  */
 public interface CourseDao {
-
-
     /**String customerAccount,
      String trainerAccount,
      String startTime,
@@ -39,4 +39,7 @@ public interface CourseDao {
 
     int modifyCourse(int courseId, String field, String newValue);
 
+    List<Course> getCustomerCourses(String account);
+
+    List<Course> getTrainerCourses(String account);
 }
