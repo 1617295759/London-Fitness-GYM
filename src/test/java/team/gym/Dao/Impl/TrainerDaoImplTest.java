@@ -14,7 +14,7 @@ public class TrainerDaoImplTest extends TestCase {
     }
 
     public void testFindTrainerByName() {
-        System.out.println(new TrainerDaoImpl().findTrainerByName(
+        System.out.println(new TrainerDaoImpl().findTrainerByAccount(
                 (String) new TrainerDaoImpl().getTrainerMap().keySet().toArray()[0]
         ));
     }

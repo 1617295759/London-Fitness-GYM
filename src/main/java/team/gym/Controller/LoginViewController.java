@@ -8,13 +8,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
-import team.gym.FXMLView.Booker;
-import team.gym.FXMLView.Video;
 import team.gym.MainApp;
 import team.gym.MyUtils.DialogUtils;
 import team.gym.MyUtils.Session;
+import team.gym.MyUtils.VideoPlayer;
 import team.gym.Service.CustomerService;
 import team.gym.Service.TrainerService;
+import team.gym.View.AdminView;
+import team.gym.View.CustomerView;
+import team.gym.View.User;
 
 @FXMLController
 public class LoginViewController {
@@ -52,38 +54,78 @@ public class LoginViewController {
     private CustomerService customerService;
     @Autowired
     private TrainerService trainerService;
-
     @Autowired
     @FXML
     private MainApp mainApp;
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+    }
 
+    public MainApp getMainApp() {
+        return mainApp;
+    }
+
+    /**
+     * 这里我们在点击登录后，因为这里区分了管理员和普通用户， 所以之后的编程会相对简单一些.
+     */
     @FXML
     private void handleLogin() throws Exception {
-        System.out.println("用户输入账号"+usernameField.getText());
-        System.out.println("用户输入密码"+passwordField.getText());
+        // 调试用信息，之后可去掉
+        System.out.println("登录按钮被点击了");
+        System.out.println(usernameField.getText());
+        System.out.println(passwordField.getText());
+
         try {
             if (isAdmin.isSelected()) {
-                String status = trainerService.verifyTrainer(usernameField.getText(),passwordField.getText());
-                if (status != null) {
-                    throw new NullPointerException(status);
+                int status = trainerService.verifyTrainer(usernameField.getText(),passwordField.getText());
+                if (status != 1) {
+                    throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }
                 Session.setUser(trainerService.getTrainer(usernameField.getText(),passwordField.getText()));
-                MainApp.showView(Booker.class);
+                MainApp.showView(AdminView.class);
             } else {
                 String status = customerService.verifyCustomer(usernameField.getText(),passwordField.getText());
                 if (status != null) {
-                    throw new NullPointerException(status);
+                    throw new NullPointerException("出错了，请您检查用户名或密码是否有误");
                 }
                 Session.setUser(customerService.getCustomer(usernameField.getText(),passwordField.getText()));
-                MainApp.showView(Video.class);
+                MainApp.showView(User.class);
             }
+//
+//            //认证完成，装载对应页面
+//            FXMLLoader loader = new FXMLLoader();
+//            if (isAdmin.isSelected()) {
+//                loader.setLocation(Main.class.getResource("views/AdminView.fxml"));
+//            } else {
+//                loader.setLocation(Main.class.getResource("views/CustomerView.fxml"));
+//            }
+//            /*
+//             *==================================================
+//             *                 !!important!!
+//             *     你必须先调用loader.load才能找到controller
+//             *==================================================
+//             */
+//            Parent newView = loader.load();
+//            if (isAdmin.isSelected()) {
+//                AdminVIewController adminVIewController = loader.getController();
+//                System.out.println(adminVIewController);
+//                System.out.println(mainApp);
+//                adminVIewController.setMainApp(mainApp);
+//            } else {
+//                CommonUserViewController commonUserViewController = loader.getController();
+//                System.out.println("mainApp: " + mainApp);
+//                commonUserViewController.setMainApp(mainApp);
+//            }
+//            mainApp.getPrimaryStage().setScene(new Scene(newView, 1152, 736));
+//
         } catch (Exception e) {
             DialogUtils.tips(mainApp.getPrimaryStage(), e.getMessage());
             System.out.println("出现了一些问题，请查看提示信息");
-            //usernameField.setText("");
-            //passwordField.setText("");
+            usernameField.setText("");
+            passwordField.setText("");
             usernameField.requestFocus();
         }
+
     }
 
     @FXML

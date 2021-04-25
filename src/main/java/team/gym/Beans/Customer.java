@@ -23,6 +23,11 @@ public class Customer extends User{
     // different level of membership
     // Newbie —— Registered —— Advanced —— Respectful —— VIP —— Honorable
     private final StringProperty  level = new SimpleStringProperty();
+    // XmLElementWrapper generates a wrapper element around XML representation
+    @XmlElementWrapper(name = "CourseList")
+    // XmlElement sets the name of the entities
+    @XmlElement(name = "course")
+    private List<Course> courses = new LinkedList<Course>();
 
     public Customer(){
         super();
@@ -47,5 +52,12 @@ public class Customer extends User{
     public void setLevel(String level) {
         this.level.set(level);
     }
+    @XmlTransient
+    public List<Course> getCourses() { return courses; }
+
+    public void setCourses(List<Course> courses) { this.courses = courses; }
+
+
+
 
 }

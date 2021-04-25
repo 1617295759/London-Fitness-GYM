@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @XmlRootElement(name = "CustomerWrapper")
-public class CustomerWrapper {
+public class CustomerWrapper extends UserWrapper{
 
     private Map<String, Customer> customerMap;
 

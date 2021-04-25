@@ -11,7 +11,7 @@ public interface TrainerService {
      * @param password user input password
      * @return 0-no such trainer, 1-matched, 2-wrong password
      */
-    public String verifyTrainer(String username, String password);
+    public int verifyTrainer(String username, String password);
 
     public User getTrainer(String username, String password);
 

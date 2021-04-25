@@ -9,19 +9,19 @@ public interface CourseService {
     void saveCourse(Course course,String customerAccount, String trainerAccount);
 
     //用户id查询用户未完成课程
-    List<Course> getCustomerTodoCourse(String account);
+    List<Course> getCustomerTodoCourse(int account);
 
     //用户id查询用户已完成课程
-    List<Course> getCustomerOverCourse(String account);
+    List<Course> getCustomerOverCourse(int account);
 
     //id查询教练未完成课程
-    List<Course> getTrainerTodoCourse(String account);
+    List<Course> getTrainerTodoCourse(int account);
 
     //id查询教练已完成课程
-    List<Course> getTrainerOverCourse(String account);
+    List<Course> getTrainerOverCourse(int account);
 
     //id删除我的课程
-    int deleteCourseById(String account,int courseId);
+    int deleteCourseById(int account,int courseId);
 
     /** change given course info field to new info
      *

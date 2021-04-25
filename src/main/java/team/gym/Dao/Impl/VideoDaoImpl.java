@@ -1,7 +1,11 @@
 package team.gym.Dao.Impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import team.gym.Beans.Course;
+import team.gym.Beans.Customer;
 import team.gym.Beans.Video;
 import team.gym.Beans.VideoWrapper;
+import team.gym.Dao.CourseDao;
 import team.gym.Dao.VideoDao;
 
 import javax.xml.bind.JAXBContext;
@@ -10,7 +14,6 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -18,7 +21,14 @@ import java.util.stream.Collectors;
 public class VideoDaoImpl implements VideoDao {
 
     private VideoWrapper wrapper;
+
+    @Autowired
     private VideoDao videoDao;
+
+    @Autowired
+    private CourseDao courseDao;
+
+
 
     public VideoDaoImpl() {
         // initiate File videos file
@@ -40,18 +50,19 @@ public class VideoDaoImpl implements VideoDao {
 
     @Override
     public List<Video> findVideosByCategory(String category) {
-        List<Video> videos = new LinkedList<>();
-        for (Video video:videoDao.findAllVideo()) {
-            if (video.getClassification() == category){
-                videos.add(video);
-            }
+        Video video;
+        Customer customer = customerDao.findCustomerByName(course1.getCustomerAccount());
+        List<Course> courses = customer.getCourses();
+        for (Course course:courses) {
+            if(courseId == course.getCourseId())
+                return course;
         }
-        return videos;
+        return null;
     }
 
     @Override
     public List<Video> findAllVideo() {
-        return getVideoMap().values().stream().collect(Collectors.toList());
+        return wrapper.getVideoMap().values().stream().collect(Collectors.toList());
     }
 
 

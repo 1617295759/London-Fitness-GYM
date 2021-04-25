@@ -65,7 +65,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
 
     @Override
-    public Customer findCustomerByName(String account) {
+    public Customer findCustomerByAccount(String account) {
         //get the specific customer information
         return wrapper.getCustomerMap().get(account);
     }
@@ -98,5 +98,4 @@ public class CustomerDaoImpl implements CustomerDao {
             e.printStackTrace();
         }
     }
-
 }
