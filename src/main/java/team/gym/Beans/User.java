@@ -4,12 +4,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import org.springframework.stereotype.Component;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlTransient;
-import java.util.LinkedList;
-import java.util.List;
-
 @Component
 public class User {
     private final StringProperty account = new SimpleStringProperty();
@@ -19,11 +13,7 @@ public class User {
     private final StringProperty location= new SimpleStringProperty();
     private final StringProperty phone= new SimpleStringProperty();
     private final StringProperty email= new SimpleStringProperty();
-    // XmLElementWrapper generates a wrapper element around XML representation
-    @XmlElementWrapper(name = "CourseList")
-    // XmlElement sets the name of the entities
-    @XmlElement(name = "course")
-    private List<Course> courses = new LinkedList<Course>();
+
 
     public User(){
 
@@ -122,11 +112,6 @@ public class User {
         this.email.set(email);
     }
 
-    @XmlTransient
-    public List<Course> getCourses() { return courses; }
-
-    public void setCourses(List<Course> courses) { this.courses = courses; }
-
     @Override
     public String toString() {
         return "User{" +
@@ -137,7 +122,6 @@ public class User {
                 ", location=" + getLocation() +
                 ", phone=" + getPhone() +
                 ", email=" + getEmail() +
-                ", courses= \n" + getCourses() +
                 '}';
     }
 

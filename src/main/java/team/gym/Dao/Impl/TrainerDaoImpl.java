@@ -1,10 +1,7 @@
 package team.gym.Dao.Impl;
 
-
 import org.springframework.stereotype.Repository;
-import team.gym.Beans.Course;
-import team.gym.Beans.Trainer;
-import team.gym.Beans.TrainerWrapper;
+import team.gym.Beans.*;
 import team.gym.Dao.TrainerDao;
 
 import javax.xml.bind.JAXBContext;
@@ -17,73 +14,40 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 @Repository
-public class TrainerDaoImpl implements TrainerDao{
+public class TrainerDaoImpl extends UserDaoImpl implements TrainerDao {
 
-    private final File trainersfile;
-    private TrainerWrapper wrapper;
-    private JAXBContext context;
+    public final File trainersFile;
 
     public TrainerDaoImpl() {
-        // initiate File customersfile
+        // initiate File trainers' file
         String xmlPath = URLDecoder.decode("XMLdata/trainers.xml", StandardCharsets.UTF_8);
-        trainersfile = new File(xmlPath);
+        trainersFile = new File(xmlPath);
+        TrainerWrapper trainerWrapper;
         try {
             // initiate JAXBContext context
             context = JAXBContext.newInstance(TrainerWrapper.class);
-            // initiate CustomerWrapper wrapper
+            // initiate TrainerWrapper wrapper
             Unmarshaller um = context.createUnmarshaller();
             // Reading XML from the file and unmarshalling.
-            wrapper = (TrainerWrapper) um.unmarshal(trainersfile);
+            trainerWrapper = (TrainerWrapper) um.unmarshal(trainersFile);
         } catch (JAXBException e) {
             System.out.println("此时trainers.xml为空");
             e.printStackTrace();
-            wrapper = new TrainerWrapper();
+            trainerWrapper = new TrainerWrapper();
         }
     }
 
 
     @Override
-    public void saveTrainer(Trainer trainer) {
-        try{
-            // read the original data and append the new customer information
-            Map<String,Trainer> map = getTrainerMap();
-            map.put(trainer.getAccount(),trainer);
-            //package the map to wrapper to transmute to XML
-            wrapper.setTrainerMap(map);
-            saveWrapper(wrapper);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public Map<String,Trainer> getTrainerMap() {
-        return wrapper.getTrainerMap();
-    }
-
-    @Override
-    public int modifyTrainer(String account, String field, String newValue) {
-        return 0;
-    }
-
-    @Override
-    public int addCourse(String account, Course course) {
-        return 0;
-    }
-
-    @Override
-    public Trainer findTrainerByName(String username) {
-        return wrapper.getTrainerMap().get(username);
-    }
-
-    public void saveWrapper(TrainerWrapper wrapper){
+    public void saveWrapper(UserWrapper wrapper) {
         try {
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            m.marshal(wrapper, trainersfile);
+            m.marshal(wrapper, trainersFile);
         } catch (JAXBException e) {
             e.printStackTrace();
         }
     }
 
 }
+

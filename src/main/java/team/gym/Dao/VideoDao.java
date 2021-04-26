@@ -8,7 +8,7 @@ public interface VideoDao {
 
     List<Video> findVideosByCategory(String category);
 
-    List<Video> findAllVideo();
+    List<Video> findAllVideos();
 
     public Map getVideoMap();
 }
