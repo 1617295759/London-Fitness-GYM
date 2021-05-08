@@ -13,10 +13,10 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public String verifyTrainer(String username, String password) {
-        Trainer verifytrainer = trainerDao.findTrainerByName(username);
-        if(verifytrainer == null ){
+        Trainer verifyTrainer = (Trainer)trainerDao.findUserByAccount(username);
+        if(verifyTrainer == null ){
             return "Trainer Account Doesn't Exist";
-        }else if(password.equals(verifytrainer.getPassword())){
+        }else if(password.equals(verifyTrainer.getPassword())){
             return null;
         }else{
             return "Wrong password, Type Again Please";
@@ -25,7 +25,7 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public User getTrainer(String username, String password) {
-        return trainerDao.findTrainerByName(username);
+        return trainerDao.findUserByAccount(username);
     }
 
     @Override

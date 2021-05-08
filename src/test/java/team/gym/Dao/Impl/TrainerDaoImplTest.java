@@ -6,16 +6,16 @@ import team.gym.Beans.Trainer;
 public class TrainerDaoImplTest extends TestCase {
 
     public void testSaveTrainer() {
-        new TrainerDaoImpl().saveUser(new Trainer());
+        new TrainerDaoImpl().saveTrainer(new Trainer());
     }
 
     public void testGetTrainerMap() {
-        System.out.println(new TrainerDaoImpl().getUserMap().values());;
+        System.out.println(new TrainerDaoImpl().getTrainerMap().values());;
     }
 
     public void testFindTrainerByName() {
         System.out.println(new TrainerDaoImpl().findUserByAccount(
-                (String) new TrainerDaoImpl().getUserMap().keySet().toArray()[0]
+                (String) new TrainerDaoImpl().getTrainerMap().keySet().toArray()[0]
         ));
     }
 }

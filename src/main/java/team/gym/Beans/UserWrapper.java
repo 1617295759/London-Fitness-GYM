@@ -3,7 +3,7 @@ package team.gym.Beans;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserWrapper {
+public class  UserWrapper {
 
     private Map<String, User> userMap;
 

@@ -51,7 +51,7 @@ import java.util.List;
                 courses1 = customer.getCourses();
                 courses1.add(course);
                 customer.setCourses(courses1);
-                customerDao.saveUser(customer);
+                customerDao.saveCustomer(customer);
 
                 List<Course> courses2;
                 String trainerName = course.getTrainerAccount();
@@ -59,7 +59,7 @@ import java.util.List;
                 courses2 = trainer.getCourses();
                 courses2.add(course);
                 trainer.setCourses(courses2);
-                trainerDao.saveUser(trainer);
+                trainerDao.saveTrainer(trainer);
             }
             if(username.equals("Trainer")) {
                 List<Course> courses3;
@@ -67,7 +67,7 @@ import java.util.List;
                 courses3 = trainer.getCourses();
                 courses3.add(course);
                 trainer.setCourses(courses3);
-                trainerDao.saveUser(trainer);
+                trainerDao.saveTrainer(trainer);
 
                 List<Course> courses4;
                 String customerName = course.getCustomerAccount();
@@ -75,7 +75,7 @@ import java.util.List;
                 courses4 = customer.getCourses();
                 courses4.add(course);
                 customer.setCourses(courses4);
-                customerDao.saveUser(customer);
+                customerDao.saveCustomer(customer);
             }
 
             return 1;
@@ -139,8 +139,8 @@ import java.util.List;
         return 0;
     }
 
-
-
-
-
+    @Override
+    public List<Course> getUserCourses() {
+        return user.getCourses();
+    }
 }

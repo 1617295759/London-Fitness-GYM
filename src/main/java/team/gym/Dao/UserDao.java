@@ -1,29 +1,15 @@
 package team.gym.Dao;
 
+import org.springframework.stereotype.Repository;
+
 import team.gym.Beans.Course;
 import team.gym.Beans.User;
 import team.gym.Beans.UserWrapper;
 
 import java.util.Map;
 
+@Repository
 public interface UserDao {
-
-    /** append a user information into the xml data
-     *
-     * @param user the Object to be saved
-     */
-    void saveUser(User user);
-
-    /**
-     * @param userAccount the account number of the user
-     * @return the corresponding customer Object
-     */
-    User findUserByAccount(String userAccount);
-
-    /**
-     * @return all the users' map, the key is account number(String), value is user Object
-     */
-    Map getUserMap();
 
     /** change information of user
      * @return change state
@@ -31,7 +17,11 @@ public interface UserDao {
      */
     int modifyUser(String account, String field, String newValue);
 
+    /** change information of user
+     * @return change state
+     * @param course the future course
+     */
     void addCourse(Course course);
 
-    void saveWrapper(UserWrapper userWrapper);
+
 }

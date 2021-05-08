@@ -9,13 +9,13 @@ public interface CourseService {
     void saveCourse(Course course,String customerAccount, String trainerAccount);
 
     //用户id查询用户未完成课程
-    List<Course> getCustomerTodoCourse(String account);
+    List<Course> getCustomerTodoCourse();
 
     //用户id查询用户已完成课程
     List<Course> getCustomerOverCourse(String account);
 
     //id查询教练未完成课程
-    List<Course> getTrainerTodoCourse(String account);
+    List<Course> getTrainerTodoCourse();
 
     //id查询教练已完成课程
     List<Course> getTrainerOverCourse(String account);

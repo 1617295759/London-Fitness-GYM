@@ -1,6 +1,7 @@
 package team.gym.Dao;
 
 import team.gym.Beans.Course;
+import team.gym.Beans.Customer;
 import team.gym.Beans.Trainer;
 import team.gym.Beans.User;
 
@@ -16,5 +17,9 @@ import java.util.Map;
  *
  */
 public interface TrainerDao extends UserDao{
+
+    public void saveTrainer(Trainer trainer);
+
+    public User findUserByAccount(String userAccount);
 
 }

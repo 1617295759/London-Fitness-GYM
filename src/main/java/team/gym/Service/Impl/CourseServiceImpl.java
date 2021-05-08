@@ -26,17 +26,17 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<Course> getCustomerTodoCourse(String account) {
+    public List<Course> getCustomerTodoCourse() {
         if(courses==null){
-            courses = courseDao.getCustomerCourses(account);
+            courses = courseDao.getUserCourses();
         }
         return getTodoCourses();
     }
 
     @Override
-    public List<Course> getTrainerTodoCourse(String account) {
+    public List<Course> getTrainerTodoCourse() {
         if(courses==null){
-            courses = courseDao.getTrainerCourses(account);
+            courses = courseDao.getUserCourses();
         }
         return getTodoCourses();
     }

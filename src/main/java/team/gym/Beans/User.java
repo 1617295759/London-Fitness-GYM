@@ -4,6 +4,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import org.springframework.stereotype.Component;
 
+import java.util.LinkedList;
+import java.util.List;
+
 @Component
 public class User {
     private final StringProperty account = new SimpleStringProperty();
@@ -13,6 +16,8 @@ public class User {
     private final StringProperty location= new SimpleStringProperty();
     private final StringProperty phone= new SimpleStringProperty();
     private final StringProperty email= new SimpleStringProperty();
+
+    private List<Course> courses = new LinkedList<Course>();
 
 
     public User(){
@@ -110,6 +115,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email.set(email);
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 
     @Override

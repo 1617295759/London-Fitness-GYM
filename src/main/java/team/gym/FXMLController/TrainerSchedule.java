@@ -56,12 +56,12 @@ public class TrainerSchedule {
 
     @FXML
     private void initialize(){
-        courseData.addAll(courseService.getTrainerTodoCourse(Session.getUser().getAccount()));
+        courseData.addAll(courseService.getTrainerTodoCourse());
         schedule.setItems(courseData);
 
         client.setCellValueFactory(cellData -> cellData.getValue().customerAccountProperty());
-        startTime.setCellValueFactory(cellData -> (ObservableValue<Date>) cellData.getValue().getStartTime());
-        duration.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getDuration())));
+        //startTime.setCellValueFactory(cellData -> (ObservableValue<Date>) cellData.getValue().getStartTime());
+        //duration.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getDuration())));
     }
 
     @FXML

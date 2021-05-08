@@ -2,6 +2,7 @@ package team.gym.Dao;
 
 import team.gym.Beans.Course;
 import team.gym.Beans.Customer;
+import team.gym.Beans.User;
 
 import java.util.Map;
 
@@ -15,5 +16,7 @@ import java.util.Map;
  *
  */
 public interface CustomerDao extends UserDao{
+    public void saveCustomer(Customer customer);
 
+    public User findUserByAccount(String userAccount);
 }

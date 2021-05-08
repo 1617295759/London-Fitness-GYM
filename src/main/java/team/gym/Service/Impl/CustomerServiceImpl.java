@@ -14,7 +14,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public String verifyCustomer(String username, String password) {
-        Customer verifycustomer = customerDao.findCustomerByName(username);
+        Customer verifycustomer = (Customer)customerDao.findUserByAccount(username);
         if(verifycustomer == null ){
             return "Customer Account Doesn't Exist";
         }else if(password.equals(verifycustomer.getPassword())){
@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public User getCustomer(String username, String password) {
-        return customerDao.findCustomerByName(username);
+        return customerDao.findUserByAccount(username);
     }
 
     @Override

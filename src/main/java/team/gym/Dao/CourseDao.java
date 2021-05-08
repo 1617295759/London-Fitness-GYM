@@ -3,6 +3,8 @@ package team.gym.Dao;
 import org.springframework.stereotype.Repository;
 import team.gym.Beans.Course;
 
+import java.util.List;
+
 
 /**
  * 课程接口
@@ -41,5 +43,7 @@ public interface CourseDao {
     int delByCourseId(int courseId);
 
     int modifyCourse(int courseId, String field, String newValue);
+
+    List<Course> getUserCourses();
 
 }
