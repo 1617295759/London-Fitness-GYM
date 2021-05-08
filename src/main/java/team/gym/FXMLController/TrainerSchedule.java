@@ -23,15 +23,16 @@ import team.gym.Service.TrainerService;
 import team.gym.View.LoginView;
 
 import java.util.Date;
+import java.util.List;
 
 @FXMLController
 public class TrainerSchedule {
 
     @FXML
-    private Button BookerAccept2button;
+    private Button OverCourses;
 
     @FXML
-    private Button BookerAccept1button;
+    private Button TodoCourses;
 
     @FXML
     private Button BookerAdjustment;
@@ -43,7 +44,7 @@ public class TrainerSchedule {
     @FXML
     private TableColumn<Course, String> client;
     @FXML
-    private TableColumn<Course, Date> startTime;
+    private TableColumn<Course, String> startTime;
     @FXML
     private Button Exit;
 
@@ -56,22 +57,15 @@ public class TrainerSchedule {
 
     @FXML
     private void initialize(){
-        courseData.addAll(courseService.getTrainerTodoCourse(Session.getUser().getAccount()));
+        List<Course> courses = courseService.getTrainerOverCourse(Session.getUser().getAccount());
+
+        courseData.addAll(courses);
+
         schedule.setItems(courseData);
 
         client.setCellValueFactory(cellData -> cellData.getValue().customerAccountProperty());
-        startTime.setCellValueFactory(cellData -> (ObservableValue<Date>) cellData.getValue().getStartTime());
+        startTime.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStartTime().toString()));
         duration.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getDuration())));
-    }
-
-    @FXML
-    void BookerAccept1Event(ActionEvent event) {
-
-    }
-
-    @FXML
-    void BookerAccept2Event(ActionEvent event) {
-
     }
 
 
@@ -84,5 +78,16 @@ public class TrainerSchedule {
     void Exit(ActionEvent event) {
         MainApp.showView(LoginView.class);
         Session.setUser(null);
+    }
+
+
+    @FXML
+    void Over(ActionEvent event) {
+
+    }
+
+    @FXML
+    void Todo(ActionEvent event) {
+
     }
 }

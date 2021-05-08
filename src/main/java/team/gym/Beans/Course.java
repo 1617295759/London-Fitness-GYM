@@ -147,5 +147,19 @@ public class Course {
         this.price.set(price);
     }
 
-
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseId=" + getCourseId() +
+                ", customerAccount=" + customerAccount +
+                ", trainerAccount=" + trainerAccount +
+                ", category=" + category +
+                ", intro=" + intro +
+                ", startTime=" + startTime +
+                ", duration=" + duration +
+                ", feedback=" + feedback +
+                ", status=" + status +
+                ", price=" + price +
+                '}';
+    }
 }

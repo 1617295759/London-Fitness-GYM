@@ -54,12 +54,29 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> getCustomerOverCourse(String account) {
-        return null;
+        if(courses==null){
+            courses = courseDao.getCustomerCourses(account);
+        }
+        return getOverCourses();
     }
 
     @Override
     public List<Course> getTrainerOverCourse(String account) {
-        return null;
+        if(courses==null){
+            courses = courseDao.getTrainerCourses(account);
+        }
+        return getOverCourses();
+    }
+
+    private List<Course> getOverCourses() {
+        List<Course> overCourses = new ArrayList<Course>();
+        Date current = new Date();
+        for (Course course : courses) {
+            if (course.getStartTime().before(current)){
+                overCourses.add(course);
+            }
+        }
+        return overCourses;
     }
 
     @Override
