@@ -67,8 +67,6 @@ public class TrainerSchedule {
         startTime.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStartTime().toString()));
         duration.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getDuration())));
     }
-
-
     @FXML
     void BookerAdjustEvent(ActionEvent event) {
 

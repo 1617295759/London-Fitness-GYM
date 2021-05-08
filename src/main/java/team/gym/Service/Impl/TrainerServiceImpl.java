@@ -6,6 +6,12 @@ import team.gym.Beans.Trainer;
 import team.gym.Beans.User;
 import team.gym.Dao.TrainerDao;
 import team.gym.Service.TrainerService;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class TrainerServiceImpl implements TrainerService {
     @Autowired
@@ -26,6 +32,11 @@ public class TrainerServiceImpl implements TrainerService {
     @Override
     public User getTrainer(String username, String password) {
         return trainerDao.findTrainerByName(username);
+    }
+
+    @Override
+    public List<Trainer> getAllTrainers() {
+        return (List<Trainer>) trainerDao.getTrainerMap().values().stream().collect(Collectors.toList());
     }
 
     @Override

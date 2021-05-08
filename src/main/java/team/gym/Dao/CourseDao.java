@@ -30,7 +30,6 @@ public interface CourseDao {
      */
     Course selByCourseId(int courseId);
 
-
     /**
      * @param courseId
      * @return

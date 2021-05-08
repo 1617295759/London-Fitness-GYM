@@ -3,6 +3,8 @@ package team.gym.Service;
 import team.gym.Beans.Trainer;
 import team.gym.Beans.User;
 
+import java.util.List;
+
 public interface TrainerService {
 
     /** verify the trainer information is matched
@@ -15,6 +17,7 @@ public interface TrainerService {
 
     public User getTrainer(String username, String password);
 
+    public List<Trainer> getAllTrainers();
     /**
      * @param trainer
      * @return if anything wrong, return the error information
