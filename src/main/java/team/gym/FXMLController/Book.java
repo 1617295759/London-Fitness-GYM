@@ -6,12 +6,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import org.springframework.beans.factory.annotation.Autowired;
+import team.gym.Beans.Course;
 import team.gym.Beans.Trainer;
+import team.gym.FXMLView.BookDetail;
 import team.gym.FXMLView.MemberShip;
 import team.gym.FXMLView.MineView;
 import team.gym.FXMLView.Video;
 import team.gym.MainApp;
+import team.gym.MyUtils.SBTFxDialog;
 import team.gym.MyUtils.Session;
 import team.gym.Service.CourseService;
 import team.gym.Service.TrainerService;
@@ -65,6 +69,8 @@ public class Book {
     TrainerService trainerService;
     @Autowired
     CourseService courseService;
+    @Autowired
+    MainApp mainApp;
 
     @FXML
     private void initialize() {
@@ -76,34 +82,33 @@ public class Book {
         Gender.setCellValueFactory(cellData -> cellData.getValue().genderProperty());
         tele.setCellValueFactory(cellData -> cellData.getValue().phoneProperty());
         email.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
-//        operate.setCellFactory((col) -> {
-//
-//                    TableCell<Trainer, String> cell = new TableCell<Trainer, String>() {
-//                        @Override
-//                        protected void updateItem(String item, boolean empty) {
-//                            super.updateItem(item, empty);
-//                            button1 = new JFXButton("编辑");
-//                            button1.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
-//
-//                            button1.setOnMouseClicked((col) -> {
-//
-//                                //获取list列表中的位置，进而获取列表对应的信息数据
-//                                Trainer userLoad1 = trainersData.get(getIndex());
-//                                //按钮事件自己添加
-//
-//                            });
-//                            if (empty) {
-//                                //如果此列为空默认不添加元素
-//                                setText(null);
-//                                setGraphic(null);
-//                            } else {
-//                                this.setGraphic(button1);
-//                            }
-//                        }
-//                    };
-//                    return cell;
-//                }
-//        );
+        operate.setCellFactory((col) -> {
+                    TableCell<Trainer, String> cell = new TableCell<Trainer, String>() {
+                        @Override
+                        protected void updateItem(String item, boolean empty) {
+                            super.updateItem(item, empty);
+                            Button wantit = new Button("Reserve This Gay");
+                            wantit.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
+
+                            wantit.setOnMouseClicked((col) -> {
+                                Trainer selectedTrainer = trainersData.get(getIndex());
+                                System.out.println("You shall reserve this gay ——"+selectedTrainer.getAccount());
+                                Session.setCoach(selectedTrainer);
+                                // turn the page to select date and time
+                                MainApp.showView(BookDetail.class);
+                            });
+                            if (empty) {
+                                //如果此列为空默认不添加元素
+                                setText(null);
+                                setGraphic(null);
+                            } else {
+                                this.setGraphic(wantit);
+                            }
+                        }
+                    };
+                    return cell;
+                }
+        );
     }
 
     @FXML

@@ -1,11 +1,18 @@
 package team.gym.FXMLController;
 
+import de.felixroske.jfxsupport.FXMLController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import team.gym.FXMLView.MemberShip;
+import team.gym.FXMLView.MineView;
+import team.gym.FXMLView.Video;
+import team.gym.MainApp;
+import team.gym.MyUtils.Session;
+import team.gym.View.LoginView;
 
-public class Booking {
-
+@FXMLController
+public class BookDetail {
     @FXML
     private ToggleButton membershipButton;
 
@@ -34,45 +41,48 @@ public class Booking {
     private TextArea BookingTextArea;
 
     @FXML
-    private ComboBox<?> BookingComboBox;
+    private ComboBox<Integer> BookingComboBox;
 
     @FXML
     private DatePicker BookingSTPicker;
 
     @FXML
-    void exitEvent(ActionEvent event) {
+    private void initialize() {
+        BookingComboBox.getItems().addAll(
+                30,
+                45,
+                60,
+                90,
+                120
+        );
+    }
 
+    @FXML
+    void exitEvent(ActionEvent event) {
+        Session.setUser(null);
+        MainApp.showView(LoginView.class);
     }
 
     @FXML
     void mineEvent(ActionEvent event) {
-
+        MainApp.showView(MineView.class);
     }
 
     @FXML
     void videoEvent(ActionEvent event) {
-
+        MainApp.showView(Video.class);
     }
 
     @FXML
     void bookEvent(ActionEvent event) {
-
+        MainApp.showView(team.gym.FXMLView.Book.class);
     }
 
     @FXML
     void membershipEvent(ActionEvent event) {
-
+        MainApp.showView(MemberShip.class);
     }
 
-    @FXML
-    void f7fbff00(ActionEvent event) {
-
-    }
-
-    @FXML
-    void f5faff00(ActionEvent event) {
-
-    }
 
     @FXML
     void BookingSDPickerEvent(ActionEvent event) {
@@ -91,7 +101,8 @@ public class Booking {
 
     @FXML
     void BookingSubmitButtonEvent(ActionEvent event) {
-
+        int duration = BookingComboBox.getValue();
+        System.out.println(duration);
     }
 
 }

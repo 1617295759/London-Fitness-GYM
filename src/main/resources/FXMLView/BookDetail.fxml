@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="team.gym.FXMLController.Booking">
+            fx:controller="team.gym.FXMLController.BookDetail">
     <children>
         <Separator layoutX="105.0" orientation="VERTICAL" prefHeight="400.0"/>
         <Button fx:id="exitButton" layoutX="7.0" layoutY="330.0" mnemonicParsing="false" onAction="#exitEvent"

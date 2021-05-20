@@ -21,7 +21,7 @@ public class CourseServiceImpl implements CourseService {
     TrainerDao trainerDao;
     List<Course> courses = null;
     @Override
-    public void saveCourse(Course course, String customerAccount, String trainerAccount) {
+    public void saveCourse(Course course) {
         courseDao.saveCourse(course);
     }
 
