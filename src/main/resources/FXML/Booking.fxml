@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.Controller.BookingController">
+    <children>
+        <AnchorPane layoutX="-2.0" prefHeight="610.0" prefWidth="912.0" styleClass="anchor-pane" stylesheets="@../statics/style.css">
+            <children>
+                <AnchorPane layoutX="7.0" layoutY="-9.0" prefHeight="56.0" prefWidth="905.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <Text fill="WHITE" layoutX="24.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi, Alice" AnchorPane.topAnchor="10.0">
+                            <font>
+                                <Font name="System Bold" size="29.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutY="46.0" prefHeight="523.0" prefWidth="60.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="46.0">
+                    <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="60.0" spacing="25.0" AnchorPane.topAnchor="20.0">
+                            <children>
+                                <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../statics/img/mine.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../statics/img/video.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../statics/img/book.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../statics/img/membrship.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="10.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../statics/img/exit.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="menuPane" layoutX="60.0" layoutY="46.0" prefHeight="523.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="46.0">
+                    <children>
+                        <VBox prefHeight="150.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+                            <children>
+                                <Button fx:id="mineButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mineEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Mine" textFill="WHITE">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="videoButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#videoEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Video" textFill="WHITE">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="bookButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#bookEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Book" textFill="WHITE">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="membershipButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" onAction="#membershipEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Membership" textFill="WHITE">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="exitButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#backEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Back" textFill="WHITE">
+                                    <font>
+                                        <Font size="38.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="155.0" />
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="241.0" layoutY="1.0" prefHeight="250.0" prefWidth="675.0">
+                    <children>
+                        <ImageView fitHeight="190.0" fitWidth="209.0" layoutX="33.0" layoutY="46.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../statics/img/profilePicture.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="239.0" layoutY="265.0" prefHeight="146.0" prefWidth="681.0">
+                    <children>
+                        <HBox layoutX="47.0" layoutY="-6.0" prefHeight="53.0" prefWidth="629.0">
+                            <children>
+                                <Label prefHeight="39.0" prefWidth="231.0" text="Start Date" textFill="#f8f4f4" />
+                                <Label prefHeight="39.0" prefWidth="245.0" text="Start Time" textFill="#eee7e7" />
+                                <Label prefHeight="39.0" prefWidth="190.0" text="Duration" textFill="#f8f7f7" />
+                            </children>
+                        </HBox>
+                        <DatePicker fx:id="startDatePicker" layoutX="34.0" layoutY="49.0" minHeight="30.0" prefHeight="30.0" prefWidth="174.0" />
+                        <ComboBox fx:id="startTimeBox" layoutX="252.0" layoutY="48.0" minHeight="30.0" prefHeight="30.0" prefWidth="174.0" visibleRowCount="6">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <effect>
+                        <Blend />
+                     </effect></ComboBox>
+                        <ComboBox fx:id="durationBox" layoutX="474.0" layoutY="48.0" minHeight="30.0" prefHeight="30.0" prefWidth="174.0" visibleRowCount="6" />
+                    </children>
+                </AnchorPane>
+                <TextArea fx:id="BookingTextArea" layoutX="272.0" layoutY="380.0" prefHeight="155.0" prefWidth="630.0" />
+                <Button fx:id="BookingSubmitButton" layoutX="804.0" layoutY="543.0" minHeight="35.0" mnemonicParsing="false" onAction="#Submit" prefHeight="35.0" prefWidth="98.0" text="Submit" textFill="CADETBLUE">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="anchor-pane" stylesheets="@../statics/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.Controller.VideoController">
+   <children>
+      <AnchorPane prefHeight="46.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Text fill="WHITE" layoutX="24.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi, Alice" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="243.0" layoutY="2.0" prefHeight="56.0" prefWidth="654.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="24.0" layoutY="16.0" prefHeight="50.0" prefWidth="630.0" styleClass="search-box" stylesheets="@../statics/style.css" AnchorPane.bottomAnchor="0.0">
+                     <children>
+                        <TextField fx:id="ViewTF" alignment="TOP_LEFT" minHeight="36.0" onAction="#ViewTFEvent" prefHeight="36.0" prefWidth="500.0" styleClass="transparent" stylesheets="@../statics/style.css">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="ViewSearchButton" minHeight="35.0" mnemonicParsing="false" onAction="#ViewSearchButtonEvent" prefHeight="35.0" prefWidth="100.0" styleClass="search-button" stylesheets="@../statics/style.css" text="Search" textFill="CADETBLUE">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="46.0" prefHeight="523.0" prefWidth="60.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="46.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="60.0" spacing="25.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../statics/img/mine.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../statics/img/video.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../statics/img/book.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../statics/img/membrship.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="10.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../statics/img/exit.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menuPane" layoutX="60.0" layoutY="46.0" prefHeight="523.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="46.0">
+         <children>
+            <VBox prefHeight="150.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+               <children>
+                  <Button fx:id="mineButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mineEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Mine" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="videoButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#videoEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Video" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="bookButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#bookEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Book" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="membershipButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" onAction="#membershipEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Membership" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exitButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#exitEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Exit" textFill="WHITE">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="155.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="250.0" layoutY="60.0" prefHeight="103.0" prefWidth="650.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <HBox prefHeight="126.0" prefWidth="650.0" spacing="80.0">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="70.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../statics/img/yoga.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../statics/img/HIIT.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../statics/img/moves.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../statics/img/sport.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <Button fx:id="yogaButton" mnemonicParsing="false" onAction="#yogaEvent" prefHeight="42.0" prefWidth="104.0" style="-fx-background-color: #008B8B;" text="Yoga" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="55.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="HIITButton" mnemonicParsing="false" onAction="#HIITEvent" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #008B8B;" text="HIIT" textFill="WHITE" />
+                  <Button fx:id="movesButton" mnemonicParsing="false" onAction="#movesEvent" prefHeight="42.0" prefWidth="105.0" style="-fx-background-color: #008B8B;" text="Moves" textFill="WHITE" />
+                  <Button fx:id="sportsButton" mnemonicParsing="false" onAction="#sportsEvent" prefHeight="42.0" prefWidth="99.0" style="-fx-background-color: #008B8B;" text="Sports" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+         <children>
+            <HBox prefHeight="150.0" prefWidth="650.0" spacing="150.0">
+               <children>
+                  <ImageView fitHeight="145.0" fitWidth="220.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../statics/img/video1.jpeg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="145.0" fitWidth="220.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../statics/img/video2.jpeg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="84.0" prefWidth="650.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: #008B8B;" text="Video1" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: #008B8B;" text="Video2" textFill="WHITE" />
+               </children></HBox>
+            <HBox prefHeight="150.0" prefWidth="650.0" spacing="150.0">
+               <children>
+                  <ImageView fitHeight="145.0" fitWidth="220.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../statics/img/video3.jpeg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="145.0" fitWidth="220.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../statics/img/video4.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="84.0" prefWidth="200.0" />
+         </children></VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+.login-button{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.anchor-pane{
+    -fx-background-color: #008B8B;
+}
+
+.login-box{
+    -fx-background-radius: 30;
+}
+
+.personal-button{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30;
+}
+
+.modification-button{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 50;
+}
+
+.membership-button{
+    -fx-background-radius: 30;
+}
+
+.search-box{
+    -fx-background-color: #5F9EA0;
+    -fx-background-radius: 20;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.search-button{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius:20 ;
+}
+
+
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections ?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="anchor-pane" stylesheets="@../statics/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.Controller.ModificationController">
+   <children>
+      <HBox prefHeight="69.0" prefWidth="900.0" spacing="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button fx:id="modifyBackButton" mnemonicParsing="false" onAction="#modifyBackEvent" prefHeight="49.0" prefWidth="108.0" styleClass="modification-button" stylesheets="@../statics/style.css" text="Back">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="100.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Details">
+               <font>
+                  <Font name="System Bold" size="41.0" />
+               </font>
+            </Text>
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveEvent" prefHeight="49.0" prefWidth="108.0" styleClass="modification-button" stylesheets="@../statics/style.css" text="Save">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="165.0" layoutY="122.0" prefHeight="374.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Picture">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="130.0" top="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="300.0" right="50.0" top="5.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../statics/img/profilePicture.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nickname">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="130.0" top="25.0" />
+                     </HBox.margin>
+                  </Text>
+               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="130.0" top="25.0" />
+                     </HBox.margin>
+                  </Text>
+               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="130.0" top="25.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ComboBox prefHeight="42.0" prefWidth="279.0" promptText="choose your gender" style="-fx-background-color: #ffffff;">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Male" />
+                           <String fx:value="Female" />
+                        </FXCollections>
+                     </items>
+                     <HBox.margin>
+                        <Insets left="220.0" right="100.0" top="25.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children></HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

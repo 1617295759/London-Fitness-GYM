@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" styleClass="anchor-pane" stylesheets="@../statics/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.Controller.LoginController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true">
+         <image>
+            <Image url="@../statics/img/BACKGROUND4.jpg" />
+         </image>
+      </ImageView>
+      <VBox fx:id="loginBox" layoutX="140.0" layoutY="149.0" opacity="0.92" prefHeight="355.0" prefWidth="648.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="149.0">
+         <children>
+            <HBox prefHeight="86.0" prefWidth="648.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="235.0" text="Account name" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="usernameField" prefHeight="48.0" prefWidth="334.0" promptText="Your Username" text="Dwayne Johnson">
+                     <HBox.margin>
+                        <Insets left="50.0" top="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="86.0" prefWidth="648.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="86.0" prefWidth="235.0" text="Password" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="passwordField" prefHeight="48.0" prefWidth="334.0" promptText="Your Password" text="123">
+                     <HBox.margin>
+                        <Insets left="50.0" top="15.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <HBox prefHeight="82.0" prefWidth="648.0">
+               <children>
+                  <RadioButton fx:id="isMember" mnemonicParsing="false" prefHeight="102.0" prefWidth="146.0" selected="true" text="Member" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="login" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="isTrainer" mnemonicParsing="false" prefHeight="102.0" prefWidth="146.0" text="Trainer" textFill="WHITE" toggleGroup="$login">
+                     <HBox.margin>
+                        <Insets left="255.0" right="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="98.0" prefWidth="648.0">
+               <children>
+                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="78.0" prefWidth="114.0" styleClass="login-button" stylesheets="@../statics/style.css" text="Log in">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#toSignUp" prefHeight="78.0" prefWidth="114.0" styleClass="login-button" stylesheets="@../statics/style.css" text="Sign up">
+                     <HBox.margin>
+                        <Insets left="150.0" right="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="223.0" layoutY="14.0" prefHeight="129.0" prefWidth="482.0" text="LONDON FITNESS" textFill="WHITE" AnchorPane.bottomAnchor="457.0" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font></Label>
+      <VBox fx:id="signUpBox" layoutX="172.0" layoutY="307.0" opacity="0.92" prefHeight="355.0" prefWidth="648.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" visible="false" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="149.0">
+         <children>
+            <HBox prefHeight="86.0" prefWidth="648.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="235.0" text="Account name" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="accountNameField1" prefHeight="48.0" prefWidth="334.0">
+                     <HBox.margin>
+                        <Insets left="50.0" top="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="86.0" prefWidth="648.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="86.0" prefWidth="235.0" text="Password" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <PasswordField fx:id="passwordField1" prefHeight="48.0" prefWidth="334.0">
+                     <HBox.margin>
+                        <Insets left="50.0" top="15.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <HBox prefHeight="82.0" prefWidth="648.0">
+               <children>
+                  <RadioButton fx:id="isMember1" mnemonicParsing="false" prefHeight="102.0" prefWidth="146.0" selected="true" text="Member" textAlignment="CENTER" textFill="WHITE">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="signup" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="isTrainer1" mnemonicParsing="false" prefHeight="102.0" prefWidth="146.0" text="Trainer" textAlignment="CENTER" textFill="WHITE" toggleGroup="$signup">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="255.0" right="50.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="98.0" prefWidth="648.0">
+               <children>
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#backEvent" prefHeight="78.0" prefWidth="114.0" styleClass="login-button" stylesheets="@../statics/style.css" text="Back">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="signUpButton1" mnemonicParsing="false" onAction="#signUp" prefHeight="78.0" prefWidth="114.0" styleClass="login-button" stylesheets="@../statics/style.css" text="Sign up">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="150.0" right="50.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

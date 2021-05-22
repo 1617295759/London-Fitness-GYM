@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="anchor-pane" stylesheets="@../statics/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.Controller.PersonalDetailController">
+   <children>
+      <HBox layoutY="486.0" prefHeight="100.0" prefWidth="200.0" spacing="190.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="486.0">
+         <children>
+            <Button fx:id="modifyButton" mnemonicParsing="false" onAction="#modifyEvent" prefHeight="65.0" prefWidth="165.0" styleClass="personal-button" stylesheets="@../statics/style.css" text="Modify">
+               <HBox.margin>
+                  <Insets left="200.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Button>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#backEvent" prefHeight="65.0" prefWidth="165.0" styleClass="personal-button" stylesheets="@../statics/style.css" text="Back">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../statics/img/profilePicture.png" />
+         </image></ImageView>
+      <Text fill="WHITE" layoutX="367.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi, Alice!" wrappingWidth="190.060546875">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Text>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
+         <children>
+            <HBox prefHeight="67.0" prefWidth="900.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID:" wrappingWidth="164.42041015625">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="66.0" prefWidth="900.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender:" wrappingWidth="164.42041015625">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="66.0" prefWidth="900.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Membership:" wrappingWidth="239.42041015625">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

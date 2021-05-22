@@ -8,7 +8,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import team.gym.Controller.PlayerController;
-
 import java.io.IOException;
 
 /**
