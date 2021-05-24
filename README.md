@@ -52,6 +52,9 @@ v2(12 April — 25 April)
 
 v3(26 April—9 May)
 	Implement TrainerSchedule page presentation course. Show Coach Information. User registration and information verification function. Improve the front-end page.
+	
+v4(10 May-21 May)
+	Merge remote-tracking branch 'origin/master' into master. Merge new front end.
 
 ## Maintainers
 
