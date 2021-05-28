@@ -7,8 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import org.springframework.beans.factory.annotation.Autowired;
 import team.gym.Beans.Trainer;
+import team.gym.Beans.User;
 import team.gym.View.Booking;
 import team.gym.MainApp;
 import team.gym.MyUtils.Session;
@@ -46,6 +48,9 @@ public class BookController {
     private Button videoButton;
 
     @FXML
+    private Text welcome;
+
+    @FXML
     private TableView<Trainer> trainersTable;
 
     @FXML
@@ -65,6 +70,8 @@ public class BookController {
 
     private ObservableList<Trainer> trainersData = FXCollections.observableArrayList();
 
+    User currentUser = null;
+
     @Autowired
     TrainerService trainerService;
     @Autowired
@@ -74,6 +81,9 @@ public class BookController {
 
     @FXML
     private void initialize() {
+        currentUser = Session.getUser();
+        welcome.setText(currentUser.getAccount());
+
         List<Trainer> trainers = trainerService.getAllTrainers();
         trainersData.addAll(trainers);
         trainersTable.setItems(trainersData);

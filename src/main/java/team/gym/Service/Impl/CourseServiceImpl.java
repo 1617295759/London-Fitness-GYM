@@ -45,7 +45,7 @@ public class CourseServiceImpl implements CourseService {
         List<Course> todoCourses = new ArrayList<Course>();
         Date current = new Date();
         for (Course course : courses) {
-            if (course.getStartTime().after(current)){
+            if (course.getStartDate().after(current)){
                 todoCourses.add(course);
             }
         }
@@ -72,7 +72,7 @@ public class CourseServiceImpl implements CourseService {
         List<Course> overCourses = new ArrayList<Course>();
         Date current = new Date();
         for (Course course : courses) {
-            if (course.getStartTime().before(current)){
+            if (course.getStartDate().before(current)){
                 overCourses.add(course);
             }
         }

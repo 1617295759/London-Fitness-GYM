@@ -96,6 +96,9 @@ public class CourseDaoImpl implements CourseDao {
 
     @Override
     public List<Course> getCustomerCourses(String account) {
+        if (customerDao == null){
+            customerDao = new CustomerDaoImpl();
+        }
         return customerDao.findCustomerByName(account).getCourses();
     }
 

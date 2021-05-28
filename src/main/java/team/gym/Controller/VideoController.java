@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import team.gym.MainApp;
 import team.gym.MyUtils.Session;
+import team.gym.MyUtils.VideoPlayer;
 import team.gym.View.LoginView;
 
 @FXMLController
@@ -81,23 +83,19 @@ public class VideoController {
     }
 
     @FXML
-    void yogaEvent(ActionEvent event) {
-
+    void yogaEvent(MouseEvent event) {
+        VideoPlayer.popup(getClass().getResource("/statics/videos/TestMedia.MP4").toString());
     }
-
     @FXML
-    void HIITEvent(ActionEvent event) {
-
+    void HIITEvent(MouseEvent event) {
+        VideoPlayer.popup(getClass().getResource("/statics/videos/TestMedia.MP4").toString());
     }
-
     @FXML
-    void movesEvent(ActionEvent event) {
-
+    void powerEvent (MouseEvent event) {
+        VideoPlayer.popup(getClass().getResource("/statics/videos/TestMedia.MP4").toString());
     }
-
     @FXML
-    void sportsEvent(ActionEvent event) {
-
+    void sportsEvent(MouseEvent event) {
+        VideoPlayer.popup(getClass().getResource("/statics/videos/TestMedia.MP4").toString());
     }
-
 }

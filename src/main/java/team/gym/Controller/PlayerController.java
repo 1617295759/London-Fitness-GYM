@@ -255,7 +255,6 @@ public class PlayerController {
                 setIcon(playBT,pauseIcon,25);
                 VideoPlayer player = VideoPlayer.popup(url);
                 player.getController().getMediaPlayer().seek(this.mediaPlayer.getCurrentTime());
-
             }
         });
     }

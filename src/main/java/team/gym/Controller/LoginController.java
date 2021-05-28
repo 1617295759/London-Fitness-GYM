@@ -83,14 +83,14 @@ public class LoginController {
                 if (status != null) {
                     throw new NullPointerException(status);
                 }
-                Session.setUser(trainerService.getTrainer(usernameField.getText(),passwordField.getText()));
+                Session.setUser(customerService.getCustomer(usernameField.getText(),passwordField.getText()));
                 MainApp.showView(team.gym.View.Video.class);
             } else {
                 String status = customerService.verifyCustomer(usernameField.getText(),passwordField.getText());
                 if (status != null) {
                     throw new NullPointerException(status);
                 }
-                Session.setUser(customerService.getCustomer(usernameField.getText(),passwordField.getText()));
+                Session.setUser(trainerService.getTrainer(usernameField.getText(),passwordField.getText()));
                 MainApp.showView(team.gym.View.Video.class);
             }
         } catch (Exception e) {

@@ -5,12 +5,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
+import team.gym.Beans.User;
 import team.gym.MainApp;
 import team.gym.MyUtils.Session;
 import team.gym.View.LoginView;
 
 @FXMLController
 public class MembershipController {
+    @FXML
+    private Text welcome;
 
     @FXML
     private Button membershipButton;
@@ -35,6 +39,14 @@ public class MembershipController {
 
     @FXML
     private Button MemSbuyButton;
+
+    User currentUser = null;
+
+    @FXML
+    private void initialize() {
+        currentUser = Session.getUser();
+        welcome.setText(currentUser.getAccount());
+    }
 
     @FXML
     void MemJbuyEvent(ActionEvent event) {
