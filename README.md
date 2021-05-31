@@ -23,7 +23,7 @@ is urgently needed to allow gym members doing workouts at home.
 
 ## Install
 
-This project uses [javafx](https://openjfx.io/) and [ma ven](http://maven.apache.org/download.cgi). Go check them out if you don't have them locally installed.
+This project uses [javafx](https://openjfx.io/) and [maven](http://maven.apache.org/download.cgi). Go check them out if you don't have them locally installed.
 
 ```sh
 $ npm install --global standard-readme-spec
