@@ -79,23 +79,23 @@ public class LoginController {
         System.out.println("用户输入密码"+passwordField.getText());
         try {
             if (isMember.isSelected()) {
-                String status = trainerService.verifyTrainer(usernameField.getText(),passwordField.getText());
+                String status = customerService.verifyCustomer(usernameField.getText(),passwordField.getText());
                 if (status != null) {
                     throw new NullPointerException(status);
                 }
                 Session.setUser(customerService.getCustomer(usernameField.getText(),passwordField.getText()));
                 MainApp.showView(team.gym.View.Video.class);
             } else {
-                String status = customerService.verifyCustomer(usernameField.getText(),passwordField.getText());
+                String status = trainerService.verifyTrainer(usernameField.getText(),passwordField.getText());
                 if (status != null) {
                     throw new NullPointerException(status);
                 }
                 Session.setUser(trainerService.getTrainer(usernameField.getText(),passwordField.getText()));
-                MainApp.showView(team.gym.View.Video.class);
+                MainApp.showView(team.gym.View.TrainerSchedule.class);
             }
         } catch (Exception e) {
-            DialogUtils.tips(mainApp.getPrimaryStage(), e.getMessage());
-            System.out.println("出现了一些问题，请查看提示信息");
+            DialogUtils.tips(mainApp.getPrimaryStage(),"There was a problem logging in", e.getMessage());
+            System.out.println("There was a problem logging in");
             usernameField.requestFocus();
         }
     }

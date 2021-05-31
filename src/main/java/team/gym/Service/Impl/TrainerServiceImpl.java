@@ -7,8 +7,6 @@ import team.gym.Beans.User;
 import team.gym.Dao.TrainerDao;
 import team.gym.Service.TrainerService;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +17,7 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public String verifyTrainer(String username, String password) {
-        Trainer verifytrainer = trainerDao.findTrainerByName(username);
+        Trainer verifytrainer = trainerDao.findTrainerByAccount(username);
         if(verifytrainer == null ){
             return "Trainer Account Doesn't Exist";
         }else if(password.equals(verifytrainer.getPassword())){
@@ -31,7 +29,7 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public User getTrainer(String username, String password) {
-        return trainerDao.findTrainerByName(username);
+        return trainerDao.findTrainerByAccount(username);
     }
 
     @Override

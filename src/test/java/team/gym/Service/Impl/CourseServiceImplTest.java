@@ -11,12 +11,12 @@ import java.util.Date;
 public class CourseServiceImplTest extends TestCase {
 
     public void testSaveCourse () {
-        CourseService service = new CourseServiceImpl();
-        CourseDao dao = new CourseDaoImpl();
-        for (Course c:dao.getCustomerCourses("Dwayne Johnson")) {
-            c.setStartDate(new Date());
-            dao.saveCourse(c);
-        }
+//        CourseService service = new CourseServiceImpl();
+//        CourseDao dao = new CourseDaoImpl();
+//        for (Course c:dao.getCustomerCourses("Dwayne Johnson")) {
+//            c.setStartDate(new Date());
+//            dao.saveCourse(c);
+//        }
     }
 
     public void testGetCustomerTodoCourse () {

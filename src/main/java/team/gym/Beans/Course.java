@@ -4,11 +4,20 @@ package team.gym.Beans;
 import javafx.beans.property.*;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
 @Component
 public class Course {
+    // status
+    public static final int COMMITTED =  0;
+    public static final int REJECTED =  1;
+    public static final int ACCEPTED =  2;
+    public static final int FINISHED =  3;
+    public static final int MISS =  4;
+
+
     private final IntegerProperty courseId = new SimpleIntegerProperty();
     private final StringProperty customerAccount = new SimpleStringProperty();
     private final StringProperty trainerAccount = new SimpleStringProperty();
@@ -18,16 +27,18 @@ public class Course {
     private StringProperty time = new SimpleStringProperty();
     private IntegerProperty duration = new SimpleIntegerProperty();
     private final StringProperty feedback = new SimpleStringProperty();
-    // 0-committed but not yet accepted，1-reject，2-accept
-    private final StringProperty status = new SimpleStringProperty();
+    // 0-committed but not yet accepted，1-reject，2-accept, 3-
+    private int status;
     private final DoubleProperty price = new SimpleDoubleProperty();
 
     public Course () {
-        setCourseId(new Random().nextInt());
+        //setCourseId(new Random().nextInt());
+        setStatus(0);
         setCustomerAccount("Tom");
         setTrainerAccount("Old jack");
         setStartDate(new Date());
     }
+
 
     public Course (String customerAccount, String trainerAccount, Date startDate, int endTime) {
         setCustomerAccount(customerAccount);
@@ -46,6 +57,12 @@ public class Course {
 
     public void setCourseId (int courseId) {
         this.courseId.set(courseId);
+    }
+
+    public void generateId(){
+        SimpleDateFormat format = new SimpleDateFormat("MMdd");
+        String id = format.format(getStartDate()) + new Random().nextInt(1000);
+        setCourseId(Integer.parseInt(id));
     }
 
     public String getCustomerAccount () {
@@ -124,16 +141,12 @@ public class Course {
         this.feedback.set(feedback);
     }
 
-    public String getStatus () {
-        return status.get();
+    public void setStatus(int status) {
+        this.status = status;
     }
 
-    public StringProperty statusProperty () {
+    public int getStatus() {
         return status;
-    }
-
-    public void setStatus (String status) {
-        this.status.set(status);
     }
 
     public double getPrice () {

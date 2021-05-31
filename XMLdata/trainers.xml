@@ -6,30 +6,26 @@
             <value>
                 <CourseList>
                     <course>
-                        <courseId>-270055933</courseId>
-                        <customerAccount>Tom</customerAccount>
-                        <duration>0</duration>
-                        <price>0.0</price>
-                        <startDate>2021-05-28T11:32:30.189+08:00</startDate>
-                        <trainerAccount>Old jack</trainerAccount>
-                    </course>
-                    <course>
-                        <courseId>-1471125925</courseId>
-                        <customerAccount>Tom</customerAccount>
-                        <duration>0</duration>
-                        <price>0.0</price>
-                        <startDate>2021-05-28T11:32:30.191+08:00</startDate>
-                        <trainerAccount>Old jack</trainerAccount>
-                    </course>
-                    <course>
-                        <courseId>1355538852</courseId>
+                        <courseId>531584</courseId>
                         <customerAccount>Dwayne Johnson</customerAccount>
-                        <duration>45</duration>
-                        <intro>GoGoGo !!!</intro>
+                        <duration>90</duration>
+                        <intro></intro>
                         <price>0.0</price>
-                        <startDate>2021-05-28T00:00:00+08:00</startDate>
-                        <time>16:00</time>
-                        <trainerAccount>Dwayne Johnson</trainerAccount>
+                        <startDate>2021-05-31T11:30:00+08:00</startDate>
+                        <status>3</status>
+                        <time>14:30</time>
+                        <trainerAccount>Johnson</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>601621</courseId>
+                        <customerAccount>Dwayne Johnson</customerAccount>
+                        <duration>120</duration>
+                        <intro></intro>
+                        <price>0.0</price>
+                        <startDate>2021-06-01T11:00:00+08:00</startDate>
+                        <status>1</status>
+                        <time>11:00</time>
+                        <trainerAccount>Johnson</trainerAccount>
                     </course>
                 </CourseList>
                 <account>Johnson</account>

@@ -13,79 +13,142 @@ import java.util.Date;
 import java.util.List;
 @Service
 public class CourseServiceImpl implements CourseService {
-    @Autowired
+    final
     CourseDao courseDao;
-    @Autowired
+    final
     CustomerDao customerDao;
-    @Autowired
+    final
     TrainerDao trainerDao;
     List<Course> courses = null;
+
+    @Autowired
+    public CourseServiceImpl (CourseDao courseDao, CustomerDao customerDao, TrainerDao trainerDao) {
+        this.courseDao = courseDao;
+        this.customerDao = customerDao;
+        this.trainerDao = trainerDao;
+    }
+
     @Override
     public void saveCourse(Course course) {
-        courseDao.saveCourse(course);
+        courseDao.addNewCourse(course);
     }
 
     @Override
     public List<Course> getCustomerTodoCourse(String account) {
-        if(courses==null){
-            courses = courseDao.getCustomerCourses(account);
-        }
-        return getTodoCourses();
-    }
-
-    @Override
-    public List<Course> getTrainerTodoCourse(String account) {
-        if(courses==null){
-            courses = courseDao.getTrainerCourses(account);
-        }
-        return getTodoCourses();
-    }
-
-    private List<Course> getTodoCourses() {
         List<Course> todoCourses = new ArrayList<Course>();
-        Date current = new Date();
-        for (Course course : courses) {
-            if (course.getStartDate().after(current)){
-                todoCourses.add(course);
+        Date now = new Date();
+        for (Course course : courseDao.getCustomerCourses(account)) {
+            if (course.getStartDate().after(now)){
+                if(course.getStatus()==Course.ACCEPTED || course.getStatus()==Course.FINISHED){
+                    todoCourses.add(course);
+                }
+            }else{
+                long diff = course.getStartDate().getTime() - now.getTime();
+                System.out.println(diff);
+                if(Math.abs(diff) < 600000 &&
+                        (course.getStatus()==Course.ACCEPTED||course.getStatus()==Course.FINISHED)){
+                    todoCourses.add(course);
+                }
             }
         }
         return todoCourses;
     }
 
     @Override
-    public List<Course> getCustomerOverCourse(String account) {
-        if(courses==null){
-            courses = courseDao.getCustomerCourses(account);
+    public List<Course> getTrainerTodoCourse(String account) {
+        List<Course> todoCourses = new ArrayList<Course>();
+        Date now = new Date();
+        for (Course course : courseDao.getTrainerCourses(account)) {
+            if (course.getStartDate().after(now)){
+                if(course.getStatus()==Course.ACCEPTED || course.getStatus()==Course.FINISHED){
+                    todoCourses.add(course);
+                }
+            }else{
+                long diff = now.getTime() - course.getStartDate().getTime() ;
+                if(diff < 600000 &&
+                        (course.getStatus()==Course.ACCEPTED||course.getStatus()==Course.FINISHED)){
+                    todoCourses.add(course);
+                }
+            }
         }
-        return getOverCourses();
+        return todoCourses;
     }
 
     @Override
-    public List<Course> getTrainerOverCourse(String account) {
-        if(courses==null){
-            courses = courseDao.getTrainerCourses(account);
+    public List<Course> getCustomerUnconfirmedCourse (String account) {
+        List<Course> unCourses = new ArrayList<>();
+        for (Course course : courseDao.getCustomerCourses(account)) {
+            if (course.getStatus()==Course.COMMITTED || course.getStatus()==Course.REJECTED){
+                unCourses.add(course);
+            }
         }
-        return getOverCourses();
+        return unCourses;
     }
 
-    private List<Course> getOverCourses() {
-        List<Course> overCourses = new ArrayList<Course>();
-        Date current = new Date();
-        for (Course course : courses) {
-            if (course.getStartDate().before(current)){
-                overCourses.add(course);
+    @Override
+    public List<Course> getTrainerUnconfirmedCourse (String account) {
+        List<Course> unCourses = new ArrayList<>();
+        Date now = new Date();
+        for (Course course : courseDao.getTrainerCourses(account)) {
+            if (course.getStatus()==Course.COMMITTED && course.getStartDate().after(now)){
+                unCourses.add(course);
+            }
+        }
+        return unCourses;
+    }
+
+    @Override
+    public List<Course> getCustomerOverCourse(String account) {
+        List<Course> overCourses = new ArrayList<>();
+        Date now = new Date();
+        for (Course course : courseDao.getCustomerCourses(account)) {
+            judgeMiss(course);
+
+            if (course.getStartDate().before(now) || course.getStatus()==Course.FINISHED){
+                if(course.getStatus()==Course.FINISHED || course.getStatus()==Course.MISS){
+                    overCourses.add(course);
+                }
             }
         }
         return overCourses;
     }
 
     @Override
-    public int deleteCourseById(String account, int courseId) {
+    public List<Course> getTrainerOverCourse(String account) {
+        List<Course> overCourses = new ArrayList<Course>();
+        Date now = new Date();
+
+        for (Course course : courseDao.getTrainerCourses(account)) {
+            judgeMiss(course);
+
+            if (course.getStartDate().before(now) || course.getStatus()==Course.FINISHED
+                    || course.getStatus()==Course.REJECTED){
+                if(course.getStatus()==Course.FINISHED || course.getStatus()==Course.MISS
+                    || course.getStatus()==Course.COMMITTED || course.getStatus()==Course.REJECTED){
+                    overCourses.add(course);
+                }
+            }
+        }
+        return overCourses;
+    }
+
+    private void judgeMiss(Course course){
+        Date now = new Date();
+        long diff = now.getTime() - course.getStartDate().getTime();
+        if(diff > 600000 && course.getStatus()==Course.ACCEPTED){
+            modifyCourseInfo(course,"status",String.valueOf(Course.MISS));
+        }
+    }
+
+    @Override
+    public int deleteCourse(Course course) {
+        courseDao.delCourse(course);
         return 0;
     }
 
     @Override
-    public int modifyCourseInfo(int courseId, String field, String newValue) {
+    public int modifyCourseInfo(Course course, String field, String newValue) {
+        courseDao.modifyCourse(course,field,newValue);
         return 0;
     }
 }

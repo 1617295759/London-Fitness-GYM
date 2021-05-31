@@ -16,7 +16,7 @@ public interface CustomerDao {
      * @param username the username number of the customer
      * @return the corresponding customer Object
      */
-    public Customer findCustomerByName(String username);
+    public Customer findCustomerByAccount(String username);
 
     /**
      * @return all the cutomers map, the key is account number(String), value is customer Object

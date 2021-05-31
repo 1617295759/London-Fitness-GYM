@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="anchor-pane" stylesheets="@../statics/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.Controller.MineController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="anchor-pane" stylesheets="@../statics/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.Controller.MineController">
    <children>
       <AnchorPane prefHeight="46.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -87,15 +86,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <TableView fx:id="calender" layoutX="512.0" layoutY="105.0" prefHeight="465.0" prefWidth="394.0">
-         <columns>
-            <TableColumn fx:id="coach" prefWidth="102.0" text="Coach" />
-            <TableColumn fx:id="date" prefWidth="75.0" text="Date" />
-            <TableColumn fx:id="time" text="Time" />
-            <TableColumn fx:id="duration" prefWidth="136.0" text="Duration" />
-         </columns>
-      </TableView>
-      <VBox layoutX="240.0" layoutY="13.0" prefHeight="574.0" prefWidth="274.0">
+      <VBox layoutX="240.0" layoutY="13.0" prefHeight="572.0" prefWidth="262.0">
          <children>
             <HBox prefHeight="75.0" prefWidth="413.0" spacing="25.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="40.0">
                <children>
@@ -129,7 +120,67 @@
                   <Font name="System Bold" size="29.0" />
                </font>
             </Text>
+            <Text fx:id="level" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="level">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Text>
          </children>
       </VBox>
+      <TabPane layoutX="501.0" layoutY="14.0" prefHeight="591.0" prefWidth="391.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="To-Do">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                           <columns>
+                              <TableColumn fx:id="coach" prefWidth="74.0" text="Coach" />
+                              <TableColumn fx:id="date" prefWidth="72.0" text="Date" />
+                              <TableColumn fx:id="time" prefWidth="63.0" text="Time" />
+                              <TableColumn fx:id="duration" prefWidth="75.0" text="Duration" />
+                              <TableColumn fx:id="statues" prefWidth="137.0" text="Statues" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Unconfirmed">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="un_calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                           <columns>
+                              <TableColumn fx:id="coach1" prefWidth="74.0" text="Coach" />
+                              <TableColumn fx:id="date1" prefWidth="79.0" text="Date" />
+                              <TableColumn fx:id="time1" prefWidth="74.0" text="Time" />
+                              <TableColumn fx:id="duration1" prefWidth="68.0" text="Duration" />
+                              <TableColumn fx:id="statues1" prefWidth="182.0" text="Statues" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Over">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="o_calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                           <columns>
+                              <TableColumn fx:id="coach2" prefWidth="59.0" text="Coach" />
+                              <TableColumn fx:id="date2" prefWidth="77.0" text="Date" />
+                              <TableColumn fx:id="time2" prefWidth="64.0" text="Time" />
+                              <TableColumn fx:id="duration2" prefWidth="95.0" text="Duration" />
+                              <TableColumn fx:id="statues2" prefWidth="182.0" text="Statues" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

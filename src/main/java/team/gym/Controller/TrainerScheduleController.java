@@ -9,22 +9,22 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import org.springframework.beans.factory.annotation.Autowired;
 import team.gym.Beans.Course;
-import team.gym.Beans.Customer;
+import team.gym.Beans.Trainer;
 import team.gym.MainApp;
 import team.gym.MyUtils.Session;
 import team.gym.Service.CourseService;
 import team.gym.View.LoginView;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 @FXMLController
-public class MineController {
-
+public class TrainerScheduleController {
     @FXML
     private TableView<Course> calender;
 
@@ -75,6 +75,8 @@ public class MineController {
     @FXML
     private TableColumn<Course, String> statues1;
     @FXML
+    private TableColumn<Course, String> statues12;
+    @FXML
     private TableColumn<Course, String> statues2;
 
     @FXML
@@ -93,9 +95,6 @@ public class MineController {
     private Text phone;
 
     @FXML
-    private Text level;
-
-    @FXML
     private Button bookButton;
 
     @FXML
@@ -110,7 +109,7 @@ public class MineController {
     @FXML
     private Text username;
 
-    Customer currentUser = null;
+    Trainer currentUser = null;
     List<Course> overCourses;
     List<Course> unconfirmedCourses;
     List<Course> todoCourses;
@@ -127,13 +126,13 @@ public class MineController {
     @FXML
     private void initialize() {
         // Text assignment
-        currentUser = (Customer) Session.getUser();
+        currentUser = (Trainer) Session.getUser();
         welcome.setText(currentUser.getAccount());
         username.setText(currentUser.getAccount());
         gender.setText(currentUser.getGender());
         email.setText(currentUser.getEmail());
         phone.setText(currentUser.getPhone());
-        level.setText(currentUser.getLevel());
+
 
         updateData();
 
@@ -146,7 +145,7 @@ public class MineController {
         // Populate the table cell with data, To_do table
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd");
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-        coach.setCellValueFactory(new PropertyValueFactory<>("trainerAccount"));
+        coach.setCellValueFactory(new PropertyValueFactory<>("customerAccount"));
         date.setCellValueFactory(
                 cellData -> new SimpleStringProperty(dateFormat.format(cellData.getValue().getStartDate())));
         time.setCellValueFactory(
@@ -170,7 +169,8 @@ public class MineController {
                         joinLive.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
                         joinLive.setOnMouseClicked((col) -> {
                             System.out.println("You shall join the live ——");
-                            courseService.modifyCourseInfo(course, "status", String.valueOf(Course.FINISHED));
+                            courseService.modifyCourseInfo(
+                                    course, "status", String.valueOf(Course.FINISHED));
                             HostServices host = mainApp.getHostServices();
                             host.showDocument("https://live.bilibili.com/");
                             updateData();
@@ -189,7 +189,7 @@ public class MineController {
         });
 
         // Unconfirmed table
-        coach1.setCellValueFactory(new PropertyValueFactory<>("trainerAccount"));
+        coach1.setCellValueFactory(new PropertyValueFactory<>("customerAccount"));
         date1.setCellValueFactory(
                 cellData -> new SimpleStringProperty(dateFormat.format(cellData.getValue().getStartDate())));
         time1.setCellValueFactory(
@@ -207,20 +207,44 @@ public class MineController {
                         super.updateItem(item, empty);
                         Course course = unconfirmedData.get(getIndex());
                         int status = course.getStatus();
-
-                        Button cancel = new Button("CANCEL");
-                        cancel.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
-                        cancel.setOnMouseClicked((col) -> {
-                            System.out.println("You shall cancel the live ——");
-                            courseService.deleteCourse(course);
+                        Button accept = new Button("ACCEPT");
+                        accept.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
+                        accept.setOnMouseClicked((col) -> {
+                            System.out.println("You shall accept the live ——");
+                            courseService.modifyCourseInfo(
+                                    course, "status", String.valueOf(Course.ACCEPTED));
                             updateData();
                         });
-
                         if (status == Course.COMMITTED) {
-                            setText("COMMITTED");
-                            setGraphic(cancel);
-                        } else if(status == Course.REJECTED){
-                            setText("BEEN REJECTED");
+                            setGraphic(accept);
+                        }
+                    }
+                }
+            };
+            return cell;
+        });
+        statues12.setCellFactory((col) -> {
+            TableCell<Course, String> cell = new TableCell<Course, String>() {
+                @Override
+                protected void updateItem(String item, boolean empty) {
+                    if (empty) {
+                        setText(null);
+                        setGraphic(null);
+                    } else {
+                        super.updateItem(item, empty);
+                        Course course = unconfirmedData.get(getIndex());
+                        int status = course.getStatus();
+
+                        Button reject = new Button("REJECT");
+                        reject.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
+                        reject.setOnMouseClicked((col) -> {
+                            System.out.println("You shall reject the live ——");
+                            courseService.modifyCourseInfo(
+                                    course, "status", String.valueOf(Course.REJECTED));
+                            updateData();
+                        });
+                        if (status == Course.COMMITTED) {
+                            setGraphic(reject);
                         }
                     }
                 }
@@ -229,7 +253,7 @@ public class MineController {
         });
 
         // passed courses table
-        coach2.setCellValueFactory(new PropertyValueFactory<>("trainerAccount"));
+        coach2.setCellValueFactory(new PropertyValueFactory<>("customerAccount"));
         date2.setCellValueFactory(
                 cellData -> new SimpleStringProperty(dateFormat.format(cellData.getValue().getStartDate())));
         time2.setCellValueFactory(
@@ -237,7 +261,7 @@ public class MineController {
         );
         duration2.setCellValueFactory(new PropertyValueFactory<>("duration"));
         statues2.setCellFactory((col) -> {
-            TableCell<Course, String> cell = new TableCell<Course, String>() {
+            TableCell<Course, String> cell = new TableCell<>() {
                 @Override
                 protected void updateItem(String item, boolean empty) {
                     if (empty) {
@@ -258,8 +282,12 @@ public class MineController {
 
                         if (status == Course.FINISHED) {
                             setText("FINISHED");
-                        } else if(status == Course.MISS){
+                        } else if (status == Course.MISS) {
                             setText("MISS");
+                        } else if (status == Course.COMMITTED) {
+                            setText("TIMEOUT");
+                        } else if (status == Course.REJECTED) {
+                            setText("REJECTED");
                         }
                         setGraphic(cancel);
                     }
@@ -272,30 +300,30 @@ public class MineController {
 
     @FXML
     void mineEvent(ActionEvent event) {
-        MainApp.showView(team.gym.View.MineView.class);
+
     }
 
     @FXML
     void videoEvent(ActionEvent event) {
-        MainApp.showView(team.gym.View.Video.class);
+
     }
 
     @FXML
     void bookEvent(ActionEvent event) {
-        MainApp.showView(team.gym.View.Book.class);
+
     }
 
     @FXML
     void membershipEvent(ActionEvent event) {
-        MainApp.showView(team.gym.View.Membership.class);
+
     }
 
     @FXML
     void exitEvent(ActionEvent event) {
+        System.out.println("Trainer exit");
         MainApp.showView(LoginView.class);
         Session.setUser(null);
     }
-
     @FXML
     void onSort(SortEvent<TableView<Course>> event) {
         // get the courses data from xml calling for Service
@@ -303,11 +331,11 @@ public class MineController {
     }
 
     void updateData() {
-        if (currentUser == null) currentUser = (Customer) Session.getUser();
+        if (currentUser == null) currentUser = (Trainer) Session.getUser();
         // get the courses data from xml calling for Service
-        overCourses = courseService.getCustomerOverCourse(currentUser.getAccount());
-        unconfirmedCourses = courseService.getCustomerUnconfirmedCourse(currentUser.getAccount());
-        todoCourses = courseService.getCustomerTodoCourse(currentUser.getAccount());
+        overCourses = courseService.getTrainerOverCourse(currentUser.getAccount());
+        unconfirmedCourses = courseService.getTrainerUnconfirmedCourse(currentUser.getAccount());
+        todoCourses = courseService.getTrainerTodoCourse(currentUser.getAccount());
 
         overData.clear();
         unconfirmedData.clear();
@@ -317,7 +345,6 @@ public class MineController {
         overData.addAll(overCourses);
         unconfirmedData.addAll(unconfirmedCourses);
         todoData.addAll(todoCourses);
+
     }
-
 }
-

@@ -17,7 +17,7 @@ public interface TrainerDao {
      * @param username the account number of the trainer
      * @return the corresponding customer Object
      */
-    public Trainer findTrainerByName(String username);
+    public Trainer findTrainerByAccount(String username);
 
     /**
      * @return all the trainer map, the key is account number(String), value is trainer Object

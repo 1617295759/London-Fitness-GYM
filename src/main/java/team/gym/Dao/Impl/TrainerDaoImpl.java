@@ -72,7 +72,7 @@ public class TrainerDaoImpl implements TrainerDao{
     }
 
     @Override
-    public Trainer findTrainerByName(String username) {
+    public Trainer findTrainerByAccount(String username) {
         return wrapper.getTrainerMap().get(username);
     }
 

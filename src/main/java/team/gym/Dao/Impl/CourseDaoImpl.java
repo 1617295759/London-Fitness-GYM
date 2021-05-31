@@ -1,4 +1,5 @@
 package team.gym.Dao.Impl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import team.gym.Beans.Course;
@@ -11,6 +12,7 @@ import team.gym.Dao.TrainerDao;
 import team.gym.MyUtils.Session;
 
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 
@@ -33,24 +35,28 @@ public class CourseDaoImpl implements CourseDao {
 
     private Customer customer;
     private Trainer trainer;
+
     @Override
-    public int saveCourse(Course course) {
+    public int addNewCourse(Course course) {
         try {
+            course.generateId();
+
             List<Course> trainer_course;
-            trainer = trainerDao.findTrainerByName(course.getTrainerAccount());
+            trainer = trainerDao.findTrainerByAccount(course.getTrainerAccount());
             trainer_course = trainer.getCourses();
             trainer_course.add(course);
             trainer.setCourses(trainer_course);
             trainerDao.saveTrainer(trainer);
 
             List<Course> user_course;
-            customer = (Customer)Session.getUser();
+            customer = (Customer) Session.getUser();
             user_course = customer.getCourses();
             user_course.add(course);
             customer.setCourses(user_course);
             customerDao.saveCustomer(customer);
             return 1;
         } catch (Exception e) {
+            System.out.println("fail to add a new course");
             e.printStackTrace();
             return 0;
         }
@@ -60,52 +66,82 @@ public class CourseDaoImpl implements CourseDao {
     @Override
     public Course selByCourseId(int courseId) {
         //get the specific course information
-        customer = (Customer)Session.getUser();
+        customer = (Customer) Session.getUser();
         List<Course> courses = customer.getCourses();
-        for (Course course:courses) {
-            if(courseId == course.getCourseId())
+        for (Course course : courses) {
+            if (courseId == course.getCourseId())
                 return course;
         }
         return null;
     }
 
     @Override
-    public int delByCourseId(int courseId) {
-        customer = (Customer)Session.getUser();
+    public int delCourse(Course course) {
+        customer = customerDao.findCustomerByAccount(course.getCustomerAccount());
+        trainer = trainerDao.findTrainerByAccount(course.getTrainerAccount());
         List<Course> courses = customer.getCourses();
-        for (Course course:courses) {
-            if(courseId == course.getCourseId()) {
+        for (Course c : courses) {
+            if (course.getCourseId() == c.getCourseId()) {
                 courses.remove(course);
+                customer.setCourses(courses);
+                customerDao.saveCustomer(customer);
+                break;
+            }
+        }
+
+        List<Course> t_courses = trainer.getCourses();
+        for (Course c : t_courses) {
+            if (course.getCourseId() == c.getCourseId()) {
+                courses.remove(course);
+                trainer.setCourses(courses);
+                trainerDao.saveTrainer(trainer);
                 return 1;
             }
         }
+
         return 0;
     }
 
     @Override
-    public int modifyCourse(int courseId, String field, String newValue) {
-        Course course = selByCourseId(courseId);
-        switch (field){
-            case("feedback"):
+    public int modifyCourse(Course course, String field, String newValue) {
+        switch (field) {
+            case ("feedback"):
                 course.setFeedback(newValue);
-            case("status"):
-                course.setStatus(newValue);
+            case ("status"):
+                course.setStatus(Integer.parseInt(newValue));
         }
+        saveCourse(course);
         return 0;
     }
 
     @Override
     public List<Course> getCustomerCourses(String account) {
-        if (customerDao == null){
-            customerDao = new CustomerDaoImpl();
-        }
-        return customerDao.findCustomerByName(account).getCourses();
+        return customerDao.findCustomerByAccount(account).getCourses();
     }
 
     @Override
     public List<Course> getTrainerCourses(String account) {
-        return trainerDao.findTrainerByName(account).getCourses();
+        return trainerDao.findTrainerByAccount(account).getCourses();
     }
 
-
+    public void saveCourse(Course course) {
+        if (customer == null) customer = customerDao.findCustomerByAccount(course.getCustomerAccount());
+        if (trainer == null) trainer = trainerDao.findTrainerByAccount(course.getTrainerAccount());
+        List<Course> c_courses = customer.getCourses();
+        for (Course c : c_courses) {
+            if (c.getCourseId() == course.getCourseId()){
+                c_courses.remove(c);
+                c_courses.add(course);
+            }
+        }
+        List<Course> t_courses = trainer.getCourses();
+        for (Course c : t_courses) {
+            if (c.getCourseId() == course.getCourseId()) {
+                t_courses.remove(c);
+                t_courses.add(course);
+            }
+        }
+        customerDao.saveCustomer(customer);
+        trainerDao.saveTrainer(trainer);
+    }
 }

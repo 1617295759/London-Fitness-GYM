@@ -23,4 +23,5 @@ public class Trainer extends User{
         setPhone("138");
         setEmail("email");
     }
+
 }

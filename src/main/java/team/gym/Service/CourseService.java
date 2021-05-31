@@ -14,6 +14,10 @@ public interface CourseService {
     //用户id查询用户已完成课程
     List<Course> getCustomerOverCourse(String account);
 
+    List<Course> getCustomerUnconfirmedCourse(String account);
+
+    List<Course> getTrainerUnconfirmedCourse(String account);
+
     //id查询教练未完成课程
     List<Course> getTrainerTodoCourse(String account);
 
@@ -21,14 +25,14 @@ public interface CourseService {
     List<Course> getTrainerOverCourse(String account);
 
     //id删除我的课程
-    int deleteCourseById(String account,int courseId);
+    int deleteCourse(Course course);
 
     /** change given course info field to new info
      *
-     * @param courseId the course id of course to be modified
+     * @param course the course of course to be modified
      * @param field what field to be modified
      * @param newValue new value
      * @return statues 1-finished successfully 0-failed
      */
-    int modifyCourseInfo(int courseId, String field, String newValue);
+    int modifyCourseInfo(Course course, String field, String newValue);
 }

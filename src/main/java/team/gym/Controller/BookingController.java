@@ -13,11 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import team.gym.Beans.Course;
 import team.gym.Beans.User;
 import team.gym.MainApp;
+import team.gym.MyUtils.DialogUtils;
 import team.gym.MyUtils.Session;
 import team.gym.Service.CourseService;
 import team.gym.View.Book;
+import team.gym.View.MineView;
 
-import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -66,6 +69,13 @@ public class BookingController {
     @Autowired
     CourseService courseService;
 
+    @Autowired
+    @FXML
+    private MainApp mainApp;
+
+    @Autowired
+    MineController mineController;
+
     @FXML
     private void initialize() {
         startDatePicker.setValue(LocalDate.now());
@@ -103,11 +113,26 @@ public class BookingController {
         ZoneId zoneId = ZoneId.systemDefault();
         ZonedDateTime zdt = startDatePicker.getValue().atStartOfDay(zoneId);
         Date date = Date.from(zdt.toInstant());
-        String time = startTimeBox.getValue();
-        int duration = durationBox.getValue();
-        String intro = BookingTextArea.getText();
 
-        System.out.println(date+time+duration);
+        String time="";int duration=0;String intro="";
+        try{
+            time = startTimeBox.getValue();
+            duration = durationBox.getValue();
+            intro = BookingTextArea.getText();
+        }catch(Exception e){
+            DialogUtils.tips(mainApp.getPrimaryStage(),"Incomplete Information","Please select all the option boxes");
+        }
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
+        String combined = dateformat.format(date) + " " + time;
+        try {
+            date = format.parse(combined);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Reserve Information" + date + "  BeginTime:" +time + "  Duration:" +duration);
 
         Course course = new Course();
         course.setCustomerAccount(currentUser.getAccount());
@@ -118,6 +143,12 @@ public class BookingController {
         course.setIntro(intro);
 
         courseService.saveCourse(course);
+
+        DialogUtils.good(mainApp.getPrimaryStage(), "Reserve Submitted"," Waiting for Confirmation of the Coach");
+
+        // update the data
+        mineController.updateData();
+        mainApp.showView(MineView.class);
     }
 
 }

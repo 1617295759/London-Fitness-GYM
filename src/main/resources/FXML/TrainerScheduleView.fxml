@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="anchor-pane" stylesheets="@../statics/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team.gym.Controller.TrainerScheduleController">
+    <children>
+        <AnchorPane prefHeight="46.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Text fx:id="welcome" fill="WHITE" layoutX="24.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi, Alice" AnchorPane.topAnchor="10.0">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="46.0" prefHeight="523.0" prefWidth="60.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="46.0">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="60.0" spacing="25.0" AnchorPane.topAnchor="20.0">
+                    <children>
+                        <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../statics/img/mine.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../statics/img/video.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../statics/img/book.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../statics/img/membrship.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </VBox>
+                <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="10.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../statics/img/exit.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="menuPane" layoutX="60.0" layoutY="46.0" prefHeight="523.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="46.0">
+            <children>
+                <VBox prefHeight="150.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+                    <children>
+                        <Button fx:id="mineButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#mineEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Mine" textFill="WHITE">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="videoButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#videoEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Video" textFill="WHITE">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="bookButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#bookEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Book" textFill="WHITE">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="membershipButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" onAction="#membershipEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Membership" textFill="WHITE">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="exitButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#exitEvent" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #5F9EA0;" text="Exit" textFill="WHITE">
+                            <font>
+                                <Font size="38.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="155.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <VBox layoutX="240.0" layoutY="13.0" prefHeight="572.0" prefWidth="262.0">
+            <children>
+                <HBox prefHeight="75.0" prefWidth="413.0" spacing="25.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="40.0">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../statics/img/profilePicture.png" />
+                            </image>
+                        </ImageView>
+                        <Text fx:id="username" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Alice">
+                            <font>
+                                <Font name="System Bold" size="41.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets top="10.0" />
+                            </HBox.margin>
+                        </Text>
+                    </children>
+                </HBox>
+                <Text fx:id="gender" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="gender">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+                <Text fx:id="email" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="e-mail">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+                <Text fx:id="phone" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="phone">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+            </children>
+        </VBox>
+        <TabPane layoutX="501.0" layoutY="14.0" prefHeight="591.0" prefWidth="391.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="To-Do">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                                    <columns>
+                                        <TableColumn fx:id="coach" prefWidth="74.0" text="Coach" />
+                                        <TableColumn fx:id="date" prefWidth="72.0" text="Date" />
+                                        <TableColumn fx:id="time" prefWidth="44.0" text="Time" />
+                                        <TableColumn fx:id="duration" prefWidth="72.0" text="Duration" />
+                                        <TableColumn fx:id="statues" prefWidth="159.0" text="Statues" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Unconfirmed">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="un_calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                                    <columns>
+                                        <TableColumn fx:id="coach1" prefWidth="74.0" text="Coach" />
+                                        <TableColumn fx:id="date1" prefWidth="57.0" text="Date" />
+                                        <TableColumn fx:id="time1" prefWidth="64.0" text="Time" />
+                                        <TableColumn fx:id="duration1" prefWidth="47.0" text="Duration" />
+                                        <TableColumn fx:id="statues1" prefWidth="71.0" text="Statues" />
+                              <TableColumn fx:id="statues12" text="Statues" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Over">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="o_calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                                    <columns>
+                                        <TableColumn fx:id="coach2" prefWidth="59.0" text="Coach" />
+                                        <TableColumn fx:id="date2" prefWidth="77.0" text="Date" />
+                                        <TableColumn fx:id="time2" prefWidth="64.0" text="Time" />
+                                        <TableColumn fx:id="duration2" prefWidth="95.0" text="Duration" />
+                                        <TableColumn fx:id="statues2" prefWidth="182.0" text="Statues" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

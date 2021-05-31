@@ -21,7 +21,7 @@ public interface CourseDao {
      * @param courses
      * @return
      */
-    int saveCourse(Course courses);
+    int addNewCourse(Course courses);
 
     /**根据id查询课表
      *
@@ -31,12 +31,12 @@ public interface CourseDao {
     Course selByCourseId(int courseId);
 
     /**
-     * @param courseId
+     * @param
      * @return
      */
-    int delByCourseId(int courseId);
+    int delCourse(Course course);
 
-    int modifyCourse(int courseId, String field, String newValue);
+    int modifyCourse(Course course, String field, String newValue);
 
     List<Course> getCustomerCourses(String account);
 

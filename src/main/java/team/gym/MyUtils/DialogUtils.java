@@ -4,6 +4,7 @@ import com.sun.tools.javac.Main;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogEvent;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import team.gym.MainApp;
@@ -14,30 +15,31 @@ import java.net.URLDecoder;
 import java.util.Optional;
 
 public class DialogUtils {
-    public static void tips(Stage stage, String message) {
+    public static void tips(Stage stage,String header, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("提示");
         ImageView menhera = new ImageView("/statics/images/systemUse/tips.png");
         menhera.setFitHeight(100);
         menhera.setPreserveRatio(true);
         alert.setGraphic(menhera);
-        alert.setHeaderText("您可能有一些信息填写有误");
+        alert.setHeaderText(header);
         alert.setContentText(message);
         alert.initOwner(stage);
         alert.show();
     }
 
-    public static void good(Stage stage, String message) {
+    public static void good(Stage stage,String header, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("祝贺");
         ImageView menhera = new ImageView("/statics/images/systemUse/good.png");
         menhera.setFitHeight(100);
         menhera.setPreserveRatio(true);
         alert.setGraphic(menhera);
-        alert.setHeaderText("您的操作如期运行了");
+        alert.setHeaderText(header);
         alert.setContentText(message);
         alert.initOwner(stage);
         alert.show();
+
     }
 
     public static boolean confirm(Stage stage, String message) {
