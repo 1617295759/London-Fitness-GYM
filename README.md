@@ -55,8 +55,9 @@ v3(26 April—9 May)
 	
 v4(10 May-21 May)
 	Merge remote-tracking branch 'origin/master' into master. Merge new front end.
-
-## Maintainers
+	
+v5(24 May-31 May)
+	Merge operation about course.
 
 [@Jingbo Yang](https://github.com/Irene20000217).
 
