@@ -1,5 +1,6 @@
 package team.gym.Service;
 
+import team.gym.Beans.Course;
 import team.gym.Beans.Customer;
 import team.gym.Beans.User;
 
@@ -23,4 +24,6 @@ public interface CustomerService {
     public String registerCustomer(Customer customer);
 
     public int deleteCustomer(Customer customer);
+
+    int modifyCustomerInfo(Customer customer, String field, String newValue);
 }

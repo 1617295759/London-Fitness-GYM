@@ -14,6 +14,7 @@ import team.gym.Beans.Course;
 import team.gym.Beans.User;
 import team.gym.MainApp;
 import team.gym.MyUtils.DialogUtils;
+import team.gym.MyUtils.PayUtils;
 import team.gym.MyUtils.Session;
 import team.gym.Service.CourseService;
 import team.gym.View.Book;
@@ -142,13 +143,9 @@ public class BookingController {
         course.setTime(time);
         course.setIntro(intro);
 
-        courseService.saveCourse(course);
+        PayUtils.payForLive(
+                mainApp.getPrimaryStage(),duration*2,course,courseService,mineController);
 
-        DialogUtils.good(mainApp.getPrimaryStage(), "Reserve Submitted"," Waiting for Confirmation of the Coach");
-
-        // update the data
-        mineController.updateData();
-        mainApp.showView(MineView.class);
     }
 
 }

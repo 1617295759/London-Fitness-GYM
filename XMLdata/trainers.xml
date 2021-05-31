@@ -27,6 +27,28 @@
                         <time>11:00</time>
                         <trainerAccount>Johnson</trainerAccount>
                     </course>
+                    <course>
+                        <courseId>601415</courseId>
+                        <customerAccount>Junior</customerAccount>
+                        <duration>45</duration>
+                        <intro></intro>
+                        <price>0.0</price>
+                        <startDate>2021-06-01T10:00:00+08:00</startDate>
+                        <status>2</status>
+                        <time>10:00</time>
+                        <trainerAccount>Johnson</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>601981</courseId>
+                        <customerAccount>Junior</customerAccount>
+                        <duration>30</duration>
+                        <intro></intro>
+                        <price>0.0</price>
+                        <startDate>2021-06-01T10:00:00+08:00</startDate>
+                        <status>2</status>
+                        <time>10:00</time>
+                        <trainerAccount>Johnson</trainerAccount>
+                    </course>
                 </CourseList>
                 <account>Johnson</account>
                 <email>email</email>

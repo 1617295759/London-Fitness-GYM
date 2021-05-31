@@ -2,6 +2,54 @@
 <CustomerWrapper>
     <customers>
         <entry>
+            <key>Junior</key>
+            <value>
+                <CourseList>
+                    <course>
+                        <courseId>601621</courseId>
+                        <customerAccount>Dwayne Johnson</customerAccount>
+                        <duration>120</duration>
+                        <intro></intro>
+                        <price>0.0</price>
+                        <startDate>2021-06-01T11:00:00+08:00</startDate>
+                        <status>1</status>
+                        <time>11:00</time>
+                        <trainerAccount>Johnson</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>601415</courseId>
+                        <customerAccount>Junior</customerAccount>
+                        <duration>45</duration>
+                        <intro></intro>
+                        <price>0.0</price>
+                        <startDate>2021-06-01T10:00:00+08:00</startDate>
+                        <status>2</status>
+                        <time>10:00</time>
+                        <trainerAccount>Johnson</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>601981</courseId>
+                        <customerAccount>Junior</customerAccount>
+                        <duration>30</duration>
+                        <intro></intro>
+                        <price>0.0</price>
+                        <startDate>2021-06-01T10:00:00+08:00</startDate>
+                        <status>2</status>
+                        <time>10:00</time>
+                        <trainerAccount>Johnson</trainerAccount>
+                    </course>
+                </CourseList>
+                <account>Junior</account>
+                <email>iemail@bupt.edu.cn</email>
+                <gender>female</gender>
+                <location>ilocation</location>
+                <name>Dwayne Johnson</name>
+                <password>123</password>
+                <phone>12345678910</phone>
+                <level>Junior</level>
+            </value>
+        </entry>
+        <entry>
             <key>4</key>
             <value>
                 <CourseList>
@@ -53,17 +101,6 @@
             <value>
                 <CourseList>
                     <course>
-                        <courseId>531584</courseId>
-                        <customerAccount>Dwayne Johnson</customerAccount>
-                        <duration>90</duration>
-                        <intro></intro>
-                        <price>0.0</price>
-                        <startDate>2021-05-31T11:30:00+08:00</startDate>
-                        <status>3</status>
-                        <time>14:30</time>
-                        <trainerAccount>Johnson</trainerAccount>
-                    </course>
-                    <course>
                         <courseId>601621</courseId>
                         <customerAccount>Dwayne Johnson</customerAccount>
                         <duration>120</duration>
@@ -74,15 +111,37 @@
                         <time>11:00</time>
                         <trainerAccount>Johnson</trainerAccount>
                     </course>
+                    <course>
+                        <courseId>601415</courseId>
+                        <customerAccount>Junior</customerAccount>
+                        <duration>45</duration>
+                        <intro></intro>
+                        <price>0.0</price>
+                        <startDate>2021-06-01T10:00:00+08:00</startDate>
+                        <status>2</status>
+                        <time>10:00</time>
+                        <trainerAccount>Johnson</trainerAccount>
+                    </course>
+                    <course>
+                        <courseId>601981</courseId>
+                        <customerAccount>Junior</customerAccount>
+                        <duration>30</duration>
+                        <intro></intro>
+                        <price>0.0</price>
+                        <startDate>2021-06-01T10:00:00+08:00</startDate>
+                        <status>2</status>
+                        <time>10:00</time>
+                        <trainerAccount>Johnson</trainerAccount>
+                    </course>
                 </CourseList>
-                <account>Dwayne Johnson</account>
+                <account>Junior</account>
                 <email>iemail@bupt.edu.cn</email>
                 <gender>female</gender>
                 <location>ilocation</location>
                 <name>Dwayne Johnson</name>
                 <password>123</password>
                 <phone>12345678910</phone>
-                <level>Newbie</level>
+                <level>Junior</level>
             </value>
         </entry>
     </customers>

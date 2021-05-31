@@ -22,6 +22,9 @@ public class Customer extends User{
     // different level of membership
     // Newbie —— Registered —— Advanced —— Respectful —— VIP —— Honorable
     private final StringProperty  level = new SimpleStringProperty();
+    public static final String NEWBIE =  "Newbie";
+    public static final String JUNIOR =  "Junior";
+    public static final String SENIOR =  "Senior";
 
     public Customer(){
         super();

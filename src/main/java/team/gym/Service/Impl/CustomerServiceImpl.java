@@ -96,6 +96,10 @@ public class CustomerServiceImpl implements CustomerService {
         return 0;
     }
 
-
+    @Override
+    public int modifyCustomerInfo(Customer customer, String field, String newValue) {
+        customerDao.modifyCustomer(customer,field,newValue);
+        return 0;
+    }
 
 }

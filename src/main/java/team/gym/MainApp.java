@@ -4,6 +4,7 @@ import team.gym.Beans.User;
 import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
 import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import team.gym.MyUtils.SplashScreenCustom;
 import team.gym.View.LoginView;
 
 @SpringBootApplication
@@ -12,7 +13,7 @@ public class MainApp extends AbstractJavaFxApplicationSupport {
     private User userNow;
 
     public static void main(String[] args) {
-        launch(MainApp.class, LoginView.class, args);
+        launch(MainApp.class, LoginView.class , new SplashScreenCustom(), args);
     }
 
     public Stage getPrimaryStage() { return primaryStage; }

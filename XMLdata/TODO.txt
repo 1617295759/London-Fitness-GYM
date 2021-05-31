@@ -22,3 +22,6 @@ Tomcat started on port(s): 8080 (http) with context path ''
 3.注册
 4.信息修改功能
 5. unconfirmed 两个选项-接受&拒绝
+
+6.课程顾客名显示 多了一个Junior
+7.上下结构

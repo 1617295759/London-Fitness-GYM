@@ -13,6 +13,7 @@ import team.gym.MyUtils.Session;
 
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -116,7 +117,11 @@ public class CourseDaoImpl implements CourseDao {
 
     @Override
     public List<Course> getCustomerCourses(String account) {
-        return customerDao.findCustomerByAccount(account).getCourses();
+        Customer customer;
+        if ((customer = customerDao.findCustomerByAccount(account))!=null){
+            return customer.getCourses();
+        }
+        return new ArrayList<>();
     }
 
     @Override

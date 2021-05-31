@@ -30,7 +30,7 @@ public class DialogUtils {
 
     public static void good(Stage stage,String header, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("祝贺");
+        alert.setTitle("Yeah!");
         ImageView menhera = new ImageView("/statics/images/systemUse/good.png");
         menhera.setFitHeight(100);
         menhera.setPreserveRatio(true);

@@ -302,7 +302,7 @@ public class MineController {
         updateData();
     }
 
-    void updateData() {
+    public void updateData() {
         if (currentUser == null) currentUser = (Customer) Session.getUser();
         // get the courses data from xml calling for Service
         overCourses = courseService.getCustomerOverCourse(currentUser.getAccount());

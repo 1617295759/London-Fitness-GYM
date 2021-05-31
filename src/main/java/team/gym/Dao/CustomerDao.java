@@ -23,7 +23,7 @@ public interface CustomerDao {
      */
     public Map getCustomerMap();
 
-    int modifyCustomer(String account, String field, String newValue);
+    int modifyCustomer(Customer customer, String field, String newValue);
 
     int addCourse(String account, Course course);
 }

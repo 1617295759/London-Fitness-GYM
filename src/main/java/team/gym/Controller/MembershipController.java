@@ -6,8 +6,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import org.springframework.beans.factory.annotation.Autowired;
+import team.gym.Beans.Customer;
 import team.gym.Beans.User;
 import team.gym.MainApp;
+import team.gym.MyUtils.PayUtils;
 import team.gym.MyUtils.Session;
 import team.gym.View.LoginView;
 
@@ -42,6 +45,10 @@ public class MembershipController {
 
     User currentUser = null;
 
+    @Autowired
+    @FXML
+    private MainApp mainApp;
+
     @FXML
     private void initialize() {
         currentUser = Session.getUser();
@@ -50,42 +57,11 @@ public class MembershipController {
 
     @FXML
     void MemJbuyEvent(ActionEvent event) {
-
+        PayUtils.payForLevel(mainApp.getPrimaryStage(), Customer.JUNIOR,20.00);
     }
-
-    @FXML
-    void fffffff2(ActionEvent event) {
-
-    }
-
-    @FXML
-    void f8f7f7(ActionEvent event) {
-
-    }
-
-    @FXML
-    void e8e3e3(ActionEvent event) {
-
-    }
-
-    @FXML
-    void f8f4f4(ActionEvent event) {
-
-    }
-
-    @FXML
-    void f5f4f4(ActionEvent event) {
-
-    }
-
     @FXML
     void MemSbuyEvent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ffffff73(ActionEvent event) {
-
+        PayUtils.payForLevel(mainApp.getPrimaryStage(), Customer.SENIOR,40.00);
     }
 
     @FXML

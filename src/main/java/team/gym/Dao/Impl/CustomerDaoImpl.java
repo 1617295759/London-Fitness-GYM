@@ -75,7 +75,15 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public int modifyCustomer(String account, String field, String newValue) {
+    public int modifyCustomer(Customer customer, String field, String newValue) {
+        Customer customer_data = findCustomerByAccount(customer.getAccount());
+        switch (field) {
+            case ("level"):
+                customer_data.setLevel(newValue);
+            case ("account"):
+                customer_data.setAccount(newValue);
+        }
+        saveCustomer(customer_data);
         return 0;
     }
 
