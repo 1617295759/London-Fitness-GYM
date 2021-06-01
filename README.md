@@ -24,19 +24,13 @@ is urgently needed to allow gym members doing workouts at home.
 ## Install
 
 This project uses [javafx](https://openjfx.io/) and [maven](http://maven.apache.org/download.cgi). Go check them out if you don't have them locally installed.
-
-```sh
-$ npm install --global standard-readme-spec
-```
+And we use IDEA to run the project. Then you should unpack the zip document of our project.  Then you can open the document in IDEA. You should click to edit configuration. In VM options, you should change this path to the lib of javafx document, then you should click to refresh it. Finally, you can run the program.
 
 ## Usage
 
 This is only a documentation package. You can print out [spec.md](spec.md) to your console:
 
-```sh
-$ standard-readme-spec
-# Prints out the standard-readme spec
-```
+
 
 ### Generator
 
