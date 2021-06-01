@@ -101,7 +101,7 @@ public class VideoController {
     List<Button> videoIntro = new ArrayList<>();
     String type = "yoga";
 
-    List<String> yoga = new ArrayList<>(){{
+    List<String> ball = new ArrayList<>(){{
         add("/statics/images/videoImg/Ball Exercise.jpg");
         add("/statics/images/videoImg/Fitness Ball - Train Legs.jpg");
         add("/statics/images/videoImg/Fitness Ball of High Difficulty.jpg");
@@ -128,7 +128,7 @@ public class VideoController {
         add("/statics/images/videoImg/Weightlifting Teaching.jpg");
     }};
 
-    List<String> ball = new ArrayList<>(){{
+    List<String> yoga = new ArrayList<>(){{
         add("/statics/images/videoImg/Basic Yoga Teaching.jpg");
         add("/statics/images/videoImg/Classical Yoga Teaching.jpg");
         add("/statics/images/videoImg/Indian Yoga.jpg");

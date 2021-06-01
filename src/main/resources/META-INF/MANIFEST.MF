@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Main-Class: team.gym.MainApp
+Class-Path: jaxb-core-2.3.0-b170127.1453.jar activation-1.1.jar logback-
+ classic-1.2.3.jar jackson-module-parameter-names-2.12.3.jar javafx-base
+ -13.jar springboot-javafx-support-2.1.6.jar javafx-controls-13.jar tomc
+ at-embed-websocket-9.0.46.jar commons-beanutils-1.7.0.jar slf4j-api-1.7
+ .25.jar javafx-media-13-win.jar spring-boot-autoconfigure-2.4.4.jar jav
+ afx-graphics-13-win.jar spring-web-5.3.7.jar tomcat-embed-el-9.0.46.jar
+  spring-core-5.3.5.jar commons-chain-1.1.jar log4j-to-slf4j-2.13.3.jar 
+ snakeyaml-1.27.jar jackson-core-2.12.3.jar stax-ex-1.7.8.jar commons-va
+ lidator-1.3.1.jar javafx-graphics-13.jar spring-boot-2.4.4.jar javax.ac
+ tivation-api-1.2.0.jar jaxb-api-2.3.1.jar spring-boot-starter-json-2.5.
+ 0.jar javafx-fxml-13.jar spring-context-5.3.5.jar javafx-media-13.jar c
+ ommons-logging-1.0.4.jar javafx-base-13-win.jar spring-aop-5.3.7.jar co
+ mmons-digester-1.8.jar FastInfoset-1.2.13.jar jackson-annotations-2.12.
+ 3.jar oro-2.0.8.jar istack-commons-runtime-3.0.4.jar antlr-2.7.2.jar sp
+ ring-beans-5.3.7.jar txw2-2.3.0-b170127.1453.jar log4j-api-2.13.3.jar s
+ pring-boot-starter-logging-2.4.4.jar struts-core-1.3.8.jar jul-to-slf4j
+ -1.7.30.jar javafx-controls-13-win.jar spring-boot-starter-2.4.4.jar sp
+ ring-boot-starter-web-2.5.0.jar jackson-datatype-jsr310-2.12.3.jar jaxb
+ -runtime-2.3.0-b170127.1453.jar jakarta.annotation-api-1.3.5.jar qdox-2
+ .0-M5.jar javafx-fxml-13-win.jar logback-core-1.2.3.jar spring-boot-sta
+ rter-tomcat-2.5.0.jar tomcat-embed-core-9.0.46.jar jackson-datatype-jdk
+ 8-2.12.3.jar spring-webmvc-5.3.7.jar spring-jcl-5.3.5.jar jackson-datab
+ ind-2.12.3.jar spring-expression-5.3.7.jar
+
