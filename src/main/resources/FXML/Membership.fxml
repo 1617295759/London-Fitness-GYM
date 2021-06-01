@@ -21,42 +21,68 @@
                         <Font name="System Bold" size="29.0" />
                      </font>
                   </Text>
-                  <Button fx:id="MemJbuyButton" layoutX="728.0" layoutY="360.0" minHeight="35.0" minWidth="100.0" mnemonicParsing="false" onAction="#MemJbuyEvent" prefHeight="25.0" prefWidth="100.0" text="Buy" textFill="DARKCYAN">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Button>
-                  <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="4.0" text="Membership" textFill="#fffffff2" AnchorPane.topAnchor="10.0">
+                  <Label alignment="TOP_LEFT" layoutX="423.0" layoutY="16.0" text="Membership" textFill="#fffffff2" AnchorPane.topAnchor="16.0">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <Label layoutX="300.0" layoutY="250.0" text="Junior Member" textFill="#f8f7f7">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="300.0" layoutY="415.0" text="Senior Member" textFill="#e8e3e3">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="314.0" layoutY="315.0" text="\$20.00" textFill="#f8f4f4">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="312.0" layoutY="480.0" text="\$50.00" textFill="#f5f4f4">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="MemSbuyButton" layoutX="728.0" layoutY="525.0" minHeight="35.0" minWidth="100.0" mnemonicParsing="false" onAction="#MemSbuyEvent" prefHeight="25.0" prefWidth="100.0" text="Buy" textFill="DARKCYAN">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Button>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff73" height="123.0" layoutX="274.0" layoutY="92.0" stroke="WHITE" strokeMiterLimit="12.0" strokeType="INSIDE" width="618.0" />
+                  <Pane layoutX="271.0" layoutY="306.0" prefHeight="233.0" prefWidth="631.0" visible="false">
+                     <children>
+                        <Label layoutX="48.0" layoutY="26.0" text="Junior Member" textFill="#f8f7f7">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="264.0" layoutY="30.0" text="\$20.00" textFill="#f8f4f4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="55.0" layoutY="105.0" text="Senior Member" textFill="#e8e3e3">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="264.0" layoutY="109.0" text="\$50.00" textFill="#f5f4f4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="250.0" layoutY="77.0" prefHeight="185.0" prefWidth="672.0">
+                     <children>
+                        <ImageView fitHeight="177.0" fitWidth="342.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../statics/images/sales1.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="185.0" fitWidth="376.0" layoutX="296.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../statics/images/sales2.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <AnchorPane layoutX="262.0" layoutY="271.0" prefHeight="335.0" prefWidth="659.0">
+                     <children>
+                        <ImageView fitHeight="361.0" fitWidth="666.0" layoutX="-13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../statics/images/member.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="MemJbuyButton" layoutX="248.0" layoutY="243.0" minHeight="35.0" minWidth="100.0" mnemonicParsing="false" onAction="#MemJbuyEvent" prefHeight="48.0" prefWidth="175.0" style="-fx-background-color: #ce1313" text="Buy" textFill="#1e1e1d">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="MemSbuyButton" layoutX="430.0" layoutY="243.0" minHeight="35.0" minWidth="100.0" mnemonicParsing="false" onAction="#MemSbuyEvent" prefHeight="48.0" prefWidth="161.0" style="-fx-background-color: #ce1313" text="Buy" textFill="#272828">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
                </children>
                <opaqueInsets>
                   <Insets />

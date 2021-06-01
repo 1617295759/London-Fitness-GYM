@@ -145,7 +145,6 @@ public class BookingController {
 
         PayUtils.payForLive(
                 mainApp.getPrimaryStage(),duration*2,course,courseService,mineController);
-
     }
 
 }

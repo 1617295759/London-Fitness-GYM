@@ -80,8 +80,10 @@ public class CustomerDaoImpl implements CustomerDao {
         switch (field) {
             case ("level"):
                 customer_data.setLevel(newValue);
+                break;
             case ("account"):
                 customer_data.setAccount(newValue);
+                break;
         }
         saveCustomer(customer_data);
         return 0;

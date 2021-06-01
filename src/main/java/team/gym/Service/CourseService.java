@@ -6,7 +6,7 @@ import java.util.List;
 public interface CourseService {
 
     //添加报名报信息，会员选课
-    void saveCourse(Course course);
+    void addNewCourse(Course course);
 
     //用户id查询用户未完成课程
     List<Course> getCustomerTodoCourse(String account);

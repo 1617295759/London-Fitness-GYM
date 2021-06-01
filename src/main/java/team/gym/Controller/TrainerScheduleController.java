@@ -175,8 +175,8 @@ public class TrainerScheduleController {
                             host.showDocument("https://live.bilibili.com/");
                             updateData();
                         });
-                        // enter the live 10 minutes before the start of the live
-                        if (Math.abs(diff) < 600000) {
+                        // enter the live regulated minutes before the start of the live
+                        if (Math.abs(diff) < Course.MAXGAP) {
                             this.setGraphic(joinLive);
                         } else {
                             setText("In Schedule");

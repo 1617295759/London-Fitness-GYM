@@ -176,7 +176,7 @@ public class MineController {
                             updateData();
                         });
                         // enter the live 10 minutes before the start of the live
-                        if (Math.abs(diff) < 600000) {
+                        if (Math.abs(diff) < Course.MAXGAP) {
                             this.setGraphic(joinLive);
                         } else {
                             setText("In Schedule");
@@ -317,6 +317,8 @@ public class MineController {
         overData.addAll(overCourses);
         unconfirmedData.addAll(unconfirmedCourses);
         todoData.addAll(todoCourses);
+
+        level.setText(currentUser.getLevel());
     }
 
 }

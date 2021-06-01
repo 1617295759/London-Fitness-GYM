@@ -14,7 +14,9 @@ import team.gym.MyUtils.Session;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 
 @Repository
@@ -50,7 +52,7 @@ public class CourseDaoImpl implements CourseDao {
             trainerDao.saveTrainer(trainer);
 
             List<Course> user_course;
-            customer = (Customer) Session.getUser();
+            customer = customerDao.findCustomerByAccount(course.getCustomerAccount());
             user_course = customer.getCourses();
             user_course.add(course);
             customer.setCourses(user_course);
@@ -108,8 +110,10 @@ public class CourseDaoImpl implements CourseDao {
         switch (field) {
             case ("feedback"):
                 course.setFeedback(newValue);
+                break;
             case ("status"):
                 course.setStatus(Integer.parseInt(newValue));
+                break;
         }
         saveCourse(course);
         return 0;
@@ -132,20 +136,32 @@ public class CourseDaoImpl implements CourseDao {
     public void saveCourse(Course course) {
         if (customer == null) customer = customerDao.findCustomerByAccount(course.getCustomerAccount());
         if (trainer == null) trainer = trainerDao.findTrainerByAccount(course.getTrainerAccount());
+        // java.util.ConcurrentModificationException: null -> Ensure that the index is normal
         List<Course> c_courses = customer.getCourses();
-        for (Course c : c_courses) {
+        ListIterator<Course> iterator = c_courses.listIterator();
+        while(iterator.hasNext()){
+            Course c = iterator.next();
             if (c.getCourseId() == course.getCourseId()){
-                c_courses.remove(c);
-                c_courses.add(course);
+                iterator.set(course);
             }
         }
+//        for (Course c : c_courses) {
+//            if (c.getCourseId() == course.getCourseId()){
+//                c_courses.remove(c);
+//                c_courses.add(course);
+//            }
+//        }
         List<Course> t_courses = trainer.getCourses();
-        for (Course c : t_courses) {
-            if (c.getCourseId() == course.getCourseId()) {
-                t_courses.remove(c);
-                t_courses.add(course);
+        iterator = t_courses.listIterator();
+        while(iterator.hasNext()){
+            Course c = iterator.next();
+            if (c.getCourseId() == course.getCourseId()){
+                iterator.set(course);
             }
         }
+        customer.setCourses(c_courses);
+        trainer.setCourses(t_courses);
+
         customerDao.saveCustomer(customer);
         trainerDao.saveTrainer(trainer);
     }

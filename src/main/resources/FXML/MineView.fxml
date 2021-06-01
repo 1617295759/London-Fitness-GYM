@@ -86,7 +86,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <VBox layoutX="240.0" layoutY="13.0" prefHeight="572.0" prefWidth="262.0">
+      <VBox layoutX="240.0" layoutY="13.0" prefHeight="197.0" prefWidth="651.0">
          <children>
             <HBox prefHeight="75.0" prefWidth="413.0" spacing="25.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="40.0">
                <children>
@@ -105,41 +105,45 @@
                   </Text>
                </children>
             </HBox>
-            <Text fx:id="gender" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="gender">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Text>
-            <Text fx:id="email" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="e-mail">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Text>
-            <Text fx:id="phone" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="phone">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Text>
-            <Text fx:id="level" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="level">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Text>
+            <AnchorPane prefHeight="170.0" prefWidth="628.0">
+               <children>
+                  <Text fx:id="gender" fill="WHITE" layoutX="62.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="gender">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="email" fill="WHITE" layoutX="68.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e-mail">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="phone" fill="WHITE" layoutX="388.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="phone">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="level" fill="WHITE" layoutX="401.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="level">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
-      <TabPane layoutX="501.0" layoutY="14.0" prefHeight="591.0" prefWidth="391.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="241.0" layoutY="235.0" prefHeight="370.0" prefWidth="651.0" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab text="To-Do">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="272.0" prefWidth="617.0">
                      <children>
-                        <TableView fx:id="calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                        <TableView fx:id="calender" onSort="#onSort" prefHeight="507.0" prefWidth="651.0">
                            <columns>
-                              <TableColumn fx:id="coach" prefWidth="74.0" text="Coach" />
-                              <TableColumn fx:id="date" prefWidth="72.0" text="Date" />
-                              <TableColumn fx:id="time" prefWidth="63.0" text="Time" />
-                              <TableColumn fx:id="duration" prefWidth="75.0" text="Duration" />
-                              <TableColumn fx:id="statues" prefWidth="137.0" text="Statues" />
+                              <TableColumn fx:id="coach" prefWidth="125.0" text="Coach" />
+                              <TableColumn fx:id="date" prefWidth="121.0" text="Date" />
+                              <TableColumn fx:id="time" prefWidth="87.0" text="Time" />
+                              <TableColumn fx:id="duration" prefWidth="155.0" text="Duration" />
+                              <TableColumn fx:id="statues" prefWidth="162.0" text="Statues" />
                            </columns>
                         </TableView>
                      </children>
@@ -150,13 +154,13 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="un_calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                        <TableView fx:id="un_calender" layoutY="-5.0" onSort="#onSort" prefHeight="512.0" prefWidth="712.0">
                            <columns>
-                              <TableColumn fx:id="coach1" prefWidth="74.0" text="Coach" />
-                              <TableColumn fx:id="date1" prefWidth="79.0" text="Date" />
-                              <TableColumn fx:id="time1" prefWidth="74.0" text="Time" />
-                              <TableColumn fx:id="duration1" prefWidth="68.0" text="Duration" />
-                              <TableColumn fx:id="statues1" prefWidth="182.0" text="Statues" />
+                              <TableColumn fx:id="coach1" prefWidth="91.0" text="Coach" />
+                              <TableColumn fx:id="date1" prefWidth="115.0" text="Date" />
+                              <TableColumn fx:id="time1" prefWidth="139.0" text="Time" />
+                              <TableColumn fx:id="duration1" prefWidth="140.0" text="Duration" />
+                              <TableColumn fx:id="statues1" prefWidth="165.0" text="Statues" />
                            </columns>
                         </TableView>
                      </children>
@@ -167,13 +171,13 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="o_calender" onSort="#onSort" prefHeight="507.0" prefWidth="395.0">
+                        <TableView fx:id="o_calender" layoutY="-2.0" onSort="#onSort" prefHeight="509.0" prefWidth="651.0">
                            <columns>
-                              <TableColumn fx:id="coach2" prefWidth="59.0" text="Coach" />
-                              <TableColumn fx:id="date2" prefWidth="77.0" text="Date" />
-                              <TableColumn fx:id="time2" prefWidth="64.0" text="Time" />
-                              <TableColumn fx:id="duration2" prefWidth="95.0" text="Duration" />
-                              <TableColumn fx:id="statues2" prefWidth="182.0" text="Statues" />
+                              <TableColumn fx:id="coach2" prefWidth="115.0" text="Coach" />
+                              <TableColumn fx:id="date2" prefWidth="103.0" text="Date" />
+                              <TableColumn fx:id="time2" prefWidth="92.0" text="Time" />
+                              <TableColumn fx:id="duration2" prefWidth="130.0" text="Duration" />
+                              <TableColumn fx:id="statues2" prefWidth="210.0" text="Statues" />
                            </columns>
                         </TableView>
                      </children>

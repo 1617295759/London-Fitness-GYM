@@ -29,7 +29,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public void saveCourse(Course course) {
+    public void addNewCourse(Course course) {
         courseDao.addNewCourse(course);
     }
 
@@ -44,8 +44,7 @@ public class CourseServiceImpl implements CourseService {
                 }
             }else{
                 long diff = course.getStartDate().getTime() - now.getTime();
-                System.out.println(diff);
-                if(Math.abs(diff) < 600000 &&
+                if(Math.abs(diff) < Course.MAXGAP &&
                         (course.getStatus()==Course.ACCEPTED||course.getStatus()==Course.FINISHED)){
                     todoCourses.add(course);
                 }
@@ -65,7 +64,7 @@ public class CourseServiceImpl implements CourseService {
                 }
             }else{
                 long diff = now.getTime() - course.getStartDate().getTime() ;
-                if(diff < 600000 &&
+                if(diff < Course.MAXGAP &&
                         (course.getStatus()==Course.ACCEPTED||course.getStatus()==Course.FINISHED)){
                     todoCourses.add(course);
                 }
@@ -135,7 +134,7 @@ public class CourseServiceImpl implements CourseService {
     private void judgeMiss(Course course){
         Date now = new Date();
         long diff = now.getTime() - course.getStartDate().getTime();
-        if(diff > 600000 && course.getStatus()==Course.ACCEPTED){
+        if(diff > Course.MAXGAP && course.getStatus()==Course.ACCEPTED){
             modifyCourseInfo(course,"status",String.valueOf(Course.MISS));
         }
     }

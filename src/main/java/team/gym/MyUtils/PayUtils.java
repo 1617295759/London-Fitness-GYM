@@ -1,7 +1,5 @@
 package team.gym.MyUtils;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -13,14 +11,12 @@ import team.gym.Controller.MineController;
 import team.gym.Dao.Impl.CustomerDaoImpl;
 import team.gym.MainApp;
 import team.gym.Service.CourseService;
-import team.gym.Service.Impl.CustomerServiceImpl;
 import team.gym.View.MineView;
 
 public class PayUtils {
-    public static void payForLevel(Stage stage,String level,double price) {
+    public static void payForLevel(Stage stage,String level,double price,MineController controller) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Paying");
-        //
         alert.setHeaderText(" ");
         alert.setContentText("Scan QR code to pay through WeChat or Alipay, You shall pay "+ price +" for this level");
 
@@ -35,13 +31,13 @@ public class PayUtils {
         Button ok = (Button)alert.getDialogPane().lookupButton(ButtonType.OK);
         ok.setText("Pay Finished");
         ok.setOnAction(event -> {
-            System.out.println("Pay successfully");
-            new CustomerDaoImpl().modifyCustomer((Customer) Session.getUser(),"level",level);
-
             Customer sessionCustomer = (Customer) Session.getUser();
+            new CustomerDaoImpl().modifyCustomer(sessionCustomer,"level",level);
+
             sessionCustomer.setLevel(level);
             Session.setUser(sessionCustomer);
-
+            controller.updateData();
+            System.out.println("Level Changed successfully to " + level);
             MainApp.showView(MineView.class);
         });
         alert.initOwner(stage);
@@ -64,7 +60,7 @@ public class PayUtils {
         Button ok = (Button)alert.getDialogPane().lookupButton(ButtonType.OK);
         ok.setText("Pay Finished");
         ok.setOnAction(event -> {
-            service.saveCourse(course);
+            service.addNewCourse(course);
             // update the data
             mineController.updateData();
             System.out.println("Pay for Live successfully");

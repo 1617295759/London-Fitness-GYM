@@ -49,6 +49,9 @@ public class MembershipController {
     @FXML
     private MainApp mainApp;
 
+    @Autowired
+    MineController mineController;
+
     @FXML
     private void initialize() {
         currentUser = Session.getUser();
@@ -57,11 +60,11 @@ public class MembershipController {
 
     @FXML
     void MemJbuyEvent(ActionEvent event) {
-        PayUtils.payForLevel(mainApp.getPrimaryStage(), Customer.JUNIOR,20.00);
+        PayUtils.payForLevel(mainApp.getPrimaryStage(), Customer.JUNIOR,20.00,mineController);
     }
     @FXML
     void MemSbuyEvent(ActionEvent event) {
-        PayUtils.payForLevel(mainApp.getPrimaryStage(), Customer.SENIOR,40.00);
+        PayUtils.payForLevel(mainApp.getPrimaryStage(), Customer.SENIOR,40.00,mineController);
     }
 
     @FXML

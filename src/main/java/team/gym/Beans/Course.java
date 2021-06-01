@@ -16,6 +16,7 @@ public class Course {
     public static final int ACCEPTED =  2;
     public static final int FINISHED =  3;
     public static final int MISS =  4;
+    public static final int MAXGAP = 60000000;
 
 
     private final IntegerProperty courseId = new SimpleIntegerProperty();
