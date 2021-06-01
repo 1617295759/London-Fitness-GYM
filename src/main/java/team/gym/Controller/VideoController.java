@@ -100,39 +100,39 @@ public class VideoController {
     String type = "yoga";
 
     List<String> yoga = new ArrayList<>(){{
-        add("/statics/images/videoImg/JeffCavaliereM.S.P-1.png");
-        add("/statics/images/videoImg/JeffCavaliereM.S.P-1.png");
-        add("/statics/images/videoImg/JeffCavaliereM.S.P-1.png");
-        add("/statics/images/videoImg/JeffCavaliereM.S.P-1.png");
-        add("/statics/images/videoImg/JeffCavaliereM.S.P-1.png");
-        add("/statics/images/videoImg/JeffCavaliereM.S.P-1.png");
+        add("/statics/images/videoImg/Ball Exercise.jpg");
+        add("/statics/images/videoImg/Fitness Ball - Train Legs.jpg");
+        add("/statics/images/videoImg/Fitness Ball of High Difficulty.jpg");
+        add("/statics/images/videoImg/Fitness Ball of Low Difficulty.jpg");
+        add("/statics/images/videoImg/Fitness Ball Teaching.jpg");
+        add("/statics/images/videoImg/Gym Ball.jpg");
     }};
 
     List<String> hiit = new ArrayList<>(){{
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
+        add("/statics/images/videoImg/Advanced HIIT Training.jpg");
+        add("/statics/images/videoImg/HIIT for Muscle-building.jpg");
+        add("/statics/images/videoImg/HIIT for Physical Exercise.jpg");
+        add("/statics/images/videoImg/HIIT for reducing fat.jpg");
+        add("/statics/images/videoImg/Intermediate HIIT Training.jpg");
+        add("/statics/images/videoImg/Primary HIIT.jpg");
     }};
 
     List<String> power = new ArrayList<>(){{
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
+        add("/statics/images/videoImg/Boxing Teaching.jpg");
+        add("/statics/images/videoImg/Functional Strength Training.jpg");
+        add("/statics/images/videoImg/build Peach Buttock.jpg");
+        add("/statics/images/videoImg/Bench Press.jpg");
+        add("/statics/images/videoImg/Waist Strength Training.jpg");
+        add("/statics/images/videoImg/Weightlifting Teaching.jpg");
     }};
 
     List<String> ball = new ArrayList<>(){{
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
-        add("/statics/images/videoImg/JEFF-CUTOUT.png");
+        add("/statics/images/videoImg/Basic Yoga Teaching.jpg");
+        add("/statics/images/videoImg/Classical Yoga Teaching.jpg");
+        add("/statics/images/videoImg/Indian Yoga.jpg");
+        add("/statics/images/videoImg/Modern Yoga Teaching.jpg");
+        add("/statics/images/videoImg/Yoga for Middle-aged and Elderly.jpg");
+        add("/statics/images/videoImg/Yoga of High Difficulty.jpg");
     }};
 
     @FXML
@@ -157,7 +157,7 @@ public class VideoController {
         }
         for (Button button:videoIntro){
             button.setAlignment(Pos.BOTTOM_LEFT);
-            button.setLayoutY(165);
+            button.setLayoutY(150);
             button.setPrefHeight(50);
             button.setMinWidth(220);
             button.setFont(new Font(18));
