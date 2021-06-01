@@ -14,9 +14,14 @@
             <Image url="@../statics/img/BACKGROUND4.jpg" />
          </image>
       </ImageView>
-      <VBox fx:id="loginBox" layoutX="140.0" layoutY="149.0" opacity="0.92" prefHeight="355.0" prefWidth="648.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="149.0">
+      <VBox fx:id="loginBox" layoutX="140.0" layoutY="149.0" opacity="0.92" prefHeight="355.0" prefWidth="648.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" visible="false" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="149.0">
          <children>
-            <HBox prefHeight="86.0" prefWidth="648.0">
+            <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="656.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="92.0" prefWidth="642.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="235.0" text="Account name" textFill="WHITE">
                      <HBox.margin>
@@ -108,11 +113,16 @@
          <font>
             <Font name="System Bold" size="50.0" />
          </font></Label>
-      <VBox fx:id="signUpBox" layoutX="172.0" layoutY="307.0" opacity="0.92" prefHeight="355.0" prefWidth="648.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" visible="false" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="149.0">
+      <VBox fx:id="signUpBox" layoutX="237.0" layoutY="98.0" opacity="0.92" prefHeight="488.0" prefWidth="454.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="209.0" AnchorPane.topAnchor="98.0">
          <children>
-            <HBox prefHeight="86.0" prefWidth="648.0">
+            <Label alignment="CENTER" contentDisplay="TOP" prefHeight="41.0" prefWidth="446.0" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="61.0" prefWidth="420.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="235.0" text="Account name" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="235.0" text="Account" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="28.0" />
                      </font>
@@ -120,7 +130,7 @@
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="accountNameField1" prefHeight="48.0" prefWidth="334.0" promptText="Sign Up With Your Account Name" text="Johnson">
+                  <TextField fx:id="accountNameField1" prefHeight="43.0" prefWidth="334.0" promptText="Sign Up With Your Account Name">
                      <HBox.margin>
                         <Insets left="50.0" top="15.0" />
                      </HBox.margin>
@@ -130,7 +140,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="86.0" prefWidth="648.0">
+            <HBox prefHeight="65.0" prefWidth="435.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="86.0" prefWidth="235.0" text="Password" textFill="WHITE">
                      <font>
@@ -140,63 +150,81 @@
                         <Insets />
                      </HBox.margin>
                   </Label>
-                  <PasswordField fx:id="passwordField1" prefHeight="48.0" prefWidth="334.0" promptText="Set Your Password" text="123">
+                  <PasswordField fx:id="passwordField1" prefHeight="48.0" prefWidth="334.0" promptText="Set Your Password">
                      <HBox.margin>
                         <Insets left="50.0" top="15.0" />
                      </HBox.margin>
                   </PasswordField>
                </children>
             </HBox>
-            <HBox prefHeight="82.0" prefWidth="648.0">
+            <HBox prefHeight="61.0" prefWidth="420.0">
                <children>
-                  <RadioButton fx:id="isMember1" mnemonicParsing="false" prefHeight="102.0" prefWidth="146.0" selected="true" text="Member" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="235.0" text="E-mail" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="accountEmail" prefHeight="43.0" prefWidth="334.0" promptText="Type In Your E-mail">
+                     <HBox.margin>
+                        <Insets left="50.0" top="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="61.0" prefWidth="420.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="235.0" text="Phone" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="accountPhone" prefHeight="43.0" prefWidth="334.0" promptText="Type in your Phone">
+                     <HBox.margin>
+                        <Insets left="50.0" top="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="backButton" layoutX="50.0" layoutY="84.0" mnemonicParsing="false" onAction="#backEvent" prefHeight="70.0" prefWidth="140.0" styleClass="login-button" stylesheets="@../statics/style.css" text="Back">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="signUpButton1" layoutX="258.0" layoutY="84.0" mnemonicParsing="false" onAction="#signUp" prefHeight="70.0" prefWidth="140.0" styleClass="login-button" stylesheets="@../statics/style.css" text="Sign up">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Button>
+                  <RadioButton fx:id="isMember1" layoutX="56.0" layoutY="21.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="146.0" selected="true" text="Member" textAlignment="CENTER" textFill="WHITE">
                      <toggleGroup>
                         <ToggleGroup fx:id="signup" />
                      </toggleGroup>
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
-                     <HBox.margin>
-                        <Insets left="50.0" />
-                     </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="isTrainer1" mnemonicParsing="false" prefHeight="102.0" prefWidth="146.0" text="Trainer" textAlignment="CENTER" textFill="WHITE" toggleGroup="$signup">
+                  <RadioButton fx:id="isTrainer1" layoutX="258.0" layoutY="16.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="146.0" text="Trainer" textAlignment="CENTER" textFill="WHITE" toggleGroup="$signup">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
-                     <HBox.margin>
-                        <Insets left="255.0" right="50.0" />
-                     </HBox.margin>
                   </RadioButton>
                </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="98.0" prefWidth="648.0">
-               <children>
-                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#backEvent" prefHeight="78.0" prefWidth="114.0" styleClass="login-button" stylesheets="@../statics/style.css" text="Back">
-                     <font>
-                        <Font name="System Bold" size="21.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="150.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="signUpButton1" mnemonicParsing="false" onAction="#signUp" prefHeight="78.0" prefWidth="114.0" styleClass="login-button" stylesheets="@../statics/style.css" text="Sign up">
-                     <font>
-                        <Font name="System Bold" size="21.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="150.0" right="50.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </AnchorPane>
          </children>
+         <padding>
+            <Insets bottom="10.0" right="13.0" />
+         </padding>
       </VBox>
    </children>
 </AnchorPane>

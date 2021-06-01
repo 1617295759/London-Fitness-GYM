@@ -43,15 +43,6 @@ public class CustomerServiceImpl implements CustomerService {
          */
         String v_password = "^[a-zA-Z0-9]{6,16}$";
 
-        /**
-         * 正则表达式：验证姓名
-         */
-        String v_name = "^[a-zA-Z]\\w{3,20}$";
-
-        /**
-         * 正则表达式：验证性别
-         */
-        String v_gender = "^[MF]$";
 
         /**
          * 正则表达式：验证手机号
@@ -70,15 +61,6 @@ public class CustomerServiceImpl implements CustomerService {
         else if(Pattern.matches(v_password,customer.getPassword()) == false)
             return "Please ensure your account has 6-16 letters";
 
-        else if(Pattern.matches(v_name,customer.getName()) == false)
-            return "Please input correct name";
-
-        else if(Pattern.matches(v_gender,customer.getGender()) == false)
-            return "Please use M and F to represent your gender";
-
-        else if(Pattern.matches(v_name,customer.getLocation()) == false)
-            return "Please input correct location";
-
         else if(Pattern.matches(v_phone,customer.getPhone()) == false)
             return "Please input correct phone number";
 
@@ -87,7 +69,7 @@ public class CustomerServiceImpl implements CustomerService {
 
         else {
             customerDao.saveCustomer(customer);
-            return "Successful Register!";
+            return null;
         }
     }
 

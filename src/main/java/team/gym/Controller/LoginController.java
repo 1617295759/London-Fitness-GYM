@@ -10,6 +10,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
+import team.gym.Beans.Customer;
+import team.gym.Beans.Trainer;
+import team.gym.Beans.User;
 import team.gym.MainApp;
 import team.gym.MyUtils.DialogUtils;
 import team.gym.MyUtils.Session;
@@ -46,9 +49,6 @@ public class LoginController {
     private VBox loginBox;
 
     @FXML
-    private PasswordField passwordField1;
-
-    @FXML
     private Button loginButton;
 
     @FXML
@@ -65,6 +65,12 @@ public class LoginController {
 
     @FXML
     private TextField accountNameField1;
+    @FXML
+    private PasswordField passwordField1;
+    @FXML
+    private TextField accountEmail;
+    @FXML
+    private TextField accountPhone;
 
     @Autowired
     TrainerService trainerService;
@@ -114,7 +120,38 @@ public class LoginController {
 
     @FXML
     void signUp(ActionEvent event) {
+        String account = accountNameField1.getText();
+        String password = passwordField1.getText();
+        String email = accountEmail.getText();
+        String phone = accountPhone.getText();
 
+        if(isMember1.isSelected()){
+            Customer user = new Customer();
+            user.setAccount(account);
+            user.setPassword(password);
+            user.setEmail(email);
+            user.setPhone(phone);
+
+            String status = customerService.registerCustomer(user);
+            if (status!=null){
+                DialogUtils.tips(mainApp.getPrimaryStage(),"There was a problem Customer Signing up", status);
+            }else{
+                DialogUtils.good(mainApp.getPrimaryStage(), "Congratulations to join us", "Signing in Successfully");
+            }
+        }else if(isTrainer1.isSelected()){
+            Trainer user = new Trainer();
+            user.setAccount(account);
+            user.setPassword(password);
+            user.setEmail(email);
+            user.setPhone(phone);
+
+            String status = trainerService.registerTrainer(user);
+            if (status!=null){
+                DialogUtils.tips(mainApp.getPrimaryStage(),"There was a problem Trainer Signing up", status);
+            }else{
+                DialogUtils.good(mainApp.getPrimaryStage(), "Congratulations to join us", "Signing in Successfully");
+            }
+        }
     }
 
 }

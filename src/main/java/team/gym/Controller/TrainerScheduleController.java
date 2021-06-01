@@ -9,8 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import org.springframework.beans.factory.annotation.Autowired;
 import team.gym.Beans.Course;
@@ -83,22 +81,10 @@ public class TrainerScheduleController {
     private Text gender;
 
     @FXML
-    private Button membershipButton;
-
-    @FXML
-    private Button mineButton;
-
-    @FXML
     private Button exitButton;
 
     @FXML
     private Text phone;
-
-    @FXML
-    private Button bookButton;
-
-    @FXML
-    private Button videoButton;
 
     @FXML
     private Text welcome;
@@ -295,26 +281,6 @@ public class TrainerScheduleController {
             };
             return cell;
         });
-
-    }
-
-    @FXML
-    void mineEvent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void videoEvent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void bookEvent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void membershipEvent(ActionEvent event) {
 
     }
 

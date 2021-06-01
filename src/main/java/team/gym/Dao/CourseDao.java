@@ -38,6 +38,10 @@ public interface CourseDao {
 
     int modifyCourse(Course course, String field, String newValue);
 
+    /**
+     * @param account
+     * @return
+     */
     List<Course> getCustomerCourses(String account);
 
     List<Course> getTrainerCourses(String account);

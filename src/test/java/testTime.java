@@ -25,6 +25,8 @@ public class testTime {
 
     @Test
     public void testNum(){
-        System.out.println(new Random().nextInt(1000));;
+        String path = "/statics/images/videoImg/JEFF-CUTOUT.png";
+
+        System.out.println(path.substring(25,path.length()-4));;
     }
 }
