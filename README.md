@@ -23,7 +23,7 @@ is urgently needed to allow gym members doing workouts at home.
 
 ## Install
 
-This project uses [javafx](https://openjfx.io/) and [maven](http://maven.apache.org/download.cgi). Go check them out if you don't have them locally installed.
+This project uses [javafx](https://openjfx.io/) and [maven](http://maven.apache.org/download.cgi) and Spring Boot. Go check them out if you don't have them locally installed. As we use Spring Boot, it so hard for us to pack the project into jar pack.
 And we use IDEA to run the project. Then you should unpack the zip document of our project.  Then you can open the document in IDEA. You should click to edit configuration. In VM options, you should change this path to the lib of javafx document, then you should click to refresh it. Finally, you can run the program.
 
 ## Usage
