@@ -2,6 +2,20 @@
 <CustomerWrapper>
     <customers>
         <entry>
+            <key>MikeBro</key>
+            <value>
+                <CourseList/>
+                <account>MikeBro</account>
+                <email>2019@bupt.edu.cn</email>
+                <gender>Male</gender>
+                <location>ilocation</location>
+                <name>iname</name>
+                <password>password</password>
+                <phone>13146267788</phone>
+                <level>Newbie</level>
+            </value>
+        </entry>
+        <entry>
             <key>Dwayne Johnson</key>
             <value>
                 <CourseList>
@@ -30,7 +44,7 @@
                 </CourseList>
                 <account>Dwayne Johnson</account>
                 <email>iemail@bupt.edu.cn</email>
-                <gender>female</gender>
+                <gender>Female</gender>
                 <location>ilocation</location>
                 <name>Dwayne Johnson</name>
                 <password>123</password>

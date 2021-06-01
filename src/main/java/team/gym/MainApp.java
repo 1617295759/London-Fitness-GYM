@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import team.gym.MyUtils.SplashScreenCustom;
 import team.gym.View.LoginView;
 
+/**
+ * Program Entrance Class
+ */
 @SpringBootApplication
 public class MainApp extends AbstractJavaFxApplicationSupport {
     private Stage primaryStage;

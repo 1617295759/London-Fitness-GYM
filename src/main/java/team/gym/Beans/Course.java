@@ -8,6 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ *  Course Entity
+ */
 @Component
 public class Course {
     // status
@@ -28,7 +31,6 @@ public class Course {
     private StringProperty time = new SimpleStringProperty();
     private IntegerProperty duration = new SimpleIntegerProperty();
     private final StringProperty feedback = new SimpleStringProperty();
-    // 0-committed but not yet accepted，1-reject，2-accept, 3-
     private int status;
     private final DoubleProperty price = new SimpleDoubleProperty();
 

@@ -21,7 +21,9 @@ import team.gym.View.LoginView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * Controller to control Mine page
+ */
 @FXMLController
 public class MineController {
 
@@ -169,7 +171,7 @@ public class MineController {
                         Button joinLive = new Button("Join the Live");
                         joinLive.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
                         joinLive.setOnMouseClicked((col) -> {
-                            System.out.println("You shall join the live ——");
+                            System.out.println("You shall join the live");
                             courseService.modifyCourseInfo(course, "status", String.valueOf(Course.FINISHED));
                             HostServices host = mainApp.getHostServices();
                             host.showDocument("https://live.bilibili.com/");
@@ -211,7 +213,7 @@ public class MineController {
                         Button cancel = new Button("CANCEL");
                         cancel.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
                         cancel.setOnMouseClicked((col) -> {
-                            System.out.println("You shall cancel the live ——");
+                            System.out.println("You shall cancel the live");
                             courseService.deleteCourse(course);
                             updateData();
                         });
@@ -251,7 +253,7 @@ public class MineController {
                         Button cancel = new Button("DELETE");
                         cancel.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
                         cancel.setOnMouseClicked((col) -> {
-                            System.out.println("You shall delete the live ——");
+                            System.out.println("You shall delete the live");
                             courseService.deleteCourse(course);
                             updateData();
                         });

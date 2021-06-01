@@ -15,7 +15,9 @@ import java.io.File;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
-
+/**
+ * do the operation in regard to trainers
+ */
 @Repository
 public class TrainerDaoImpl implements TrainerDao{
 
@@ -67,15 +69,14 @@ public class TrainerDaoImpl implements TrainerDao{
     }
 
     @Override
-    public int addCourse(String account, Course course) {
-        return 0;
-    }
-
-    @Override
     public Trainer findTrainerByAccount(String username) {
         return wrapper.getTrainerMap().get(username);
     }
 
+    /** write the wrapper to trainers.xml
+     *
+     * @param wrapper the wrapper to be saved
+     */
     public void saveWrapper(TrainerWrapper wrapper){
         try {
             Marshaller m = context.createMarshaller();

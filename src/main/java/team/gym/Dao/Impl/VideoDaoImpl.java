@@ -1,5 +1,6 @@
 package team.gym.Dao.Impl;
 
+import org.springframework.stereotype.Repository;
 import team.gym.Beans.Video;
 import team.gym.Beans.VideoWrapper;
 import team.gym.Dao.VideoDao;
@@ -14,6 +15,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+/**
+ * do the operation in regard to videos
+ */
 
 public class VideoDaoImpl implements VideoDao {
 
@@ -55,7 +59,6 @@ public class VideoDaoImpl implements VideoDao {
     }
 
 
-    @Override
     public Map<String, Video> getVideoMap() {
         return wrapper.getVideoMap();
     }

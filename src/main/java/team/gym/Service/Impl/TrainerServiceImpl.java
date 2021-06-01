@@ -10,7 +10,9 @@ import team.gym.Service.TrainerService;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-
+/**
+ * realize the functions in regard to Courses
+ */
 @Service
 public class TrainerServiceImpl implements TrainerService {
     @Autowired
@@ -40,28 +42,18 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public String registerTrainer(Trainer trainer) {
-        /**
-         * 正则表达式：验证用户名
-         */
+        //regular expression to verify account
         String v_account = "^[a-zA-Z]\\w{5,17}$";
 
-        /**
-         * 正则表达式：验证密码
-         */
+        //regular expression to verify password
         String v_password = "^[a-zA-Z0-9]{6,16}$";
 
-
-        /**
-         * 正则表达式：验证手机号
-         */
+        //regular expression to verify phone
         String v_phone = "^((13[0-9])|(15[^4,\\D])|(14[57])|(17[0])|(17[7])|(18[0,0-9]))\\d{8}$";
 
-        /**
-         * 正则表达式：验证邮箱
-         */
+        //regular expression to verify e-mail
         String v_email = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
 
-        //还需要验证账户是否重复
         if(Pattern.matches(v_account, trainer.getAccount()) == false)
             return "Please ensure your account has 5-17 letters without numbers";
 

@@ -11,6 +11,10 @@ import team.gym.Service.CourseService;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+/**
+ * realize the functions in regard to Courses
+ */
 @Service
 public class CourseServiceImpl implements CourseService {
     final

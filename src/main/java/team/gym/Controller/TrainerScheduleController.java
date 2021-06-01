@@ -20,7 +20,9 @@ import team.gym.View.LoginView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * Controller to control schedule page of the trainer
+ */
 @FXMLController
 public class TrainerScheduleController {
     @FXML
@@ -154,7 +156,7 @@ public class TrainerScheduleController {
                         Button joinLive = new Button("Join the Live");
                         joinLive.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
                         joinLive.setOnMouseClicked((col) -> {
-                            System.out.println("You shall join the live ——");
+                            System.out.println("You shall join the live");
                             courseService.modifyCourseInfo(
                                     course, "status", String.valueOf(Course.FINISHED));
                             HostServices host = mainApp.getHostServices();
@@ -196,7 +198,7 @@ public class TrainerScheduleController {
                         Button accept = new Button("ACCEPT");
                         accept.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
                         accept.setOnMouseClicked((col) -> {
-                            System.out.println("You shall accept the live ——");
+                            System.out.println("You shall accept the live");
                             courseService.modifyCourseInfo(
                                     course, "status", String.valueOf(Course.ACCEPTED));
                             updateData();
@@ -224,7 +226,7 @@ public class TrainerScheduleController {
                         Button reject = new Button("REJECT");
                         reject.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
                         reject.setOnMouseClicked((col) -> {
-                            System.out.println("You shall reject the live ——");
+                            System.out.println("You shall reject the live");
                             courseService.modifyCourseInfo(
                                     course, "status", String.valueOf(Course.REJECTED));
                             updateData();
@@ -261,7 +263,7 @@ public class TrainerScheduleController {
                         Button cancel = new Button("DELETE");
                         cancel.setStyle("-fx-background-color: #00bcff;-fx-text-fill: #ffffff");
                         cancel.setOnMouseClicked((col) -> {
-                            System.out.println("You shall delete the live ——");
+                            System.out.println("You shall delete the live");
                             courseService.deleteCourse(course);
                             updateData();
                         });

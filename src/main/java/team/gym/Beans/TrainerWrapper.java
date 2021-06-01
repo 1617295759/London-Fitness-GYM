@@ -5,7 +5,9 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ *  wrap the trainers to list, in order to store to files
+ */
 @XmlRootElement(name = "CustomerWrapper")
 public class TrainerWrapper {
     private Map<String,Trainer> trainerMap;

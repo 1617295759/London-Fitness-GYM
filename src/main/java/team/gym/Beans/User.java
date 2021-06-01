@@ -10,6 +10,9 @@ import javax.xml.bind.annotation.XmlTransient;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Super class of Trainer and Customer
+ */
 @Component
 public class User {
     private final StringProperty account = new SimpleStringProperty();

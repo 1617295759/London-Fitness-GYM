@@ -14,7 +14,7 @@
             <Image url="@../statics/img/BACKGROUND4.jpg" />
          </image>
       </ImageView>
-      <VBox fx:id="loginBox" layoutX="140.0" layoutY="149.0" opacity="0.92" prefHeight="355.0" prefWidth="648.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" visible="false" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="149.0">
+      <VBox fx:id="loginBox" layoutX="140.0" layoutY="149.0" opacity="0.92" prefHeight="355.0" prefWidth="648.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="149.0">
          <children>
             <Label alignment="CENTER" contentDisplay="TOP" prefHeight="48.0" prefWidth="656.0" text="Login" textFill="WHITE">
                <font>
@@ -113,7 +113,7 @@
          <font>
             <Font name="System Bold" size="50.0" />
          </font></Label>
-      <VBox fx:id="signUpBox" layoutX="237.0" layoutY="98.0" opacity="0.92" prefHeight="488.0" prefWidth="454.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="209.0" AnchorPane.topAnchor="98.0">
+      <VBox fx:id="signUpBox" layoutX="237.0" layoutY="98.0" opacity="0.92" prefHeight="488.0" prefWidth="454.0" style="-fx-background-color: #808080;" styleClass="login-box" stylesheets="@../statics/style.css" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="209.0" AnchorPane.topAnchor="98.0">
          <children>
             <Label alignment="CENTER" contentDisplay="TOP" prefHeight="41.0" prefWidth="446.0" text="Register" textFill="WHITE">
                <font>

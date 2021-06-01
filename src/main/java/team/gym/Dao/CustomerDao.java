@@ -13,22 +13,28 @@ public interface CustomerDao {
      *
      * @param customer the Object to be saved
      */
-    public void saveCustomer(Customer customer);
+    void saveCustomer(Customer customer);
 
     /** get the Customer object by the course account
      *
      * @param username the username number of the customer
      * @return the corresponding customer Object
      */
-    public Customer findCustomerByAccount(String username);
+    Customer findCustomerByAccount(String username);
 
-    /**  all the cutomers
+    /** get all the cutomers Map
      *
      * @return all the cutomers map, the key is account number(String), value is customer Object
      */
-    public Map getCustomerMap();
+    Map getCustomerMap();
 
+    /** modify the specific field in the Customer Object and save it in Persistence layer
+     *
+     * @param customer the customer information to be modified
+     * @param field the specific field that you want to modify
+     * @param newValue  new value
+     * @return operation status
+     */
     int modifyCustomer(Customer customer, String field, String newValue);
 
-    int addCourse(String account, Course course);
 }

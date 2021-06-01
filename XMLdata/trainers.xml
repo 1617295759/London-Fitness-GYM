@@ -30,11 +30,24 @@
                 </CourseList>
                 <account>Johnson</account>
                 <email>email</email>
-                <gender>gender</gender>
+                <gender>Femal</gender>
                 <location>location</location>
                 <name>Johnson</name>
                 <password>123</password>
-                <phone>138</phone>
+                <phone>13805410333</phone>
+            </value>
+        </entry>
+        <entry>
+            <key>ThenxYuzhe</key>
+            <value>
+                <CourseList/>
+                <account>ThenxYuzhe</account>
+                <email>2018@bupt.edu.cn</email>
+                <gender>Male</gender>
+                <location>location</location>
+                <name>name</name>
+                <password>password</password>
+                <phone>15666322576</phone>
             </value>
         </entry>
     </trainers>

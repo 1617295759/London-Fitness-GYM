@@ -27,6 +27,9 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
+/**
+ * Controller to control reserving page
+ */
 @FXMLController
 public class BookingController {
     @FXML

@@ -5,11 +5,6 @@ import team.gym.Beans.Customer;
 
 public class CustomerServiceImplTest extends TestCase {
 
-    public void testVerifyCustomer() {
-    }
-
-    public void testGetCustomer() {
-    }
 
     public void testRegisterCustomer() {
         Customer ct = new Customer();
@@ -20,6 +15,4 @@ public class CustomerServiceImplTest extends TestCase {
         System.out.println(new CustomerServiceImpl().registerCustomer(ct));
     }
 
-    public void testDeleteCustomer() {
-    }
 }

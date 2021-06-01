@@ -9,6 +9,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Trainer Entity
+ */
 @Component
 @XmlRootElement(name = "trainer")
 public class Trainer extends User{
@@ -18,7 +21,7 @@ public class Trainer extends User{
         setAccount(String.valueOf(new Random().nextInt()));
         setPassword("password");
         setName("name");
-        setGender("gender");
+        setGender("Male");
         setLocation("location");
         setPhone("138");
         setEmail("email");

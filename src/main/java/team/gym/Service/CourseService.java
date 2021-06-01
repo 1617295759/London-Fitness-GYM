@@ -3,28 +3,64 @@ package team.gym.Service;
 import team.gym.Beans.Course;
 import java.util.List;
 
+/**
+ * realize the functions in regard to Courses
+ */
 public interface CourseService {
 
-    //添加报名报信息，会员选课
+    /** After members have pay for course, Add new course information
+     *
+     * @param course the course information to be added
+     */
     void addNewCourse(Course course);
 
-    //用户id查询用户未完成课程
+    /** Query the courses that customer arrange to attend
+     *
+     * @param account the Customer's account
+     * @return the courses that customer arrange to take part in
+     */
     List<Course> getCustomerTodoCourse(String account);
 
-    //用户id查询用户已完成课程
+    /** Query the courses that customer had attended
+     *
+     * @param account the Customer's account
+     * @return the courses that customer had attended
+     */
     List<Course> getCustomerOverCourse(String account);
 
+    /** Query the courses that is unconfirmed in regard to the customer
+     *
+     * @param account the Customer's account
+     * @return the courses that is unconfirmed
+     */
     List<Course> getCustomerUnconfirmedCourse(String account);
 
+    /** Query the courses that is unconfirmed in regard to the trainer
+     *
+     * @param account the Trainer's account
+     * @return the courses that is unconfirmed
+     */
     List<Course> getTrainerUnconfirmedCourse(String account);
 
-    //id查询教练未完成课程
+    /**Query the courses that trainer arrange to attend
+     *
+     * @param account the Trainer's account
+     * @return the courses that trainer arrange to take part in
+     */
     List<Course> getTrainerTodoCourse(String account);
 
-    //id查询教练已完成课程
+    /**Query the courses that trainer had attended
+     *
+     * @param account the Trainer's account
+     * @return  the courses that trainer missed to take part in
+     */
     List<Course> getTrainerOverCourse(String account);
 
-    //id删除我的课程
+    /** delete a specific course
+     *
+     * @param course the course to be deleted
+     * @return operation status
+     */
     int deleteCourse(Course course);
 
     /** change given course info field to new info

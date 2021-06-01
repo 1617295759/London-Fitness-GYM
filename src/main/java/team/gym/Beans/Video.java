@@ -2,6 +2,13 @@ package team.gym.Beans;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import org.springframework.stereotype.Component;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * Video Entity
+ */
 
 public class Video {
     private final StringProperty name = new SimpleStringProperty();

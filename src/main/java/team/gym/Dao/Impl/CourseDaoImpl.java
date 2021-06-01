@@ -19,16 +19,12 @@ import java.util.List;
 import java.util.ListIterator;
 
 
+/**
+ * do the operation in regard to courses
+ */
 @Repository
 public class CourseDaoImpl implements CourseDao {
-    /*
-            文件路径问题：java.io.FileNotFoundException:系统找不到指定的路径 ？？
-            问题解决 ：路径中的中文或有空格路径处理，会用编码为 a3%20%e9%a1%b9% 等字符
-            String xmlPath = URLDecoder.decode("/XMLdata/customers.xml","utf-8");
 
-            URL xmlURL = getClass().getResource("/xmldata/customer.xml");
-            resources文件夹下为静态资源，只适合存放配置等不改动的文件，持久化文件不应该放在那里
-    */
 
     @Autowired
     private TrainerDao trainerDao;
@@ -145,12 +141,6 @@ public class CourseDaoImpl implements CourseDao {
                 iterator.set(course);
             }
         }
-//        for (Course c : c_courses) {
-//            if (c.getCourseId() == course.getCourseId()){
-//                c_courses.remove(c);
-//                c_courses.add(course);
-//            }
-//        }
         List<Course> t_courses = trainer.getCourses();
         iterator = t_courses.listIterator();
         while(iterator.hasNext()){

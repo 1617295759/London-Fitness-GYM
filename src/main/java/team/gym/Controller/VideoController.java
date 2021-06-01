@@ -19,7 +19,9 @@ import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Controller to control videos presentation page
+ */
 @FXMLController
 public class VideoController {
 
@@ -235,11 +237,11 @@ public class VideoController {
     @FXML
     void video1Play(MouseEvent event) {
         String videoPath = switch (type) {
-            case "yoga" ->  "/statics/videos/TestMedia.MP4" ;
-            case "hiit" ->  "/statics/videos/TestMedia.MP4" ;
-            case "power" ->  "/statics/videos/TestMedia.MP4";
-            case "ball" -> "/statics/videos/TestMedia.MP4";
-            default ->  "/statics/videos/TestMedia.MP4" ;
+            case "yoga" ->  "/statics/videos/Yoga.MP4" ;
+            case "hiit" ->  "/statics/videos/HIIT.MP4" ;
+            case "power" ->  "/statics/videos/Power.MP4";
+            case "ball" -> "/statics/videos/ball.MP4";
+            default ->  "/statics/videos/Yoga.MP4" ;
         };
         VideoPlayer.popup(getClass().getResource(videoPath).toString());
     }

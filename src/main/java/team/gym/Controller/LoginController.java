@@ -18,7 +18,11 @@ import team.gym.MyUtils.DialogUtils;
 import team.gym.MyUtils.Session;
 import team.gym.Service.CustomerService;
 import team.gym.Service.TrainerService;
-
+import team.gym.View.TrainerSchedule;
+import team.gym.View.Video;
+/**
+ * Controller to control login page
+ */
 @FXMLController
 public class LoginController {
     @FXML
@@ -136,7 +140,9 @@ public class LoginController {
             if (status!=null){
                 DialogUtils.tips(mainApp.getPrimaryStage(),"There was a problem Customer Signing up", status);
             }else{
-                DialogUtils.good(mainApp.getPrimaryStage(), "Congratulations to join us", "Signing in Successfully");
+                Session.setUser(user);
+                MainApp.showView(Video.class);
+                DialogUtils.good(mainApp.getPrimaryStage(), "Congratulations to Join Us", "Signing in Successfully");
             }
         }else if(isTrainer1.isSelected()){
             Trainer user = new Trainer();
@@ -149,7 +155,10 @@ public class LoginController {
             if (status!=null){
                 DialogUtils.tips(mainApp.getPrimaryStage(),"There was a problem Trainer Signing up", status);
             }else{
-                DialogUtils.good(mainApp.getPrimaryStage(), "Congratulations to join us", "Signing in Successfully");
+                Session.setUser(user);
+                MainApp.showView(TrainerSchedule.class);
+                DialogUtils.good(mainApp.getPrimaryStage(), "Congratulations to Join Us",
+                        "Signing in Successfully, Your Information are presented to Coachees");
             }
         }
     }

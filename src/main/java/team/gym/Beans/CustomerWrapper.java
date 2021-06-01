@@ -6,6 +6,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *  wrap the customers to list, in order to store to files
+ */
 @XmlRootElement(name = "CustomerWrapper")
 public class CustomerWrapper {
 

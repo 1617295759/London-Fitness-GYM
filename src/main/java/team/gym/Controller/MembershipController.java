@@ -13,7 +13,9 @@ import team.gym.MainApp;
 import team.gym.MyUtils.PayUtils;
 import team.gym.MyUtils.Session;
 import team.gym.View.LoginView;
-
+/**
+ * Controller to control membership page
+ */
 @FXMLController
 public class MembershipController {
     @FXML

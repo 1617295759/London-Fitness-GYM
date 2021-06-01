@@ -12,8 +12,17 @@ import team.gym.Dao.Impl.CustomerDaoImpl;
 import team.gym.MainApp;
 import team.gym.Service.CourseService;
 import team.gym.View.MineView;
-
+/**
+ * Payment Util
+ */
 public class PayUtils {
+    /** Handle the payment of Customers Level Improvement
+     *
+     * @param stage the main stage
+     * @param level the level improved to
+     * @param price the price to pay
+     * @param controller the MineController to handle update courses
+     */
     public static void payForLevel(Stage stage,String level,double price,MineController controller) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Paying");
@@ -43,6 +52,16 @@ public class PayUtils {
         alert.initOwner(stage);
         alert.show();
     }
+
+
+    /**Handle the payment of Customers reserve Live Course
+     *
+     * @param stage the main stage
+     * @param price the price to pay
+     * @param course the new course carrying reserve information
+     * @param service the CourseService object that has been autowired
+     * @param mineController the MineController to handle update courses
+     */
     public static void payForLive(Stage stage, double price, Course course, CourseService service, MineController mineController) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Paying");

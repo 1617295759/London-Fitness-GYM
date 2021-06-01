@@ -11,16 +11,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-@Component
-@XmlRootElement(name = "customer")
+
 
 /**
- * 会员实体类
+ * Customer Entity
  */
-
+@Component
+@XmlRootElement(name = "customer")
 public class Customer extends User{
     // different level of membership
-    // Newbie —— Registered —— Advanced —— Respectful —— VIP —— Honorable
     private final StringProperty  level = new SimpleStringProperty();
     public static final String NEWBIE =  "Newbie";
     public static final String JUNIOR =  "Junior";
@@ -31,7 +30,7 @@ public class Customer extends User{
         setAccount(String.valueOf(new Random().nextInt(94)));
         setPassword("ipassword");
         setName("iname");
-        setGender("it");
+        setGender("Male");
         setLocation("ilocation");
         setPhone("138");
         setEmail("iemail");

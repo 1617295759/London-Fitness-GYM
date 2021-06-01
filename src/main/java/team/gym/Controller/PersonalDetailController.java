@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import team.gym.Beans.User;
 import team.gym.MyUtils.Session;
-
+/**
+ * Controller to control Personal Detail page
+ */
 @FXMLController
 public class PersonalDetailController {
 

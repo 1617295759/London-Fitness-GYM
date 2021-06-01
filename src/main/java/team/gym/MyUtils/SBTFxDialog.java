@@ -18,10 +18,9 @@ import javafx.scene.web.WebView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
 /**
- * JavaFx确认弹出框
- * @author clzhu 2014/12/15
- *
+ * Dialog Util
  */
 public class SBTFxDialog {
 
@@ -62,7 +61,7 @@ public class SBTFxDialog {
     static class Message extends Text {
         public Message(String msg) {
             super(msg);
-            setWrappingWidth(250);//自动换行的宽度
+            setWrappingWidth(250);
         }
     }
 

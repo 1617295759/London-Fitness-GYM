@@ -21,6 +21,9 @@ import team.gym.View.LoginView;
 
 import java.util.List;
 
+/**
+ * Controller to control reserve course page
+ */
 @FXMLController
 public class BookController {
     @FXML
@@ -102,13 +105,12 @@ public class BookController {
 
                             wantit.setOnMouseClicked((col) -> {
                                 Trainer selectedTrainer = trainersData.get(getIndex());
-                                System.out.println("You shall reserve this gay ——"+selectedTrainer.getAccount());
+                                System.out.println("You shall reserve this gay"+selectedTrainer.getAccount());
                                 Session.setCoach(selectedTrainer);
                                 // turn the page to select date and time
                                 MainApp.showView(Booking.class);
                             });
                             if (empty) {
-                                //如果此列为空默认不添加元素
                                 setText(null);
                                 setGraphic(null);
                             } else {

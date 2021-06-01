@@ -15,16 +15,12 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
+/**
+ * do the operation in regard to customers
+ */
 @Repository
 public class CustomerDaoImpl implements CustomerDao {
-    /*
-            文件路径问题：java.io.FileNotFoundException:系统找不到指定的路径 ？？
-            问题解决 ：路径中的中文或有空格路径处理，会用编码为 a3%20%e9%a1%b9% 等字符
-            String xmlPath = URLDecoder.decode("/XMLdata/customers.xml","utf-8");
 
-            URL xmlURL = getClass().getResource("/xmldata/customer.xml");
-            resources文件夹下为静态资源，只适合存放配置等不改动的文件，持久化文件不应该放在那里
-    */
     private final File customersfile;
     private CustomerWrapper wrapper;
     private JAXBContext context;
@@ -89,10 +85,6 @@ public class CustomerDaoImpl implements CustomerDao {
         return 0;
     }
 
-    @Override
-    public int addCourse(String account, Course course) {
-        return 0;
-    }
 
     /** write the wrapper to customers.xml
      *

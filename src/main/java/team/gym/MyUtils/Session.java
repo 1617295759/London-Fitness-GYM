@@ -1,7 +1,9 @@
 package team.gym.MyUtils;
 
 import team.gym.Beans.User;
-
+/**
+ * To store some data
+ */
 public class Session {
     private static final ThreadLocal<User> userholder = new ThreadLocal<>();
     private static final ThreadLocal<User> selectedCoach = new ThreadLocal<>();

@@ -24,7 +24,12 @@ public interface TrainerDao {
      */
     public Map getTrainerMap();
 
+    /** modify the specific field in the Trainer Object and save it in Persistence layer
+     *
+     * @param account the trainer information to be modified
+     * @param field the specific field that you want to modify
+     * @param newValue new value
+     * @return new value
+     */
     int modifyTrainer(String account, String field, String newValue);
-
-    int addCourse(String account, Course course);
 }
