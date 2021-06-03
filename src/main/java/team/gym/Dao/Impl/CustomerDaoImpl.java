@@ -21,11 +21,15 @@ import java.util.Map;
 @Repository
 public class CustomerDaoImpl implements CustomerDao {
 
-    private final File customersfile;
+    private File customersfile;
     private CustomerWrapper wrapper;
     private JAXBContext context;
 
     public CustomerDaoImpl() {
+       loadData();
+    }
+
+    public void loadData(){
         // initiate File customersfile
         String xmlPath = URLDecoder.decode("XMLdata/customers.xml", StandardCharsets.UTF_8);
         customersfile = new File(xmlPath);
@@ -42,7 +46,6 @@ public class CustomerDaoImpl implements CustomerDao {
             wrapper = new CustomerWrapper();
         }
     }
-
 
     @Override
     public void saveCustomer(Customer customer) {

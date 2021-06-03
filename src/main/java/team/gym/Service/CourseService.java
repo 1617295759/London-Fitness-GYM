@@ -71,4 +71,6 @@ public interface CourseService {
      * @return statues 1-finished successfully 0-failed
      */
     int modifyCourseInfo(Course course, String field, String newValue);
+
+    void reload();
 }

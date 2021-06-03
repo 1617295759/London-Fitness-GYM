@@ -300,6 +300,8 @@ public class TrainerScheduleController {
 
     void updateData() {
         if (currentUser == null) currentUser = (Trainer) Session.getUser();
+
+        courseService.reload();
         // get the courses data from xml calling for Service
         overCourses = courseService.getTrainerOverCourse(currentUser.getAccount());
         unconfirmedCourses = courseService.getTrainerUnconfirmedCourse(currentUser.getAccount());

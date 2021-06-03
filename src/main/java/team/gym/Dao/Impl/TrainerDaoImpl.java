@@ -21,12 +21,16 @@ import java.util.Map;
 @Repository
 public class TrainerDaoImpl implements TrainerDao{
 
-    private final File trainersfile;
+    private File trainersfile;
     private TrainerWrapper wrapper;
     private JAXBContext context;
 
     public TrainerDaoImpl() {
-        // initiate File customersfile
+        loadData();
+    }
+
+    public void loadData(){
+        // initiate File trainers file
         String xmlPath = URLDecoder.decode("XMLdata/trainers.xml", StandardCharsets.UTF_8);
         trainersfile = new File(xmlPath);
         try {
@@ -42,7 +46,6 @@ public class TrainerDaoImpl implements TrainerDao{
             wrapper = new TrainerWrapper();
         }
     }
-
 
     @Override
     public void saveTrainer(Trainer trainer) {

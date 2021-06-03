@@ -32,4 +32,6 @@ public interface TrainerDao {
      * @return new value
      */
     int modifyTrainer(String account, String field, String newValue);
+
+    void loadData();
 }

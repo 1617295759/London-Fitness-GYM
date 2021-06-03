@@ -306,6 +306,8 @@ public class MineController {
 
     public void updateData() {
         if (currentUser == null) currentUser = (Customer) Session.getUser();
+
+        courseService.reload();
         // get the courses data from xml calling for Service
         overCourses = courseService.getCustomerOverCourse(currentUser.getAccount());
         unconfirmedCourses = courseService.getCustomerUnconfirmedCourse(currentUser.getAccount());

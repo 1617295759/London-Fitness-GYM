@@ -37,4 +37,5 @@ public interface CustomerDao {
      */
     int modifyCustomer(Customer customer, String field, String newValue);
 
+    void loadData();
 }

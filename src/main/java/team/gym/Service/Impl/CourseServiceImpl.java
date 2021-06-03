@@ -32,6 +32,11 @@ public class CourseServiceImpl implements CourseService {
         this.trainerDao = trainerDao;
     }
 
+    public void reload(){
+        trainerDao.loadData();
+        customerDao.loadData();
+    }
+
     @Override
     public void addNewCourse(Course course) {
         courseDao.addNewCourse(course);

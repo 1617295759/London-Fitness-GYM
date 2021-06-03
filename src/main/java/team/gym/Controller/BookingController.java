@@ -90,7 +90,7 @@ public class BookingController {
         durationBox.getItems().addAll(30, 45, 60, 90, 120);
         durationBox.getSelectionModel().selectFirst();
         startTimeBox.getItems().addAll(
-                "9:00","9:30","10:00","10:30","11:00","14:30","15:00","15:30","16:00","16:30");
+                "9:00","9:30","10:00","10:30","11:00","14:30","15:00","15:30","16:00","16:30","20:30");
         startTimeBox.getSelectionModel().selectFirst();
     }
 
